@@ -60,7 +60,7 @@ export default function AboutPage() {
               <div className="grid grid-cols-2 gap-4">
                 {[
                   { value: '40+', label: 'Countries Deployed' },
-                  { value: '8+', label: 'Robot Models' },
+                  { value: '14+', label: 'Robot Models' },
                   { value: 'IIC T6', label: 'Highest Ex Rating' },
                   { value: '24/7', label: 'Autonomous Patrol' },
                 ].map((s, i) => (

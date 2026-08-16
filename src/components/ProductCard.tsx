@@ -7,12 +7,14 @@ const categoryLabel: Record<ProductCategory, string> = {
   'explosion-proof': 'Explosion-Proof',
   electric: 'Electric',
   software: 'Software',
+  peripheral: 'Peripheral',
 };
 
 const categoryClass: Record<ProductCategory, string> = {
   'explosion-proof': 'tag-explosion',
   electric: 'tag-electric',
   software: 'tag-software',
+  peripheral: 'tag-peripheral',
 };
 
 interface ProductCardProps {

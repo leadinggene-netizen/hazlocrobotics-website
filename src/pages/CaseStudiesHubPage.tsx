@@ -39,14 +39,16 @@ export default function CaseStudiesHubPage() {
                     <h2 className="mt-3 font-display text-xl font-bold text-ink-900 lg:text-2xl">{cs.title}</h2>
                     <p className="mt-3 text-ink-500 leading-relaxed">{cs.description}</p>
 
-                    <div className="mt-6 grid grid-cols-2 gap-3">
-                      {cs.results.slice(0, 4).map((r, j) => (
-                        <div key={j} className="rounded-xl bg-ink-50 p-3">
-                          <div className="font-display text-lg font-bold text-teal-600">{r.value}</div>
-                          <div className="text-xs text-ink-400 mt-0.5">{r.metric}</div>
-                        </div>
-                      ))}
-                    </div>
+                    {cs.results && cs.results.length > 0 && (
+                      <div className="mt-6 grid grid-cols-2 gap-3">
+                        {cs.results.slice(0, 4).map((r, j) => (
+                          <div key={j} className="rounded-xl bg-ink-50 p-3">
+                            <div className="font-display text-lg font-bold text-teal-600">{r.value}</div>
+                            <div className="text-xs text-ink-400 mt-0.5">{r.metric}</div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
 
                     <Link
                       to={`/case-studies/${cs.slug}`}

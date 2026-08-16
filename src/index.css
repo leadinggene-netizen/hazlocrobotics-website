@@ -46,6 +46,9 @@
   .tag-software {
     @apply tag bg-ink-100 text-ink-600;
   }
+  .tag-peripheral {
+    @apply tag bg-gold-100 text-gold-800;
+  }
 }
 
 /* Custom scrollbar */

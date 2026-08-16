@@ -22,7 +22,7 @@ export const industries: Industry[] = [
     description:
       'Explosion-proof inspection robots enable continuous autonomous patrol of processing units, tank farms, and pipe racks — detecting gas leaks, thermal anomalies, and structural issues before they become incidents. Deployed in 40+ countries across the world\'s leading oil and gas operators.',
     image: 'https://images.pexels.com/photos/15970032/pexels-photo-15970032.jpeg?auto=compress&cs=tinysrgb&w=1920',
-    bestProducts: ['explosion-proof-wheeled-robot-l4s', 'explosion-proof-quadruped-robot', 'explosion-proof-rail-robot', 'explosion-proof-tracked-robot'],
+    bestProducts: ['explosion-proof-wheeled-robot-l4s', 'explosion-proof-quadruped-robot', 'explosion-proof-rail-robot-g7-module', 'explosion-proof-tracked-robot'],
     buyingCommittee: ['HSE Director', 'Plant Manager', 'Inspection Manager', 'EPC Project Director'],
     keyBenefits: [
       '24/7 autonomous patrol replaces shift-limited manual inspection',
@@ -41,7 +41,7 @@ export const industries: Industry[] = [
     description:
       'Autonomous inspection robots provide repeatable, high-frequency monitoring of critical power generation assets. Thermal imaging detects overheating components before failure, while continuous patrol replaces costly and dangerous manual boiler and conveyor inspections.',
     image: 'https://images.pexels.com/photos/13385063/pexels-photo-13385063.jpeg?auto=compress&cs=tinysrgb&w=1920',
-    bestProducts: ['explosion-proof-rail-robot', 'electric-wheeled-robot', 'electric-rail-robot', 'asset-tracking-center-software'],
+    bestProducts: ['explosion-proof-rail-robot-g7-power', 'electric-wheeled-robot', 'electric-rail-robot', 'asset-tracking-center-software'],
     buyingCommittee: ['Operations Director', 'Maintenance Manager', 'Safety Manager'],
     keyBenefits: [
       'Thermal monitoring detects bearing and electrical faults early',

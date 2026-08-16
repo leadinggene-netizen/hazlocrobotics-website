@@ -22,6 +22,7 @@ import { products } from '@/data/products';
 import { industries } from '@/data/industries';
 import { caseStudies } from '@/data/caseStudies';
 import { resources } from '@/data/resources';
+import heroBanner from '@/assets/banner.jpg';
 
 export default function HomePage() {
   const featuredProducts = [
@@ -36,8 +37,8 @@ export default function HomePage() {
       <section className="relative min-h-screen flex items-center overflow-hidden bg-ink-950">
         <div className="absolute inset-0">
           <img
-            src="https://images.pexels.com/photos/10396413/pexels-photo-10396413.jpeg?auto=compress&cs=tinysrgb&w=1920"
-            alt="Industrial oil refinery at night"
+            src={heroBanner}
+            alt="The Hazloc Robotics fleet deployed across a petrochemical facility"
             className="h-full w-full object-cover opacity-40"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-ink-950 via-ink-950/85 to-ink-950/30" />
@@ -79,7 +80,7 @@ export default function HomePage() {
                 { icon: Globe, value: '40+', label: 'Countries Deployed' },
                 { icon: ShieldCheck, value: 'IIC T6', label: 'Highest Ex Rating' },
                 { icon: Clock, value: '24/7', label: 'Autonomous Patrol' },
-                { icon: Cpu, value: '8+', label: 'Robot Models' },
+                { icon: Cpu, value: '14+', label: 'Robot Models' },
               ].map((stat, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <stat.icon size={28} className="text-gold-400 flex-shrink-0" />
@@ -122,7 +123,7 @@ export default function HomePage() {
                   The Robot Fleet
                 </h2>
                 <p className="mt-3 text-lg text-ink-500 max-w-xl">
-                  Eight robots — from explosion-proof quadrupeds to fleet management software — built for hazardous-location inspection.
+                  Fourteen robots — from explosion-proof quadrupeds to fleet management software — built for hazardous-location inspection.
                 </p>
               </div>
               <Link to="/products" className="btn-secondary flex-shrink-0">
@@ -320,7 +321,7 @@ export default function HomePage() {
                   {caseStudies[0].description}
                 </p>
                 <div className="mt-8 grid grid-cols-2 gap-4">
-                  {caseStudies[0].results.slice(0, 4).map((r, i) => (
+                  {(caseStudies[0].results ?? []).slice(0, 4).map((r, i) => (
                     <div key={i} className="rounded-xl bg-white/5 p-4">
                       <div className="font-display text-xl font-bold text-gold-400">{r.value}</div>
                       <div className="mt-1 text-xs text-ink-400">{r.metric}</div>

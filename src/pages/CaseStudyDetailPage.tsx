@@ -37,20 +37,22 @@ export default function CaseStudyDetailPage() {
       </PageHero>
 
       {/* Results highlights */}
-      <section className="py-16 lg:py-20">
-        <div className="container-x">
-          <Reveal>
-            <div className="grid grid-cols-2 gap-4 lg:gap-6 lg:grid-cols-4">
-              {cs.results.map((r, i) => (
-                <div key={i} className="rounded-2xl bg-gradient-to-br from-teal-50 to-white border border-teal-100 p-6 text-center">
-                  <div className="font-display text-2xl font-bold text-teal-700 lg:text-3xl">{r.value}</div>
-                  <div className="mt-2 text-sm text-ink-500">{r.metric}</div>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      {cs.results && cs.results.length > 0 && (
+        <section className="py-16 lg:py-20">
+          <div className="container-x">
+            <Reveal>
+              <div className="grid grid-cols-2 gap-4 lg:gap-6 lg:grid-cols-4">
+                {cs.results.map((r, i) => (
+                  <div key={i} className="rounded-2xl bg-gradient-to-br from-teal-50 to-white border border-teal-100 p-6 text-center">
+                    <div className="font-display text-2xl font-bold text-teal-700 lg:text-3xl">{r.value}</div>
+                    <div className="mt-2 text-sm text-ink-500">{r.metric}</div>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+        </section>
+      )}
 
       {/* Challenge & Solution */}
       <section className="pb-16 lg:pb-24">

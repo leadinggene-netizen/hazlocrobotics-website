@@ -11,6 +11,7 @@ const categoryLabel = {
   'explosion-proof': 'Explosion-Proof Robot',
   electric: 'Electric Robot',
   software: 'Software Platform',
+  peripheral: 'Peripheral Product',
 };
 
 export default function ProductDetailPage() {

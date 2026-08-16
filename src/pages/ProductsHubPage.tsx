@@ -13,6 +13,7 @@ const filters: { key: Filter; label: string }[] = [
   { key: 'explosion-proof', label: 'Explosion-Proof' },
   { key: 'electric', label: 'Electric' },
   { key: 'software', label: 'Software' },
+  { key: 'peripheral', label: 'Peripherals' },
 ];
 
 export default function ProductsHubPage() {
@@ -28,7 +29,7 @@ export default function ProductsHubPage() {
       <PageHero
         eyebrow="Product Line"
         title="Inspection Robots & Fleet Software"
-        subtitle="Eight robots engineered for hazardous-location inspection — from explosion-proof quadrupeds and wheeled robots to rail-mounted systems and the software that unifies your fleet."
+        subtitle="Fourteen robots engineered for hazardous-location inspection — from explosion-proof quadrupeds and wheeled robots to rail-mounted systems and the software that unifies your fleet."
         image="https://images.pexels.com/photos/5884386/pexels-photo-5884386.jpeg?auto=compress&cs=tinysrgb&w=1920"
       />
 
