@@ -1,16 +1,42 @@
-import { Link } from 'react-router-dom';
 import { ArrowRight, MapPin, Globe } from 'lucide-react';
+import Link from '@/i18n/LocaleLink';
+import { useLocale } from '@/i18n/useLocale';
 import PageHero from '@/components/PageHero';
 import Reveal from '@/components/Reveal';
-import { caseStudies } from '@/data/caseStudies';
+import { getLocalizedCaseStudies } from '@/data/caseStudies';
+
+const copy = {
+  en: {
+    eyebrow: 'Case Studies',
+    title: 'Real Deployments, Measurable Results',
+    subtitle: 'See how hazardous-location inspection robots are deployed at oil and gas operations worldwide — the challenges they address, the solutions deployed, and the results achieved.',
+    readFull: 'Read the full case study',
+    ctaTitle: 'Want to see results at your site?',
+    ctaBody: 'Schedule a site assessment and we will build a deployment plan with quantified expected outcomes for your facility.',
+    ctaButton: 'Request a Site Assessment',
+  },
+  fr: {
+    eyebrow: 'Études de cas',
+    title: 'Déploiements réels, résultats mesurables',
+    subtitle: 'Découvrez comment les robots d\'inspection en emplacement dangereux sont déployés dans les opérations pétrolières et gazières à travers le monde — les défis qu\'ils résolvent, les solutions déployées et les résultats obtenus.',
+    readFull: 'Lire l\'étude de cas complète',
+    ctaTitle: 'Vous voulez voir des résultats sur votre site?',
+    ctaBody: 'Planifiez une évaluation de site et nous bâtirons un plan de déploiement avec des résultats attendus quantifiés pour votre installation.',
+    ctaButton: 'Demander une évaluation de site',
+  },
+};
 
 export default function CaseStudiesHubPage() {
+  const locale = useLocale();
+  const t = copy[locale];
+  const caseStudies = getLocalizedCaseStudies(locale);
+
   return (
     <>
       <PageHero
-        eyebrow="Case Studies"
-        title="Real Deployments, Measurable Results"
-        subtitle="See how hazardous-location inspection robots are deployed at oil and gas operations worldwide — the challenges they address, the solutions deployed, and the results achieved."
+        eyebrow={t.eyebrow}
+        title={t.title}
+        subtitle={t.subtitle}
         image="https://images.pexels.com/photos/6767963/pexels-photo-6767963.jpeg?auto=compress&cs=tinysrgb&w=1920"
       />
 
@@ -54,7 +80,7 @@ export default function CaseStudiesHubPage() {
                       to={`/case-studies/${cs.slug}`}
                       className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-teal-600 hover:text-teal-700 transition-colors"
                     >
-                      Read the full case study
+                      {t.readFull}
                       <ArrowRight size={16} />
                     </Link>
                   </div>
@@ -70,13 +96,13 @@ export default function CaseStudiesHubPage() {
         <div className="container-x">
           <Reveal className="max-w-3xl mx-auto text-center">
             <h2 className="font-display text-2xl font-bold text-ink-900 sm:text-3xl">
-              Want to see results at your site?
+              {t.ctaTitle}
             </h2>
             <p className="mt-4 text-lg text-ink-500">
-              Schedule a site assessment and we will build a deployment plan with quantified expected outcomes for your facility.
+              {t.ctaBody}
             </p>
             <Link to="/contact" className="mt-6 btn-primary">
-              Request a Site Assessment
+              {t.ctaButton}
               <ArrowRight size={16} />
             </Link>
           </Reveal>

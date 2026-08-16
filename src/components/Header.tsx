@@ -1,21 +1,40 @@
-import { Link, NavLink } from 'react-router-dom';
 import { useState } from 'react';
-import { Menu, X, ChevronDown, Bot } from 'lucide-react';
+import { Menu, X, Bot } from 'lucide-react';
+import Link from '@/i18n/LocaleLink';
+import NavLink from '@/i18n/LocaleNavLink';
+import LanguageToggle from '@/i18n/LanguageToggle';
+import { useLocale } from '@/i18n/useLocale';
 
-const navItems = [
-  { label: 'Home', to: '/' },
-  { label: 'Products', to: '/products', hasMega: true },
-  { label: 'Build', to: '/build' },
-  { label: 'Certification', to: '/certification' },
-  { label: 'Industries', to: '/industries', hasMega: true },
-  { label: 'Resources', to: '/resources' },
-  { label: 'Case Studies', to: '/case-studies' },
-  { label: 'About', to: '/about' },
-];
+const navItemsByLocale = {
+  en: [
+    { label: 'Home', to: '/' },
+    { label: 'Products', to: '/products' },
+    { label: 'Build', to: '/build' },
+    { label: 'Certification', to: '/certification' },
+    { label: 'Industries', to: '/industries' },
+    { label: 'Resources', to: '/resources' },
+    { label: 'Case Studies', to: '/case-studies' },
+    { label: 'About', to: '/about' },
+  ],
+  fr: [
+    { label: 'Accueil', to: '/' },
+    { label: 'Produits', to: '/products' },
+    { label: 'Configurateur', to: '/build' },
+    { label: 'Certification', to: '/certification' },
+    { label: 'Secteurs', to: '/industries' },
+    { label: 'Ressources', to: '/resources' },
+    { label: 'Études de cas', to: '/case-studies' },
+    { label: 'À propos', to: '/about' },
+  ],
+};
+
+const demoCta = { en: 'Request Online Demo', fr: 'Demande de démo en ligne' };
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const locale = useLocale();
+  const navItems = navItemsByLocale[locale];
 
   if (typeof window !== 'undefined') {
     window.addEventListener('scroll', () => setScrolled(window.scrollY > 20), { once: true });
@@ -43,6 +62,7 @@ export default function Header() {
               <NavLink
                 key={item.to}
                 to={item.to}
+                end={item.to === '/'}
                 className={({ isActive }) =>
                   `relative px-3.5 py-2 text-sm font-medium transition-colors rounded-lg ${
                     isActive
@@ -59,8 +79,11 @@ export default function Header() {
           </nav>
 
           <div className="hidden lg:flex items-center gap-3">
+            <LanguageToggle
+              className={scrolled ? 'border-ink-200 text-ink-600' : 'border-white/30 text-white'}
+            />
             <Link to="/contact" className="btn-primary text-xs">
-              Request Online Demo
+              {demoCta[locale]}
             </Link>
           </div>
 
@@ -86,6 +109,7 @@ export default function Header() {
               <NavLink
                 key={item.to}
                 to={item.to}
+                end={item.to === '/'}
                 onClick={() => setMobileOpen(false)}
                 className={({ isActive }) =>
                   `px-4 py-3 rounded-lg text-sm font-medium ${
@@ -96,8 +120,11 @@ export default function Header() {
                 {item.label}
               </NavLink>
             ))}
+            <div className="px-4 pt-2">
+              <LanguageToggle className="border-ink-200 text-ink-600" />
+            </div>
             <Link to="/contact" onClick={() => setMobileOpen(false)} className="btn-primary mt-2">
-              Request Online Demo
+              {demoCta[locale]}
             </Link>
           </nav>
         </div>

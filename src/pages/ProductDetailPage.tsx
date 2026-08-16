@@ -1,29 +1,74 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { ArrowRight, ArrowLeft, CheckCircle2, Activity } from 'lucide-react';
+import Link from '@/i18n/LocaleLink';
+import { useLocale } from '@/i18n/useLocale';
 import PageHero from '@/components/PageHero';
 import Reveal from '@/components/Reveal';
 import ProductCard from '@/components/ProductCard';
-import { getProduct, products } from '@/data/products';
-import { caseStudies } from '@/data/caseStudies';
-import { resources } from '@/data/resources';
+import { getLocalizedProduct, getLocalizedProducts } from '@/data/products';
+import { getLocalizedCaseStudies } from '@/data/caseStudies';
+import { getLocalizedResources } from '@/data/resources';
 
-const categoryLabel = {
-  'explosion-proof': 'Explosion-Proof Robot',
-  electric: 'Electric Robot',
-  software: 'Software Platform',
-  peripheral: 'Peripheral Product',
+const copy = {
+  en: {
+    categoryLabel: {
+      'explosion-proof': 'Explosion-Proof Robot',
+      electric: 'Electric Robot',
+      software: 'Software Platform',
+      peripheral: 'Peripheral Product',
+    },
+    notFound: 'Product not found',
+    backToProducts: 'Back to Products',
+    overview: 'Overview',
+    keyFeatures: 'Key Features',
+    demoCta: 'Request Online Demo',
+    allProducts: 'All Products',
+    techSpecs: 'Technical Specifications',
+    useCases: 'Typical Use Cases',
+    relatedCaseStudy: 'Related Case Study',
+    readCaseStudy: 'Read Case Study',
+    relatedResource: 'Related Resource',
+    readArticle: 'Read Article',
+    relatedProducts: 'Related Products',
+  },
+  fr: {
+    categoryLabel: {
+      'explosion-proof': 'Robot antidéflagrant',
+      electric: 'Robot électrique',
+      software: 'Plateforme logicielle',
+      peripheral: 'Produit périphérique',
+    },
+    notFound: 'Produit introuvable',
+    backToProducts: 'Retour aux produits',
+    overview: 'Aperçu',
+    keyFeatures: 'Caractéristiques principales',
+    demoCta: 'Demande de démo en ligne',
+    allProducts: 'Tous les produits',
+    techSpecs: 'Spécifications techniques',
+    useCases: 'Cas d\'usage typiques',
+    relatedCaseStudy: 'Étude de cas associée',
+    readCaseStudy: 'Lire l\'étude de cas',
+    relatedResource: 'Ressource associée',
+    readArticle: 'Lire l\'article',
+    relatedProducts: 'Produits associés',
+  },
 };
 
 export default function ProductDetailPage() {
+  const locale = useLocale();
+  const t = copy[locale];
   const { slug } = useParams<{ slug: string }>();
-  const product = getProduct(slug || '');
+  const product = getLocalizedProduct(slug || '', locale);
+  const products = getLocalizedProducts(locale);
+  const caseStudies = getLocalizedCaseStudies(locale);
+  const resources = getLocalizedResources(locale);
 
   if (!product) {
     return (
       <div className="pt-32 pb-20 text-center">
-        <h1 className="font-display text-2xl font-bold text-ink-900">Product not found</h1>
+        <h1 className="font-display text-2xl font-bold text-ink-900">{t.notFound}</h1>
         <Link to="/products" className="mt-4 inline-flex items-center gap-2 text-teal-600 font-semibold">
-          <ArrowLeft size={16} /> Back to Products
+          <ArrowLeft size={16} /> {t.backToProducts}
         </Link>
       </div>
     );
@@ -42,7 +87,7 @@ export default function ProductDetailPage() {
   return (
     <>
       <PageHero
-        eyebrow={categoryLabel[product.category]}
+        eyebrow={t.categoryLabel[product.category]}
         title={product.name}
         subtitle={product.tagline}
         image={product.heroImage}
@@ -64,10 +109,10 @@ export default function ProductDetailPage() {
               </div>
             </Reveal>
             <Reveal delay={150}>
-              <h2 className="font-display text-2xl font-bold text-ink-900 sm:text-3xl">Overview</h2>
+              <h2 className="font-display text-2xl font-bold text-ink-900 sm:text-3xl">{t.overview}</h2>
               <p className="mt-4 text-lg text-ink-600 leading-relaxed">{product.description}</p>
 
-              <h3 className="mt-8 font-display text-lg font-bold text-ink-900">Key Features</h3>
+              <h3 className="mt-8 font-display text-lg font-bold text-ink-900">{t.keyFeatures}</h3>
               <ul className="mt-4 space-y-3">
                 {product.features.map((f, i) => (
                   <li key={i} className="flex items-start gap-3">
@@ -79,12 +124,12 @@ export default function ProductDetailPage() {
 
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link to="/contact" className="btn-primary">
-                  Request Online Demo
+                  {t.demoCta}
                   <ArrowRight size={16} />
                 </Link>
                 <Link to="/products" className="btn-secondary">
                   <ArrowLeft size={16} />
-                  All Products
+                  {t.allProducts}
                 </Link>
               </div>
             </Reveal>
@@ -96,7 +141,7 @@ export default function ProductDetailPage() {
       <section className="bg-ink-50 py-16 lg:py-24">
         <div className="container-x">
           <Reveal>
-            <h2 className="font-display text-2xl font-bold text-ink-900 sm:text-3xl">Technical Specifications</h2>
+            <h2 className="font-display text-2xl font-bold text-ink-900 sm:text-3xl">{t.techSpecs}</h2>
           </Reveal>
           <Reveal delay={100}>
             <div className="mt-8 overflow-hidden rounded-2xl border border-ink-100 bg-white">
@@ -117,7 +162,7 @@ export default function ProductDetailPage() {
       <section className="py-16 lg:py-24">
         <div className="container-x">
           <Reveal>
-            <h2 className="font-display text-2xl font-bold text-ink-900 sm:text-3xl">Typical Use Cases</h2>
+            <h2 className="font-display text-2xl font-bold text-ink-900 sm:text-3xl">{t.useCases}</h2>
           </Reveal>
           <div className="mt-8 grid gap-6 md:grid-cols-3">
             {product.useCases.map((uc, i) => (
@@ -144,11 +189,11 @@ export default function ProductDetailPage() {
                   <img src={caseStudy.image} alt={caseStudy.title} className="absolute inset-0 h-full w-full object-cover" />
                 </div>
                 <div className="bg-white p-8 lg:p-10 flex flex-col justify-center">
-                  <p className="text-sm font-semibold uppercase tracking-widest text-gold-500">Related Case Study</p>
+                  <p className="text-sm font-semibold uppercase tracking-widest text-gold-500">{t.relatedCaseStudy}</p>
                   <h3 className="mt-2 font-display text-xl font-bold text-ink-900">{caseStudy.title}</h3>
                   <p className="mt-3 text-ink-500">{caseStudy.description}</p>
                   <Link to={`/case-studies/${caseStudy.slug}`} className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-teal-600 hover:text-teal-700 transition-colors">
-                    Read Case Study
+                    {t.readCaseStudy}
                     <ArrowRight size={16} />
                   </Link>
                 </div>
@@ -164,13 +209,13 @@ export default function ProductDetailPage() {
           <div className="container-x">
             <Reveal>
               <Link to={`/resources/${resource.slug}`} className="card group block p-8">
-                <p className="text-sm font-semibold uppercase tracking-widest text-teal-600">Related Resource</p>
+                <p className="text-sm font-semibold uppercase tracking-widest text-teal-600">{t.relatedResource}</p>
                 <h3 className="mt-2 font-display text-xl font-bold text-ink-900 group-hover:text-teal-700 transition-colors">
                   {resource.title}
                 </h3>
                 <p className="mt-2 text-ink-500">{resource.excerpt}</p>
                 <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-teal-600">
-                  Read Article <ArrowRight size={16} />
+                  {t.readArticle} <ArrowRight size={16} />
                 </span>
               </Link>
             </Reveal>
@@ -182,7 +227,7 @@ export default function ProductDetailPage() {
       {related.length > 0 && (
         <section className="bg-ink-50 py-16 lg:py-24">
           <div className="container-x">
-            <h2 className="font-display text-2xl font-bold text-ink-900 sm:text-3xl mb-8">Related Products</h2>
+            <h2 className="font-display text-2xl font-bold text-ink-900 sm:text-3xl mb-8">{t.relatedProducts}</h2>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {related.map((p, i) => (
                 <Reveal key={p.slug} delay={i * 100}>

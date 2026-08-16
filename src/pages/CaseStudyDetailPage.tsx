@@ -1,32 +1,60 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, MapPin, Globe, Quote, CheckCircle2 } from 'lucide-react';
+import Link from '@/i18n/LocaleLink';
+import { useLocale } from '@/i18n/useLocale';
 import PageHero from '@/components/PageHero';
 import Reveal from '@/components/Reveal';
-import { getCaseStudy, caseStudies } from '@/data/caseStudies';
-import { getProduct } from '@/data/products';
+import { getLocalizedCaseStudy, getLocalizedCaseStudies } from '@/data/caseStudies';
+import { getLocalizedProduct } from '@/data/products';
+
+const copy = {
+  en: {
+    notFound: 'Case study not found',
+    backToCases: 'Back to Case Studies',
+    caseStudyLabel: 'Case Study',
+    challenge: 'The Challenge',
+    solution: 'The Solution',
+    productsDeployed: 'Products Deployed',
+    learnMore: 'Learn more',
+    moreCases: 'More Case Studies',
+  },
+  fr: {
+    notFound: 'Étude de cas introuvable',
+    backToCases: 'Retour aux études de cas',
+    caseStudyLabel: 'Étude de cas',
+    challenge: 'Le défi',
+    solution: 'La solution',
+    productsDeployed: 'Produits déployés',
+    learnMore: 'En savoir plus',
+    moreCases: 'Plus d\'études de cas',
+  },
+};
 
 export default function CaseStudyDetailPage() {
+  const locale = useLocale();
+  const t = copy[locale];
   const { slug } = useParams<{ slug: string }>();
-  const cs = getCaseStudy(slug || '');
+  const cs = getLocalizedCaseStudy(slug || '', locale);
+  const caseStudies = getLocalizedCaseStudies(locale);
 
   if (!cs) {
     return (
       <div className="pt-32 pb-20 text-center">
-        <h1 className="font-display text-2xl font-bold text-ink-900">Case study not found</h1>
+        <h1 className="font-display text-2xl font-bold text-ink-900">{t.notFound}</h1>
         <Link to="/case-studies" className="mt-4 inline-flex items-center gap-2 text-teal-600 font-semibold">
-          <ArrowLeft size={16} /> Back to Case Studies
+          <ArrowLeft size={16} /> {t.backToCases}
         </Link>
       </div>
     );
   }
 
-  const productsUsed = cs.productsUsed.map(getProduct).filter(Boolean);
+  const productsUsed = cs.productsUsed.map((s) => getLocalizedProduct(s, locale)).filter(Boolean);
   const moreCaseStudies = caseStudies.filter((c) => c.slug !== cs.slug).slice(0, 1);
 
   return (
     <>
       <PageHero
-        eyebrow={`Case Study · ${cs.phase}`}
+        eyebrow={`${t.caseStudyLabel} · ${cs.phase}`}
         title={cs.title}
         image={cs.image}
       >
@@ -59,11 +87,11 @@ export default function CaseStudyDetailPage() {
         <div className="container-x">
           <div className="grid gap-12 lg:grid-cols-2">
             <Reveal>
-              <h2 className="font-display text-2xl font-bold text-ink-900">The Challenge</h2>
+              <h2 className="font-display text-2xl font-bold text-ink-900">{t.challenge}</h2>
               <p className="mt-4 text-ink-600 leading-relaxed">{cs.challenge}</p>
             </Reveal>
             <Reveal delay={150}>
-              <h2 className="font-display text-2xl font-bold text-ink-900">The Solution</h2>
+              <h2 className="font-display text-2xl font-bold text-ink-900">{t.solution}</h2>
               <p className="mt-4 text-ink-600 leading-relaxed">{cs.solution}</p>
             </Reveal>
           </div>
@@ -95,7 +123,7 @@ export default function CaseStudyDetailPage() {
       <section className="py-16 lg:py-24">
         <div className="container-x">
           <Reveal>
-            <h2 className="font-display text-2xl font-bold text-ink-900 sm:text-3xl">Products Deployed</h2>
+            <h2 className="font-display text-2xl font-bold text-ink-900 sm:text-3xl">{t.productsDeployed}</h2>
           </Reveal>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {productsUsed.map((p, i) => (
@@ -106,7 +134,7 @@ export default function CaseStudyDetailPage() {
                   </h3>
                   <p className="mt-2 text-sm text-ink-500">{p!.tagline}</p>
                   <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-teal-600 group-hover:gap-2 transition-all">
-                    Learn more <ArrowRight size={14} />
+                    {t.learnMore} <ArrowRight size={14} />
                   </span>
                 </Link>
               </Reveal>
@@ -119,7 +147,7 @@ export default function CaseStudyDetailPage() {
       {moreCaseStudies.length > 0 && (
         <section className="bg-ink-50 py-16">
           <div className="container-x">
-            <h2 className="font-display text-xl font-bold text-ink-900 mb-6">More Case Studies</h2>
+            <h2 className="font-display text-xl font-bold text-ink-900 mb-6">{t.moreCases}</h2>
             <div className="grid gap-6 md:grid-cols-2">
               {moreCaseStudies.map((c, i) => (
                 <Reveal key={c.slug} delay={i * 100}>

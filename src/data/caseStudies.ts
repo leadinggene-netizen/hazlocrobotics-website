@@ -1,6 +1,7 @@
 import iraqImg from '@/assets/robots/case-iraq.png';
 import indonesiaImg from '@/assets/robots/case-indonesia.png';
 import basfImg from '@/assets/cases/basf.jpg';
+import { caseStudiesFr } from './caseStudies.fr';
 
 export interface CaseStudy {
   slug: string;
@@ -88,4 +89,19 @@ export const caseStudies: CaseStudy[] = [
 
 export function getCaseStudy(slug: string): CaseStudy | undefined {
   return caseStudies.find((c) => c.slug === slug);
+}
+
+export function localizeCaseStudy(cs: CaseStudy, locale: 'en' | 'fr'): CaseStudy {
+  if (locale === 'en') return cs;
+  const fr = caseStudiesFr[cs.slug];
+  return fr ? { ...cs, ...fr } : cs;
+}
+
+export function getLocalizedCaseStudies(locale: 'en' | 'fr'): CaseStudy[] {
+  return caseStudies.map((c) => localizeCaseStudy(c, locale));
+}
+
+export function getLocalizedCaseStudy(slug: string, locale: 'en' | 'fr'): CaseStudy | undefined {
+  const cs = getCaseStudy(slug);
+  return cs ? localizeCaseStudy(cs, locale) : undefined;
 }

@@ -14,24 +14,41 @@ import CaseStudyDetailPage from '@/pages/CaseStudyDetailPage';
 import AboutPage from '@/pages/AboutPage';
 import ContactPage from '@/pages/ContactPage';
 
+// Every route is declared twice: once at its plain English path, and once
+// under /fr/* for the French version. Page components detect which locale
+// they're rendering via useLocale() (based on the /fr prefix) and render
+// their own bilingual content accordingly — see src/i18n/useLocale.ts.
+const routeDefs: { path: string; element: JSX.Element }[] = [
+  { path: '/', element: <HomePage /> },
+  { path: '/products', element: <ProductsHubPage /> },
+  { path: '/products/:slug', element: <ProductDetailPage /> },
+  { path: '/build', element: <BuildRobotPage /> },
+  { path: '/certification', element: <CertificationPage /> },
+  { path: '/industries', element: <IndustriesHubPage /> },
+  { path: '/industries/:slug', element: <IndustryDetailPage /> },
+  { path: '/resources', element: <ResourcesHubPage /> },
+  { path: '/resources/:slug', element: <ResourceDetailPage /> },
+  { path: '/case-studies', element: <CaseStudiesHubPage /> },
+  { path: '/case-studies/:slug', element: <CaseStudyDetailPage /> },
+  { path: '/about', element: <AboutPage /> },
+  { path: '/contact', element: <ContactPage /> },
+];
+
 export default function App() {
   return (
     <BrowserRouter>
       <Layout>
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/products" element={<ProductsHubPage />} />
-          <Route path="/products/:slug" element={<ProductDetailPage />} />
-          <Route path="/build" element={<BuildRobotPage />} />
-          <Route path="/certification" element={<CertificationPage />} />
-          <Route path="/industries" element={<IndustriesHubPage />} />
-          <Route path="/industries/:slug" element={<IndustryDetailPage />} />
-          <Route path="/resources" element={<ResourcesHubPage />} />
-          <Route path="/resources/:slug" element={<ResourceDetailPage />} />
-          <Route path="/case-studies" element={<CaseStudiesHubPage />} />
-          <Route path="/case-studies/:slug" element={<CaseStudyDetailPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
+          {routeDefs.map((r) => (
+            <Route key={r.path} path={r.path} element={r.element} />
+          ))}
+          {routeDefs.map((r) => (
+            <Route
+              key={`fr-${r.path}`}
+              path={r.path === '/' ? '/fr' : `/fr${r.path}`}
+              element={r.element}
+            />
+          ))}
           <Route path="*" element={<HomePage />} />
         </Routes>
       </Layout>

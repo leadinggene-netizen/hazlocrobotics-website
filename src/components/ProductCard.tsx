@@ -1,13 +1,22 @@
-import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import Link from '@/i18n/LocaleLink';
+import { useLocale } from '@/i18n/useLocale';
 import { products } from '@/data/products';
 import type { ProductCategory } from '@/data/products';
 
-const categoryLabel: Record<ProductCategory, string> = {
-  'explosion-proof': 'Explosion-Proof',
-  electric: 'Electric',
-  software: 'Software',
-  peripheral: 'Peripheral',
+const categoryLabel: Record<'en' | 'fr', Record<ProductCategory, string>> = {
+  en: {
+    'explosion-proof': 'Explosion-Proof',
+    electric: 'Electric',
+    software: 'Software',
+    peripheral: 'Peripheral',
+  },
+  fr: {
+    'explosion-proof': 'Antidéflagrant',
+    electric: 'Électrique',
+    software: 'Logiciel',
+    peripheral: 'Périphérique',
+  },
 };
 
 const categoryClass: Record<ProductCategory, string> = {
@@ -17,11 +26,15 @@ const categoryClass: Record<ProductCategory, string> = {
   peripheral: 'tag-peripheral',
 };
 
+const learnMore = { en: 'Learn more', fr: 'En savoir plus' };
+
 interface ProductCardProps {
   product: (typeof products)[number];
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
+  const locale = useLocale();
+
   return (
     <Link
       to={`/products/${product.slug}`}
@@ -36,7 +49,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink-900/60 to-transparent" />
         <span className={`absolute top-4 left-4 ${categoryClass[product.category]}`}>
-          {categoryLabel[product.category]}
+          {categoryLabel[locale][product.category]}
         </span>
       </div>
       <div className="flex flex-1 flex-col p-6">
@@ -47,7 +60,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           {product.tagline}
         </p>
         <div className="mt-4 flex items-center gap-1.5 text-sm font-semibold text-teal-600 group-hover:gap-3 transition-all">
-          Learn more
+          {learnMore[locale]}
           <ArrowRight size={16} />
         </div>
       </div>

@@ -1,16 +1,36 @@
-import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import Link from '@/i18n/LocaleLink';
+import { useLocale } from '@/i18n/useLocale';
 import PageHero from '@/components/PageHero';
 import Reveal from '@/components/Reveal';
-import { industries } from '@/data/industries';
+import { getLocalizedIndustries } from '@/data/industries';
+
+const copy = {
+  en: {
+    eyebrow: 'Industries',
+    title: 'Deployed Across the Most Demanding Industrial Environments',
+    subtitle: 'From oil refineries to offshore platforms, power plants to mines, and fire scenes — our robots inspect the places where human inspection is most dangerous and most needed.',
+    explore: 'Explore',
+  },
+  fr: {
+    eyebrow: 'Secteurs',
+    title: 'Déployés dans les environnements industriels les plus exigeants',
+    subtitle: 'Des raffineries de pétrole aux plateformes offshore, des centrales électriques aux mines et aux lieux d\'incendie — nos robots inspectent les endroits où l\'inspection humaine est la plus dangereuse et la plus nécessaire.',
+    explore: 'Explorer',
+  },
+};
 
 export default function IndustriesHubPage() {
+  const locale = useLocale();
+  const t = copy[locale];
+  const industries = getLocalizedIndustries(locale);
+
   return (
     <>
       <PageHero
-        eyebrow="Industries"
-        title="Deployed Across the Most Demanding Industrial Environments"
-        subtitle="From oil refineries to offshore platforms, power plants to mines, and fire scenes — our robots inspect the places where human inspection is most dangerous and most needed."
+        eyebrow={t.eyebrow}
+        title={t.title}
+        subtitle={t.subtitle}
         image="https://images.pexels.com/photos/2391/dirty-industry-stack-factory.jpg?auto=compress&cs=tinysrgb&w=1920"
       />
 
@@ -39,7 +59,7 @@ export default function IndustriesHubPage() {
                   <div className="p-6 flex items-center justify-between">
                     <p className="text-sm text-ink-500">{ind.description.slice(0, 120)}...</p>
                     <span className="flex-shrink-0 ml-4 inline-flex items-center gap-1.5 text-sm font-semibold text-teal-600 group-hover:gap-3 transition-all">
-                      Explore <ArrowRight size={16} />
+                      {t.explore} <ArrowRight size={16} />
                     </span>
                   </div>
                 </Link>

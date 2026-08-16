@@ -1,46 +1,152 @@
 import { useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowLeft, CheckCircle2, Loader2, AlertCircle, Sparkles } from 'lucide-react';
+import Link from '@/i18n/LocaleLink';
+import { useLocale } from '@/i18n/useLocale';
 import PageHero from '@/components/PageHero';
 import Reveal from '@/components/Reveal';
 import ProductCard from '@/components/ProductCard';
-import { products, getProduct, type Product } from '@/data/products';
-import { industries } from '@/data/industries';
+import { getLocalizedProducts, type Product } from '@/data/products';
+import { getLocalizedIndustries } from '@/data/industries';
 import { supabase } from '@/lib/supabase';
 
-const industryOptions = [
-  ...industries.map((i) => ({ value: i.slug, label: i.name })),
-  { value: 'other', label: 'Other / Not sure yet' },
-];
+const terrainMatchSlugs: Record<string, string> = {
+  stairs: 'quadruped',
+  narrow: 'l4s',
+  'fixed-path': 'rail',
+  outdoor: 'tracked',
+  fire: 'firefighting',
+  flat: 'electric',
+  'software-only': 'asset-tracking-center-software',
+};
 
-const hazardOptions = [
-  { value: 'zone1', label: 'Zone 1 / Class I Div 1', desc: 'Explosive gas or dust present continuously or frequently' },
-  { value: 'zone2', label: 'Zone 2 / Class I Div 2', desc: 'Explosive atmosphere possible but not normally present' },
-  { value: 'non-hazardous', label: 'Non-hazardous / general industrial', desc: 'No explosive atmosphere classification required' },
-  { value: 'not-sure', label: 'Not sure yet', desc: 'A specialist can help determine your area classification' },
-];
+const optionsByLocale = {
+  en: {
+    otherIndustry: 'Other / Not sure yet',
+    hazardOptions: [
+      { value: 'zone1', label: 'Zone 1 / Class I Div 1', desc: 'Explosive gas or dust present continuously or frequently' },
+      { value: 'zone2', label: 'Zone 2 / Class I Div 2', desc: 'Explosive atmosphere possible but not normally present' },
+      { value: 'non-hazardous', label: 'Non-hazardous / general industrial', desc: 'No explosive atmosphere classification required' },
+      { value: 'not-sure', label: 'Not sure yet', desc: 'A specialist can help determine your area classification' },
+    ],
+    terrainOptions: [
+      { value: 'stairs', label: 'Stairs, mezzanines, multi-level access' },
+      { value: 'narrow', label: 'Narrow corridors, equipment gaps, tight clearances' },
+      { value: 'fixed-path', label: 'Long fixed paths — pipe racks, conveyors, tunnels' },
+      { value: 'outdoor', label: 'Rough outdoor terrain — mud, gravel, debris' },
+      { value: 'fire', label: 'Active fire or hazmat scene response' },
+      { value: 'flat', label: 'General flat facility floor' },
+      { value: 'software-only', label: 'I already have robots — just need fleet software' },
+    ],
+    functionOptions: [
+      { value: 'thermal', label: 'Thermal imaging' },
+      { value: 'gas', label: 'Gas detection' },
+      { value: 'visual', label: 'HD visual / video inspection' },
+      { value: 'acoustic', label: 'Acoustic monitoring' },
+      { value: 'software', label: 'Fleet management software & dashboards' },
+    ],
+  },
+  fr: {
+    otherIndustry: 'Autre / Pas encore certain',
+    hazardOptions: [
+      { value: 'zone1', label: 'Zone 1 / Classe I Div 1', desc: 'Gaz ou poussière explosif présent en continu ou fréquemment' },
+      { value: 'zone2', label: 'Zone 2 / Classe I Div 2', desc: 'Atmosphère explosive possible mais normalement absente' },
+      { value: 'non-hazardous', label: 'Non dangereux / industriel général', desc: 'Aucune classification d\'atmosphère explosive requise' },
+      { value: 'not-sure', label: 'Pas encore certain', desc: 'Un spécialiste peut vous aider à déterminer la classification de votre zone' },
+    ],
+    terrainOptions: [
+      { value: 'stairs', label: 'Escaliers, mezzanines, accès à plusieurs niveaux' },
+      { value: 'narrow', label: 'Corridors étroits, interstices d\'équipement, dégagements serrés' },
+      { value: 'fixed-path', label: 'Longs trajets fixes — racks de tuyauterie, convoyeurs, tunnels' },
+      { value: 'outdoor', label: 'Terrain extérieur accidenté — boue, gravier, débris' },
+      { value: 'fire', label: 'Intervention active sur scène d\'incendie ou de matières dangereuses' },
+      { value: 'flat', label: 'Plancher d\'installation général et plat' },
+      { value: 'software-only', label: 'J\'ai déjà des robots — j\'ai seulement besoin du logiciel de flotte' },
+    ],
+    functionOptions: [
+      { value: 'thermal', label: 'Imagerie thermique' },
+      { value: 'gas', label: 'Détection de gaz' },
+      { value: 'visual', label: 'Inspection visuelle / vidéo HD' },
+      { value: 'acoustic', label: 'Surveillance acoustique' },
+      { value: 'software', label: 'Logiciel et tableaux de bord de gestion de flotte' },
+    ],
+  },
+};
 
-const terrainOptions = [
-  { value: 'stairs', label: 'Stairs, mezzanines, multi-level access', matchSlug: 'quadruped' },
-  { value: 'narrow', label: 'Narrow corridors, equipment gaps, tight clearances', matchSlug: 'l4s' },
-  { value: 'fixed-path', label: 'Long fixed paths — pipe racks, conveyors, tunnels', matchSlug: 'rail' },
-  { value: 'outdoor', label: 'Rough outdoor terrain — mud, gravel, debris', matchSlug: 'tracked' },
-  { value: 'fire', label: 'Active fire or hazmat scene response', matchSlug: 'firefighting' },
-  { value: 'flat', label: 'General flat facility floor', matchSlug: 'electric' },
-  { value: 'software-only', label: 'I already have robots — just need fleet software', matchSlug: 'asset-tracking-center-software' },
-];
+const copy = {
+  en: {
+    eyebrow: 'Robot Configurator',
+    title: 'Build Your Robot',
+    subtitle: 'Answer a few questions about your site and we\'ll point you to the robot models most likely to fit — a starting point for a specialist to help scope your deployment, not a finished order.',
+    q1: 'What industry are you in?',
+    q2: 'What\'s the area classification?',
+    q3: 'What does the site look like?',
+    q3sub: 'Pick the closest match — this drives mobility type.',
+    q4: 'What functions matter most?',
+    q4sub: 'Select as many as apply.',
+    back: 'Back',
+    next: 'Next',
+    seeRecommendation: 'See recommendation',
+    startingPoint: 'Suggested starting point',
+    resultTitle: 'Based on your answers, here\'s where we\'d start',
+    resultBody: 'This is a starting point, not a finished spec — a specialist will confirm the right fit and discuss custom configuration once we hear from you below.',
+    thanksTitle: 'Thanks — we\'ve got it',
+    thanksBody: 'A specialist will review your answers and reach out within one business day to talk through fit, customization, and next steps.',
+    backToHome: 'Back to Home',
+    sendToSpecialist: 'Send this to a specialist',
+    sendToSpecialistSub: 'We\'ll follow up to confirm fit and talk through what a custom deployment would involve.',
+    fullName: 'Full Name *',
+    email: 'Email *',
+    company: 'Company',
+    companyPlaceholder: 'Operator, EPC or distributor',
+    sending: 'Sending...',
+    sendButton: 'Send to a Specialist',
+    backToQuestions: 'Back to questions',
+    errorRequired: 'Please fill in your name and email.',
+    errorSubmit: 'Something went wrong submitting this. Please try again or email us directly.',
+  },
+  fr: {
+    eyebrow: 'Configurateur de robot',
+    title: 'Configurez votre robot',
+    subtitle: 'Répondez à quelques questions sur votre site et nous vous orienterons vers les modèles de robots les plus susceptibles de convenir — un point de départ pour qu\'un spécialiste vous aide à définir votre déploiement, pas une commande finale.',
+    q1: 'Dans quel secteur êtes-vous?',
+    q2: 'Quelle est la classification de la zone?',
+    q3: 'À quoi ressemble le site?',
+    q3sub: 'Choisissez la correspondance la plus proche — cela détermine le type de mobilité.',
+    q4: 'Quelles fonctions comptent le plus?',
+    q4sub: 'Sélectionnez toutes celles qui s\'appliquent.',
+    back: 'Retour',
+    next: 'Suivant',
+    seeRecommendation: 'Voir la recommandation',
+    startingPoint: 'Point de départ suggéré',
+    resultTitle: 'D\'après vos réponses, voici par où commencer',
+    resultBody: 'Ceci est un point de départ, pas une spécification finale — un spécialiste confirmera le bon choix et discutera de la configuration personnalisée une fois que nous aurons reçu vos coordonnées ci-dessous.',
+    thanksTitle: 'Merci — c\'est noté',
+    thanksBody: 'Un spécialiste examinera vos réponses et vous contactera dans un jour ouvrable pour discuter de la pertinence, de la personnalisation et des prochaines étapes.',
+    backToHome: 'Retour à l\'accueil',
+    sendToSpecialist: 'Envoyer ceci à un spécialiste',
+    sendToSpecialistSub: 'Nous vous recontacterons pour confirmer la pertinence et discuter de ce qu\'impliquerait un déploiement personnalisé.',
+    fullName: 'Nom complet *',
+    email: 'Courriel *',
+    company: 'Entreprise',
+    companyPlaceholder: 'Opérateur, EPC ou distributeur',
+    sending: 'Envoi en cours...',
+    sendButton: 'Envoyer à un spécialiste',
+    backToQuestions: 'Retour aux questions',
+    errorRequired: 'Veuillez remplir votre nom et courriel.',
+    errorSubmit: 'Une erreur s\'est produite lors de l\'envoi. Veuillez réessayer ou nous écrire directement.',
+  },
+};
 
-const functionOptions = [
-  { value: 'thermal', label: 'Thermal imaging' },
-  { value: 'gas', label: 'Gas detection' },
-  { value: 'visual', label: 'HD visual / video inspection' },
-  { value: 'acoustic', label: 'Acoustic monitoring' },
-  { value: 'software', label: 'Fleet management software & dashboards' },
-];
-
-function getRecommendations(industrySlug: string, hazard: string, terrain: string, fns: string[]) {
+function getRecommendations(
+  products: Product[],
+  industries: ReturnType<typeof getLocalizedIndustries>,
+  industrySlug: string,
+  hazard: string,
+  terrain: string,
+  fns: string[]
+) {
   const industry = industries.find((i) => i.slug === industrySlug);
-  const terrainOpt = terrainOptions.find((t) => t.value === terrain);
+  const matchSlug = terrainMatchSlugs[terrain];
 
   const scored = products.map((p) => {
     let score = 0;
@@ -48,7 +154,7 @@ function getRecommendations(industrySlug: string, hazard: string, terrain: strin
     if (hazard === 'zone1' && p.category === 'explosion-proof') score += 2;
     if (hazard === 'zone2' && p.category === 'explosion-proof') score += 1;
     if (hazard === 'non-hazardous' && p.category === 'electric') score += 2;
-    if (terrainOpt && p.slug.includes(terrainOpt.matchSlug)) score += 3;
+    if (matchSlug && p.slug.includes(matchSlug)) score += 3;
     if (fns.includes('software') && p.category === 'software') score += 2;
     return { product: p, score };
   });
@@ -62,8 +168,9 @@ function getRecommendations(industrySlug: string, hazard: string, terrain: strin
     terrain !== 'software-only' &&
     !primary.some((p) => p.category === 'software') &&
     (fns.includes('software') || primary.length < 2);
-  const recommended = addSoftware
-    ? [...primary, getProduct('asset-tracking-center-software')!].filter(
+  const softwareProduct = products.find((p) => p.slug === 'asset-tracking-center-software');
+  const recommended = addSoftware && softwareProduct
+    ? [...primary, softwareProduct].filter(
         (p, i, arr) => arr.findIndex((x) => x.slug === p.slug) === i
       )
     : primary;
@@ -74,6 +181,17 @@ function getRecommendations(industrySlug: string, hazard: string, terrain: strin
 const TOTAL_STEPS = 5;
 
 export default function BuildRobotPage() {
+  const locale = useLocale();
+  const t = copy[locale];
+  const opts = optionsByLocale[locale];
+  const products = getLocalizedProducts(locale);
+  const industries = getLocalizedIndustries(locale);
+
+  const industryOptions = [
+    ...industries.map((i) => ({ value: i.slug, label: i.name })),
+    { value: 'other', label: opts.otherIndustry },
+  ];
+
   const [step, setStep] = useState(0);
   const [industry, setIndustry] = useState('');
   const [hazard, setHazard] = useState('');
@@ -83,8 +201,9 @@ export default function BuildRobotPage() {
   const [errorMsg, setErrorMsg] = useState('');
 
   const recommendations = useMemo(
-    () => getRecommendations(industry, hazard, terrain, fns),
-    [industry, hazard, terrain, fns]
+    () => getRecommendations(products, industries, industry, hazard, terrain, fns),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [industry, hazard, terrain, fns, locale]
   );
 
   function toggleFn(value: string) {
@@ -103,7 +222,7 @@ export default function BuildRobotPage() {
 
     if (!name || !email) {
       setStatus('error');
-      setErrorMsg('Please fill in your name and email.');
+      setErrorMsg(t.errorRequired);
       return;
     }
 
@@ -112,15 +231,15 @@ export default function BuildRobotPage() {
       email,
       company,
       industry: industryOptions.find((i) => i.value === industry)?.label ?? null,
-      hazard_classification: hazardOptions.find((h) => h.value === hazard)?.label ?? null,
-      terrain: terrainOptions.find((t) => t.value === terrain)?.label ?? null,
-      functions_needed: fns.map((f) => functionOptions.find((o) => o.value === f)?.label).join(', ') || null,
+      hazard_classification: opts.hazardOptions.find((h) => h.value === hazard)?.label ?? null,
+      terrain: opts.terrainOptions.find((tOpt) => tOpt.value === terrain)?.label ?? null,
+      functions_needed: fns.map((f) => opts.functionOptions.find((o) => o.value === f)?.label).join(', ') || null,
       recommended_products: recommendations.map((p) => p.name).join(', '),
     });
 
     if (error) {
       setStatus('error');
-      setErrorMsg('Something went wrong submitting this. Please try again or email us directly.');
+      setErrorMsg(t.errorSubmit);
       return;
     }
 
@@ -136,9 +255,9 @@ export default function BuildRobotPage() {
   return (
     <>
       <PageHero
-        eyebrow="Robot Configurator"
-        title="Build Your Robot"
-        subtitle="Answer a few questions about your site and we'll point you to the robot models most likely to fit — a starting point for a specialist to help scope your deployment, not a finished order."
+        eyebrow={t.eyebrow}
+        title={t.title}
+        subtitle={t.subtitle}
         image="https://images.pexels.com/photos/5884386/pexels-photo-5884386.jpeg?auto=compress&cs=tinysrgb&w=1920"
       />
 
@@ -162,7 +281,7 @@ export default function BuildRobotPage() {
                 <Reveal key={step}>
                   {step === 0 && (
                     <div>
-                      <h2 className="font-display text-2xl font-bold text-ink-900">What industry are you in?</h2>
+                      <h2 className="font-display text-2xl font-bold text-ink-900">{t.q1}</h2>
                       <div className="mt-6 grid gap-3 sm:grid-cols-2">
                         {industryOptions.map((opt) => (
                           <button
@@ -185,10 +304,10 @@ export default function BuildRobotPage() {
                   {step === 1 && (
                     <div>
                       <h2 className="font-display text-2xl font-bold text-ink-900">
-                        What's the area classification?
+                        {t.q2}
                       </h2>
                       <div className="mt-6 grid gap-3">
-                        {hazardOptions.map((opt) => (
+                        {opts.hazardOptions.map((opt) => (
                           <button
                             key={opt.value}
                             type="button"
@@ -212,11 +331,11 @@ export default function BuildRobotPage() {
                   {step === 2 && (
                     <div>
                       <h2 className="font-display text-2xl font-bold text-ink-900">
-                        What does the site look like?
+                        {t.q3}
                       </h2>
-                      <p className="mt-2 text-sm text-ink-500">Pick the closest match — this drives mobility type.</p>
+                      <p className="mt-2 text-sm text-ink-500">{t.q3sub}</p>
                       <div className="mt-6 grid gap-3">
-                        {terrainOptions.map((opt) => (
+                        {opts.terrainOptions.map((opt) => (
                           <button
                             key={opt.value}
                             type="button"
@@ -237,11 +356,11 @@ export default function BuildRobotPage() {
                   {step === 3 && (
                     <div>
                       <h2 className="font-display text-2xl font-bold text-ink-900">
-                        What functions matter most?
+                        {t.q4}
                       </h2>
-                      <p className="mt-2 text-sm text-ink-500">Select as many as apply.</p>
+                      <p className="mt-2 text-sm text-ink-500">{t.q4sub}</p>
                       <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                        {functionOptions.map((opt) => (
+                        {opts.functionOptions.map((opt) => (
                           <button
                             key={opt.value}
                             type="button"
@@ -275,7 +394,7 @@ export default function BuildRobotPage() {
                     className="btn-ghost disabled:opacity-0"
                   >
                     <ArrowLeft size={16} />
-                    Back
+                    {t.back}
                   </button>
                   <button
                     type="button"
@@ -283,7 +402,7 @@ export default function BuildRobotPage() {
                     disabled={!canAdvance}
                     className="btn-primary disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:shadow-none"
                   >
-                    {step === 3 ? 'See recommendation' : 'Next'}
+                    {step === 3 ? t.seeRecommendation : t.next}
                     <ArrowRight size={16} />
                   </button>
                 </div>
@@ -294,14 +413,13 @@ export default function BuildRobotPage() {
               <Reveal>
                 <div className="flex items-center gap-2 text-teal-600">
                   <Sparkles size={20} />
-                  <p className="text-sm font-semibold uppercase tracking-widest">Suggested starting point</p>
+                  <p className="text-sm font-semibold uppercase tracking-widest">{t.startingPoint}</p>
                 </div>
                 <h2 className="mt-3 font-display text-2xl font-bold text-ink-900 sm:text-3xl">
-                  Based on your answers, here's where we'd start
+                  {t.resultTitle}
                 </h2>
                 <p className="mt-3 text-ink-500">
-                  This is a starting point, not a finished spec — a specialist will confirm the right fit and
-                  discuss custom configuration once we hear from you below.
+                  {t.resultBody}
                 </p>
 
                 <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -314,22 +432,21 @@ export default function BuildRobotPage() {
                   {status === 'success' ? (
                     <div className="text-center">
                       <CheckCircle2 size={48} className="mx-auto text-teal-600" />
-                      <h3 className="mt-4 font-display text-xl font-bold text-ink-900">Thanks — we've got it</h3>
+                      <h3 className="mt-4 font-display text-xl font-bold text-ink-900">{t.thanksTitle}</h3>
                       <p className="mt-2 text-ink-600">
-                        A specialist will review your answers and reach out within one business day to talk
-                        through fit, customization, and next steps.
+                        {t.thanksBody}
                       </p>
                       <Link to="/" className="mt-6 btn-secondary inline-flex">
-                        Back to Home
+                        {t.backToHome}
                       </Link>
                     </div>
                   ) : (
                     <form onSubmit={handleSubmit}>
                       <h3 className="font-display text-lg font-bold text-ink-900">
-                        Send this to a specialist
+                        {t.sendToSpecialist}
                       </h3>
                       <p className="mt-1 text-sm text-ink-500">
-                        We'll follow up to confirm fit and talk through what a custom deployment would involve.
+                        {t.sendToSpecialistSub}
                       </p>
 
                       {status === 'error' && (
@@ -341,7 +458,7 @@ export default function BuildRobotPage() {
 
                       <div className="mt-6 grid gap-5 sm:grid-cols-2">
                         <div>
-                          <label htmlFor="cfg-name" className="block text-sm font-semibold text-ink-700">Full Name *</label>
+                          <label htmlFor="cfg-name" className="block text-sm font-semibold text-ink-700">{t.fullName}</label>
                           <input
                             id="cfg-name"
                             name="name"
@@ -353,7 +470,7 @@ export default function BuildRobotPage() {
                           />
                         </div>
                         <div>
-                          <label htmlFor="cfg-email" className="block text-sm font-semibold text-ink-700">Email *</label>
+                          <label htmlFor="cfg-email" className="block text-sm font-semibold text-ink-700">{t.email}</label>
                           <input
                             id="cfg-email"
                             name="email"
@@ -365,14 +482,14 @@ export default function BuildRobotPage() {
                           />
                         </div>
                         <div className="sm:col-span-2">
-                          <label htmlFor="cfg-company" className="block text-sm font-semibold text-ink-700">Company</label>
+                          <label htmlFor="cfg-company" className="block text-sm font-semibold text-ink-700">{t.company}</label>
                           <input
                             id="cfg-company"
                             name="company"
                             type="text"
                             disabled={status === 'submitting'}
                             className="mt-1.5 w-full rounded-lg border border-ink-200 px-4 py-2.5 text-sm text-ink-900 outline-none transition-colors focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 disabled:opacity-50"
-                            placeholder="Operator, EPC or distributor"
+                            placeholder={t.companyPlaceholder}
                           />
                         </div>
                       </div>
@@ -385,11 +502,11 @@ export default function BuildRobotPage() {
                         {status === 'submitting' ? (
                           <>
                             <Loader2 size={18} className="animate-spin" />
-                            Sending...
+                            {t.sending}
                           </>
                         ) : (
                           <>
-                            Send to a Specialist
+                            {t.sendButton}
                             <ArrowRight size={18} />
                           </>
                         )}
@@ -405,7 +522,7 @@ export default function BuildRobotPage() {
                     className="mt-6 btn-ghost"
                   >
                     <ArrowLeft size={16} />
-                    Back to questions
+                    {t.backToQuestions}
                   </button>
                 )}
               </Reveal>

@@ -16,6 +16,7 @@ import assetTrackingImg from '@/assets/robots/asset-tracking-center.png';
 import chargingRoomImg from '@/assets/peripherals/charging-room.jpg';
 import industrialPcImg from '@/assets/peripherals/industrial-pc-e01.jpg';
 import aiComputeImg from '@/assets/peripherals/pc-a01-flat-fan.jpg';
+import { productsFr } from './products.fr';
 
 export type ProductCategory = 'explosion-proof' | 'electric' | 'software' | 'peripheral';
 
@@ -642,4 +643,19 @@ export const products: Product[] = [
 
 export function getProduct(slug: string): Product | undefined {
   return products.find((p) => p.slug === slug);
+}
+
+export function localizeProduct(product: Product, locale: 'en' | 'fr'): Product {
+  if (locale === 'en') return product;
+  const fr = productsFr[product.slug];
+  return fr ? { ...product, ...fr } : product;
+}
+
+export function getLocalizedProducts(locale: 'en' | 'fr'): Product[] {
+  return products.map((p) => localizeProduct(p, locale));
+}
+
+export function getLocalizedProduct(slug: string, locale: 'en' | 'fr'): Product | undefined {
+  const product = getProduct(slug);
+  return product ? localizeProduct(product, locale) : undefined;
 }

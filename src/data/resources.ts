@@ -1,3 +1,5 @@
+import { resourcesFr } from './resources.fr';
+
 export interface ResourceArticle {
   slug: string;
   title: string;
@@ -184,4 +186,19 @@ export const resources: ResourceArticle[] = [
 
 export function getResource(slug: string): ResourceArticle | undefined {
   return resources.find((r) => r.slug === slug);
+}
+
+export function localizeResource(resource: ResourceArticle, locale: 'en' | 'fr'): ResourceArticle {
+  if (locale === 'en') return resource;
+  const fr = resourcesFr[resource.slug];
+  return fr ? { ...resource, ...fr } : resource;
+}
+
+export function getLocalizedResources(locale: 'en' | 'fr'): ResourceArticle[] {
+  return resources.map((r) => localizeResource(r, locale));
+}
+
+export function getLocalizedResource(slug: string, locale: 'en' | 'fr'): ResourceArticle | undefined {
+  const resource = getResource(slug);
+  return resource ? localizeResource(resource, locale) : undefined;
 }

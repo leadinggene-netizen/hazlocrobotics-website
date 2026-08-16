@@ -1,3 +1,5 @@
+import { industriesFr } from './industries.fr';
+
 export interface Industry {
   slug: string;
   name: string;
@@ -111,4 +113,19 @@ export const industries: Industry[] = [
 
 export function getIndustry(slug: string): Industry | undefined {
   return industries.find((i) => i.slug === slug);
+}
+
+export function localizeIndustry(industry: Industry, locale: 'en' | 'fr'): Industry {
+  if (locale === 'en') return industry;
+  const fr = industriesFr[industry.slug];
+  return fr ? { ...industry, ...fr } : industry;
+}
+
+export function getLocalizedIndustries(locale: 'en' | 'fr'): Industry[] {
+  return industries.map((i) => localizeIndustry(i, locale));
+}
+
+export function getLocalizedIndustry(slug: string, locale: 'en' | 'fr'): Industry | undefined {
+  const industry = getIndustry(slug);
+  return industry ? localizeIndustry(industry, locale) : undefined;
 }
