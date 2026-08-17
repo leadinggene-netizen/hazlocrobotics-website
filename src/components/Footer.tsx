@@ -23,6 +23,7 @@ const copy = {
     partner: 'North & Latin America commercial partner',
     partnerLine2: 'for Qiteng Robotics',
     demoCta: 'Request Online Demo',
+    legalName: 'Hazlocrobotics LLC, a Delaware Company',
     rights: 'All rights reserved.',
     privacy: 'Privacy Policy',
     terms: 'Terms of Service',
@@ -48,6 +49,7 @@ const copy = {
     partner: 'Partenaire commercial pour l\'Amérique du Nord et l\'Amérique latine',
     partnerLine2: 'de Qiteng Robotics',
     demoCta: 'Demande de démo en ligne',
+    legalName: 'Hazlocrobotics LLC, une société du Delaware',
     rights: 'Tous droits réservés.',
     privacy: 'Politique de confidentialité',
     terms: 'Conditions d\'utilisation',
@@ -126,7 +128,7 @@ export default function Footer() {
 
         <div className="mt-12 border-t border-ink-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-ink-500">
-            © {new Date().getFullYear()} Hazloc Robotics. {t.rights}
+            © {new Date().getFullYear()} {t.legalName}. {t.rights}
           </p>
           <div className="flex gap-6 text-xs text-ink-500">
             <a href="#" className="hover:text-ink-300 transition-colors">{t.privacy}</a>
