@@ -261,14 +261,14 @@ export default function ContactPage() {
                       <MapPin size={20} className="flex-shrink-0 mt-0.5 text-teal-400" />
                       <div>
                         <p className="text-sm text-ink-400">{t.naLaOffice}</p>
-                        <p className="text-sm font-medium">Houston, TX, USA</p>
+                        <p className="text-sm font-medium">Dover, Delaware, USA</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <MapPin size={20} className="flex-shrink-0 mt-0.5 text-teal-400" />
                       <div>
                         <p className="text-sm text-ink-400">{t.manufacturingPartner}</p>
-                        <p className="text-sm font-medium">Shenzhen, China</p>
+                        <p className="text-sm font-medium">Chongqing, China</p>
                       </div>
                     </div>
                   </div>
