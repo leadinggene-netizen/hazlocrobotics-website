@@ -26,9 +26,34 @@ const navItemsByLocale = {
     { label: 'Études de cas', to: '/case-studies' },
     { label: 'À propos', to: '/about' },
   ],
+  es: [
+    { label: 'Inicio', to: '/' },
+    { label: 'Productos', to: '/products' },
+    { label: 'Configurador', to: '/build' },
+    { label: 'Certificación', to: '/certification' },
+    { label: 'Industrias', to: '/industries' },
+    { label: 'Recursos', to: '/resources' },
+    { label: 'Casos de éxito', to: '/case-studies' },
+    { label: 'Nosotros', to: '/about' },
+  ],
+  pt: [
+    { label: 'Início', to: '/' },
+    { label: 'Produtos', to: '/products' },
+    { label: 'Configurador', to: '/build' },
+    { label: 'Certificação', to: '/certification' },
+    { label: 'Setores', to: '/industries' },
+    { label: 'Recursos', to: '/resources' },
+    { label: 'Casos de sucesso', to: '/case-studies' },
+    { label: 'Sobre', to: '/about' },
+  ],
 };
 
-const demoCta = { en: 'Request Online Demo', fr: 'Demande de démo en ligne' };
+const demoCta = {
+  en: 'Request Online Demo',
+  fr: 'Demande de démo en ligne',
+  es: 'Solicitar una demo en línea',
+  pt: 'Solicitar uma demonstração online',
+};
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);

@@ -1,10 +1,10 @@
 import { ArrowRight } from 'lucide-react';
 import Link from '@/i18n/LocaleLink';
-import { useLocale } from '@/i18n/useLocale';
+import { useLocale, type Locale } from '@/i18n/useLocale';
 import { products } from '@/data/products';
 import type { ProductCategory } from '@/data/products';
 
-const categoryLabel: Record<'en' | 'fr', Record<ProductCategory, string>> = {
+const categoryLabel: Record<Locale, Record<ProductCategory, string>> = {
   en: {
     'explosion-proof': 'Explosion-Proof',
     electric: 'Electric',
@@ -17,6 +17,18 @@ const categoryLabel: Record<'en' | 'fr', Record<ProductCategory, string>> = {
     software: 'Logiciel',
     peripheral: 'Périphérique',
   },
+  es: {
+    'explosion-proof': 'Antiexplosión',
+    electric: 'Eléctrico',
+    software: 'Software',
+    peripheral: 'Periférico',
+  },
+  pt: {
+    'explosion-proof': 'À prova de explosão',
+    electric: 'Elétrico',
+    software: 'Software',
+    peripheral: 'Periférico',
+  },
 };
 
 const categoryClass: Record<ProductCategory, string> = {
@@ -26,7 +38,7 @@ const categoryClass: Record<ProductCategory, string> = {
   peripheral: 'tag-peripheral',
 };
 
-const learnMore = { en: 'Learn more', fr: 'En savoir plus' };
+const learnMore = { en: 'Learn more', fr: 'En savoir plus', es: 'Más información', pt: 'Saiba mais' };
 
 interface ProductCardProps {
   product: (typeof products)[number];

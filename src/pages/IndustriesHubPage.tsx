@@ -18,6 +18,18 @@ const copy = {
     subtitle: 'Des raffineries de pétrole aux plateformes offshore, des centrales électriques aux mines et aux lieux d\'incendie — nos robots inspectent les endroits où l\'inspection humaine est la plus dangereuse et la plus nécessaire.',
     explore: 'Explorer',
   },
+  es: {
+    eyebrow: 'Industrias',
+    title: 'Implementados en los entornos industriales más exigentes',
+    subtitle: 'Desde refinerías de petróleo hasta plataformas marinas, centrales eléctricas, minas y escenas de incendio — nuestros robots inspeccionan los lugares donde la inspección humana es más peligrosa y más necesaria.',
+    explore: 'Explorar',
+  },
+  pt: {
+    eyebrow: 'Setores',
+    title: 'Implantados nos ambientes industriais mais exigentes',
+    subtitle: 'De refinarias de petróleo a plataformas offshore, usinas de energia a minas e cenas de incêndio — nossos robôs inspecionam os locais onde a inspeção humana é mais perigosa e mais necessária.',
+    explore: 'Explorar',
+  },
 };
 
 export default function IndustriesHubPage() {

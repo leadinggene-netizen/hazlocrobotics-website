@@ -11,7 +11,7 @@ export const resourcesFr: Record<string, ResourceTranslation> = {
     title: 'Qu\'est-ce que la norme UL 6260? Guide de certification pour robots en emplacement dangereux',
     metaDescription:
       'La norme UL 6260 est la norme émergente pour les robots en emplacement dangereux. Ce guide explique ce qu\'elle couvre, où elle en est, et ce que les acheteurs devraient demander aux fournisseurs dès aujourd\'hui.',
-    readTime: '8 min de lecture',
+    readTime: '8 min',
     excerpt:
       'La norme UL 6260 est la première norme conçue spécifiquement pour les robots opérant en emplacement dangereux. Voici ce qu\'elle couvre, où en est le processus de certification aujourd\'hui, et ce qu\'il faut demander à un fournisseur avant de déployer.',
     body: [
@@ -60,7 +60,7 @@ export const resourcesFr: Record<string, ResourceTranslation> = {
     title: 'IECEx/ATEX vs. NEC Classe/Division : la classification des emplacements dangereux expliquée',
     metaDescription:
       'Une comparaison en langage clair de la classification par zones IECEx/ATEX et du système Classe/Division du NEC pour les acheteurs évaluant des robots en emplacement dangereux.',
-    readTime: '10 min de lecture',
+    readTime: '10 min',
     excerpt:
       'Deux systèmes classifient les emplacements dangereux — le système de zones de la CEI (IECEx/ATEX) et le système Classe/Division du NEC. Voici comment ils se comparent, et ce que cela signifie pour les acheteurs de robots en Amérique du Nord.',
     body: [
@@ -118,7 +118,7 @@ export const resourcesFr: Record<string, ResourceTranslation> = {
     title: 'Calculer le RCI des robots d\'inspection : un cadre pour les responsables HSE et opérations',
     metaDescription:
       'Un cadre pratique pour calculer le retour sur investissement des robots d\'inspection en emplacement dangereux, avec des catégories de coûts et zones de bénéfices réelles.',
-    readTime: '7 min de lecture',
+    readTime: '7 min',
     excerpt:
       'Comment bâtir un dossier d\'affaires crédible pour les robots d\'inspection en emplacement dangereux — au-delà du « c\'est plus sécuritaire » vers l\'évitement de coûts quantifié, les économies de main-d\'œuvre et la prévention d\'incidents.',
     body: [

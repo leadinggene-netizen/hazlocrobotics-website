@@ -7,9 +7,11 @@ import Reveal from '@/components/Reveal';
 import { getLocalizedResource, getLocalizedResources } from '@/data/resources';
 import { getLocalizedProduct } from '@/data/products';
 
-const categoryLabel: Record<'en' | 'fr', Record<string, string>> = {
+const categoryLabel: Record<'en' | 'fr' | 'es' | 'pt', Record<string, string>> = {
   en: { 'Explainer': 'Explainer', 'Guide': 'Guide', 'Buyer Education': 'Buyer Education', 'Gated': 'Gated' },
   fr: { 'Explainer': 'Explication', 'Guide': 'Guide', 'Buyer Education': 'Éducation acheteur', 'Gated': 'Contenu protégé' },
+  es: { 'Explainer': 'Explicación', 'Guide': 'Guía', 'Buyer Education': 'Educación del comprador', 'Gated': 'Contenido restringido' },
+  pt: { 'Explainer': 'Explicação', 'Guide': 'Guia', 'Buyer Education': 'Educação do comprador', 'Gated': 'Conteúdo restrito' },
 };
 
 const copy = {
@@ -46,6 +48,40 @@ const copy = {
     moreResources: 'Plus de ressources',
     read: 'Lire',
     dateLocale: 'fr-CA',
+  },
+  es: {
+    notFound: 'Artículo no encontrado',
+    backToResources: 'Volver a recursos',
+    readSuffix: 'de lectura',
+    relatedProduct: 'Producto relacionado',
+    learnMore: 'Más información',
+    certification: 'Certificación',
+    certTitle: 'Certificación y cumplimiento',
+    certDesc: 'Estado de certificación completo, clasificaciones explicadas y guía de verificación.',
+    view: 'Ver',
+    questionsTitle: '¿Preguntas sobre la implementación?',
+    questionsBody: 'Nuestro equipo le ayuda a evaluar el robot adecuado para su sitio.',
+    contactUs: 'Contáctenos',
+    moreResources: 'Más recursos',
+    read: 'Leer',
+    dateLocale: 'es-MX',
+  },
+  pt: {
+    notFound: 'Artigo não encontrado',
+    backToResources: 'Voltar aos recursos',
+    readSuffix: 'de leitura',
+    relatedProduct: 'Produto relacionado',
+    learnMore: 'Saiba mais',
+    certification: 'Certificação',
+    certTitle: 'Certificação e conformidade',
+    certDesc: 'Status de certificação completo, classificações explicadas e orientação de verificação.',
+    view: 'Ver',
+    questionsTitle: 'Dúvidas sobre a implantação?',
+    questionsBody: 'Nossa equipe ajuda você a avaliar o robô certo para o seu local.',
+    contactUs: 'Entre em contato',
+    moreResources: 'Mais recursos',
+    read: 'Ler',
+    dateLocale: 'pt-BR',
   },
 };
 

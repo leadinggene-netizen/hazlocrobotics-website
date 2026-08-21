@@ -1,0 +1,475 @@
+import type { ProductTranslation } from './products.fr';
+
+export const productsPt: Record<string, ProductTranslation> = {
+  'explosion-proof-quadruped-robot': {
+    name: 'Robô quadrúpede à prova de explosão — X3 Stable',
+    shortName: 'X3 Stable',
+    tagline: 'Inspeção ágil sobre patas para zonas perigosas complexas e obstruídas',
+    description:
+      'Combinando vários métodos de design à prova de explosão, o X3 Stable oferece vantagens abrangentes em proteção contra explosões, leveza e confiabilidade. Equipado com mais de 500 algoritmos inteligentes, aprendizado adaptativo e aquisição de imagens de alta precisão, ele sobe escadas, degraus, vãos e espaços confinados inacessíveis a robôs com rodas — e vai além da inspeção para oferecer reconhecimento, transporte de material e apoio a resgates em emergências.',
+    specs: [
+      { label: 'Classificação à prova de explosão', value: 'Ex IIB T4 Gb' },
+      { label: 'Dimensões', value: 'Em pé 1200×600×1060mm · Deitado 1310×600×590mm' },
+      { label: 'Peso', value: '110 kg' },
+      { label: 'Carga útil', value: '20 kg' },
+      { label: 'Mobilidade', value: 'Quadrúpede, 14 graus de liberdade (12 + gimbal de 2 eixos) — subidas de 20°, obstáculos de 20cm' },
+      { label: 'Autonomia', value: '2 a 3 horas de patrulha contínua · carga 3h' },
+      { label: 'Sensores', value: 'Térmico, gás, câmera HD, LIDAR — navegação a laser, precisão ±5cm' },
+    ],
+    useCases: [
+      'Inspeções de escadarias e de vários níveis em plantas petroquímicas',
+      'Patrulha em corredores estreitos de unidades de processo confinadas',
+      'Transporte de material e apoio a resgates em cenários de resposta a emergências',
+    ],
+    features: [
+      'A mobilidade sobre patas alcança áreas inacessíveis a robôs com rodas',
+      'Mais de 500 algoritmos embarcados para percepção ambiental e aprendizado autônomo',
+      'Patrulha autônoma com desvio de obstáculos e repetição de rota',
+      'Algoritmos de cenário opcionais: detecção de pessoas, área de bombeamento, área de tanques, patrulha de tubulações',
+    ],
+  },
+  'explosion-proof-wheeled-robot-sgls-04': {
+    name: 'Robô com rodas à prova de explosão — SGLS-04',
+    shortName: 'SGLS-04',
+    tagline: 'Detecção ambiental em tempo real com diagnóstico automatizado de defeitos',
+    description:
+      'O SGLS-04 coleta e analisa dados ambientais do local em tempo real, permitindo diagnóstico automático de defeitos de equipamentos, manutenção inteligente de instalações e investigação de riscos — substituindo total ou parcialmente pessoas nas rondas de inspeção de rotina. Um sistema de suspensão de alta precisão melhora a estabilidade de condução e evita vibração de alta frequência em ambientes hostis, reduzindo o risco e a carga de trabalho dos operadores.',
+    specs: [
+      { label: 'Classificação à prova de explosão', value: 'Ex IIB T6 Gb' },
+      { label: 'Dimensões', value: '1150×880×1060mm' },
+      { label: 'Peso', value: '420 kg' },
+      { label: 'Mobilidade', value: 'Tração nas quatro rodas — subidas de 20°, obstáculos de 12cm, vau de 20cm' },
+      { label: 'Autonomia', value: '5 horas de operação · carga 3h' },
+      { label: 'Sensores', value: 'Imagem óptica e acústica — navegação a laser, precisão ±5cm' },
+    ],
+    useCases: [
+      'Diagnóstico automatizado de defeitos em equipamentos de processamento petroquímico',
+      'Rondas de investigação de riscos em extração de petróleo e parques de tanques',
+      'Patrulha de áreas de armazenamento de GNL e de produto acabado',
+    ],
+    features: [
+      'Diagnóstico automático de defeitos de equipamentos, não apenas captura de vídeo',
+      'Suspensão de alta precisão para estabilidade em terrenos difíceis',
+      'Medição de vibração a laser e detecção de ruído/impressão vocal opcionais',
+      'Algoritmos de cenário ajustados para extração de petróleo e armazenamento de GNL',
+    ],
+  },
+  'explosion-proof-wheeled-robot-sgls-c3': {
+    name: 'Robô com rodas à prova de explosão — SGLS-C3',
+    shortName: 'SGLS-C3',
+    tagline: 'Integração modular de sensores com segurança anticolisão e detecção de valas',
+    description:
+      'Com design modular, o SGLS-C3 integra facilmente diversos dispositivos para atender às necessidades de diferentes cenários de aplicação — cobrindo detecção de vazamentos, segurança de equipamentos, segurança do pessoal e segurança do local em uma única plataforma. Um sistema anticolisão omnidirecional por ultrassom e de detecção de valas antiqueda protege equipamentos e pessoal, e um PC industrial com IA opcional permite reconhecimento e resposta em milissegundos.',
+    specs: [
+      { label: 'Classificação à prova de explosão', value: 'Ex IIC T6 Gb (grupo de gás mais alto)' },
+      { label: 'Dimensões', value: '1250×960×920mm' },
+      { label: 'Peso', value: '450 kg' },
+      { label: 'Mobilidade', value: 'Tração nas quatro rodas, 0–1,4 m/s — subidas de 25°, obstáculos de 10cm' },
+      { label: 'Autonomia', value: '5 horas de autonomia · carga 3h' },
+      { label: 'Sensores', value: 'Imagem óptica e acústica, braço robótico opcional — navegação a laser, precisão ±3cm' },
+    ],
+    useCases: [
+      'Inspeção de áreas de síntese de amônia e unidades de BDO',
+      'Patrulha de segurança em refino e unidades VCM',
+      'Monitoramento de vazamentos e segurança do local em toda a instalação',
+    ],
+    features: [
+      'Integração modular de dispositivos para configurações de sensores específicas do local',
+      'Anticolisão por ultrassom e detecção antiqueda de valas',
+      'Gimbal ajustável e braço robótico opcionais',
+      'Classificação Ex IIC — o grupo de gás mais alto, incluindo atmosferas de hidrogênio',
+    ],
+  },
+  'explosion-proof-wheeled-robot-l4s': {
+    name: 'Robô com rodas à prova de explosão — L4-S',
+    shortName: 'Robô com rodas L4-S',
+    tagline: 'O robô de inspeção com rodas principal para áreas perigosas de Zona 1',
+    description:
+      'O L4-S é o robô de inspeção com rodas à prova de explosão principal, terceira geração da linha com rodas, projetado para resolver os desafios de inspeção em locais industriais complexos. Um design flexível, modular e integrado o mantém compacto — 1065×655×1000mm — para manobrar em passagens estreitas, vãos entre equipamentos e espaços de tubulação inacessíveis a robôs maiores. Sensores ultrassônicos garantem desvio de colisão em 360° sem pontos cegos, com resistência à corrosão projetada para as condições de plataformas offshore.',
+    specs: [
+      { label: 'Classificação à prova de explosão', value: 'Ex IIB T4 Gb' },
+      { label: 'Dimensões', value: '1065×655×1000mm' },
+      { label: 'Peso', value: '275 kg' },
+      { label: 'Mobilidade', value: 'Tração nas quatro rodas, 0–0,9 m/s — subidas de 20°, obstáculos de 10cm' },
+      { label: 'Autonomia', value: '3 horas de operação · carga 1,5h' },
+      { label: 'Proteção ambiental', value: 'IP65 — resistente à corrosão e umidade, projetado para plataformas offshore' },
+      { label: 'Posicionamento', value: 'Navegação a laser, precisão ±3cm' },
+    ],
+    useCases: [
+      'Patrulha contínua de perímetro e ativos em grandes refinarias',
+      'Inspeção de parques de tanques e monitoramento térmico',
+      'Plataformas de perfuração offshore, grupos de bombeamento e estações de GNL',
+    ],
+    features: [
+      'Compacto o suficiente para inspeção de tubulações estreitas e vãos entre equipamentos',
+      'Desvio de colisão por ultrassom em 360°, sem pontos cegos',
+      'Construção resistente à corrosão, projetada para ambientes offshore e costeiros',
+      'Algoritmos de cenário para tanques de argila, tratamento de lodo e estações de gás natural',
+    ],
+  },
+  'explosion-proof-wheeled-robot-l7-twister': {
+    name: 'Robô com rodas à prova de explosão — L7 Twister',
+    shortName: 'L7 Twister',
+    tagline: 'Configuração de quatro rodas e oito motores para inspeção autônoma todo-terreno',
+    description:
+      'Projetado com configuração de quatro rodas e oito motores e suspensão independente, o L7 Twister oferece grande adaptabilidade em terrenos complexos e acidentados. Cada roda possui sua própria unidade de potência independente para desempenho off-road excepcional e manobrabilidade ágil. Um computador industrial com IA embarcado fornece até 100 TOPS de poder computacional para inspeção offline, com alta confiabilidade e forte desempenho em tempo real.',
+    specs: [
+      { label: 'Classificação à prova de explosão', value: 'Ex IIC T6 Gb (grupo de gás mais alto)' },
+      { label: 'Dimensões', value: '1060×620×1020mm' },
+      { label: 'Peso', value: '250 kg' },
+      { label: 'Mobilidade', value: 'Quatro rodas, oito motores — subidas de 15°, obstáculos de 10cm' },
+      { label: 'Autonomia', value: '5 horas de operação · carga 3h' },
+      { label: 'Computação', value: 'Computador industrial com IA embarcado, até 100 TOPS para inspeção offline' },
+    ],
+    useCases: [
+      'Patrulha todo-terreno em locais industriais acidentados e sem pavimentação',
+      'Inspeção de plataformas offshore e áreas de unidades VCM/BDO',
+      'Inspeção offline de alto poder computacional onde a conectividade é limitada',
+    ],
+    features: [
+      'Unidade de potência independente por roda para agilidade off-road',
+      'Até 100 TOPS de computação embarcada — inspeção completa sem conectividade',
+      'Gimbal pan-tilt-zoom com imagem acústica e óptica',
+      'Classificação Ex IIC — o grupo de gás mais alto, incluindo atmosferas de hidrogênio',
+    ],
+  },
+  'explosion-proof-wheeled-robot-l7-fire': {
+    name: 'Robô com rodas à prova de explosão — L7 Fire',
+    shortName: 'L7 Fire',
+    tagline: 'Inspeção com rodas com detecção de chamas e extinção integradas',
+    description:
+      'O L7 Fire combina capacidade de inspeção padrão com funções de detecção de chamas e extinção de incêndio. Um sensor de chama montado e bicos de extinção capturam rápida e precisamente a localização, o tamanho e a direção de propagação de um incêndio, enquanto o controle flexível do ângulo de pulverização e da vazão do agente extintor permite uma resposta rápida e confiável — melhorando a rapidez da resposta de emergência sem colocar pessoas em risco.',
+    specs: [
+      { label: 'Classificação à prova de explosão', value: 'Ex IIC T6 Gb (grupo de gás mais alto)' },
+      { label: 'Dimensões', value: '1250×960×920mm' },
+      { label: 'Peso', value: '450 kg' },
+      { label: 'Mobilidade', value: 'Tração nas quatro rodas, 0–1,4 m/s — subidas de 25°, obstáculos de 10cm' },
+      { label: 'Autonomia', value: '5 horas de operação · carga 5h' },
+      { label: 'Resposta a incêndio', value: 'Extinção remota com ângulo de pulverização e vazão ajustáveis' },
+    ],
+    useCases: [
+      'Detecção precoce de incêndio e extinção em locais industriais ativos',
+      'Patrulha de risco de incêndio em refino e unidades VCM',
+      'Inspeção combinada e prontidão contra incêndio para operadores petroquímicos',
+    ],
+    features: [
+      'O sensor de chama localiza com precisão o incêndio, seu tamanho e propagação',
+      'Ângulo de pulverização e vazão do agente extintor controlados remotamente',
+      'Compartilha o conjunto de sensores de inspeção da plataforma L7',
+      'Algoritmos de cenário para refino e áreas de unidades VCM e BDO',
+    ],
+  },
+  'explosion-proof-rail-robot-g7-module': {
+    name: 'Robô suspenso sobre trilho à prova de explosão — G7 Module',
+    shortName: 'G7 Module',
+    tagline: 'Robô suspenso de design modular para precisão centimétrica',
+    description:
+      'Um design modular inovador mantém o centro de gravidade do G7 Module próximo ao trilho, reduzindo oscilações e garantindo estabilidade em alta velocidade. Um sistema de posicionamento de alta precisão oferece precisão centimétrica, e a arquitetura modular permite integração rápida de diferentes sensores para atender necessidades de aplicação diversas — um robô de trajeto fixo projetado para monitoramento repetível e de alta precisão.',
+    specs: [
+      { label: 'Classificação à prova de explosão', value: 'Ex IIC T6 Gb' },
+      { label: 'Dimensões', value: '1420×460×520mm' },
+      { label: 'Peso', value: '130 kg' },
+      { label: 'Mobilidade', value: 'Trilho de via única — subidas de 20°' },
+      { label: 'Alcance', value: '3,2 km por carga · carga 3h' },
+      { label: 'Posicionamento', value: 'Odometria + sensor Hall + RFID, precisão ±1cm' },
+    ],
+    useCases: [
+      'Inspeção 24/7 de pipe racks e corredores técnicos em refinarias',
+      'Monitoramento de prédios de vapor evaporativo e unidades de gaseificação',
+      'Patrulha de áreas de armazenamento e unidades de extração',
+    ],
+    features: [
+      'Centro de gravidade baixo minimiza a oscilação do trilho em alta velocidade',
+      'Integração modular de sensores para configurações específicas do local',
+      'Limpeza automatizada opcional do trilho e do corpo do dispositivo',
+      'Posicionamento repetível centimétrico para análise de tendências',
+    ],
+  },
+  'explosion-proof-rail-robot-g7-power': {
+    name: 'Robô de trilho de teto à prova de explosão — G7 Power',
+    shortName: 'G7 Power',
+    tagline: 'Robô de trilho de alta potência com 10km de autonomia e forte capacidade de subida',
+    description:
+      'Um sistema de acionamento modular de alta potência à prova de explosão confere ao G7 Power maior segurança, confiabilidade e flexibilidade. Opera de forma estável entre -20°C e 60°C, com autonomia ultralonga de 10 km e capacidade de subida de rampas de 45° para cenários de trilho complexos, como corredores técnicos e túneis. Um design de torreta altamente modular permite adaptação rápida a diferentes necessidades de inspeção.',
+    specs: [
+      { label: 'Classificação à prova de explosão', value: 'Ex IIC T6 Gb / Ex tC T80 Db' },
+      { label: 'Dimensões', value: '1290×380×390mm' },
+      { label: 'Peso', value: '50 kg' },
+      { label: 'Mobilidade', value: 'Acionamento duplo sobre trilho — subidas de 45°' },
+      { label: 'Autonomia', value: '10 km de autonomia · carga 3h' },
+      { label: 'Faixa de operação', value: '-20°C a 60°C' },
+      { label: 'Posicionamento', value: 'Odometria + sensor Hall + RFID, precisão ±1cm' },
+    ],
+    useCases: [
+      'Inspeção de corredores técnicos e túneis em ampla faixa de temperatura',
+      'Monitoramento de áreas de coqueificação, sulfuração e fornos de coque',
+      'Patrulha de salas de compressores e pátios de armazenamento',
+    ],
+    features: [
+      'Autonomia de 10 km por carga para longos trajetos sobre trilho',
+      'Capacidade de subida de rampas de 45°',
+      'Gimbal elevatório-orientável com imagem óptica e acústica',
+      'Projetado para operar entre -20°C e 60°C',
+    ],
+  },
+  'explosion-proof-rail-robot-g451': {
+    name: 'Robô de trilho suspenso à prova de explosão — G451',
+    shortName: 'G451',
+    tagline: 'Robô de trilho de autonomia ultralonga para cobertura contínua de área',
+    description:
+      'Projetado para patrulha contínua de longa distância, o G451 alcança até 45 km por carga com excelente estabilidade e precisão. Um design de trilho duplo paralelo permite um movimento mais suave, resiste a diversas interferências e minimiza o desvio ao máximo. Oferece inspeção contínua e de cobertura total das áreas de equipamentos em qualquer condição climática, com múltiplas funções de inspeção como reconhecimento de leitura de medidores, detecção de vazamentos e derramamentos, medição de temperatura infravermelha e monitoramento de anomalias.',
+    specs: [
+      { label: 'Classificação à prova de explosão', value: 'Ex IIB T4 Gb' },
+      { label: 'Dimensões', value: '880×600×700mm' },
+      { label: 'Peso', value: '230 kg' },
+      { label: 'Mobilidade', value: 'Trilho duplo, tração em duas rodas — subidas de 5°' },
+      { label: 'Autonomia', value: 'Até 45 km · carga 4h' },
+      { label: 'Posicionamento', value: 'Odometria + sensor Hall + RFID, precisão ±1cm' },
+    ],
+    useCases: [
+      'Leitura de medidores e detecção de vazamentos 24/7 em trajetos fixos',
+      'Patrulha de inspeção de tubulações ao longo de longos corredores de infraestrutura',
+      'Configuração opcional de robô de resgate para cenários de emergência',
+    ],
+    features: [
+      'Autonomia de 45 km por carga — a mais longa da linha de trilho',
+      'Design de trilho duplo paralelo que minimiza desvio e interferências',
+      'Reconhecimento de leitura de medidores e medição de temperatura infravermelha',
+      'Configuração opcional de carga útil de robô de resgate',
+    ],
+  },
+  'explosion-proof-tracked-robot': {
+    name: 'Robô com esteiras à prova de explosão — D071',
+    shortName: 'D071',
+    tagline: 'Inspeção com esteiras todo-terreno para os ambientes mais difíceis',
+    description:
+      'Um sistema de esteiras de alta eficiência torna o D071 mais adequado para condições de terreno complexas do que estruturas com rodas. Com uma maior relação de pressão de contato com o solo e um padrão de banda de rodagem especialmente projetado, ele atende às demandas de cenários de aplicação complexos, como ambientes de frio extremo, chuva e neve mistas, superfícies molhadas e escorregadias, e terrenos montanhosos acidentados. A detecção e o controle internos adotam um design modular — cada componente é independente, mas coordena-se eficientemente com os demais, permitindo que o robô mantenha um estado de operação estável e confiável em todos os momentos.',
+    specs: [
+      { label: 'Classificação à prova de explosão', value: 'Ex IIB T4 Gb' },
+      { label: 'Dimensões', value: '1420×900×1120mm' },
+      { label: 'Peso', value: '550 kg' },
+      { label: 'Mobilidade', value: 'Esteiras duplas, tração em duas rodas, 0–1,4 m/s — subidas de 25°, obstáculos de 15cm' },
+      { label: 'Autonomia', value: '3 horas de operação · carga 5h' },
+      { label: 'Posicionamento', value: 'Navegação a laser, precisão ±5cm' },
+    ],
+    useCases: [
+      'Patrulha de parques de tanques e tubulações ao ar livre em qualquer clima',
+      'Reconhecimento de campos de destroços pós-incidente',
+      'Inspeção de mineração e pedreiras em atmosferas de poeira explosiva',
+    ],
+    features: [
+      'Tração superior em lama, cascalho, neve e destroços',
+      'Maior capacidade de carga útil da linha à prova de explosão',
+      'Invólucro resistente certificado para atmosferas perigosas de Zona 1',
+      'Algoritmos de cenário para extração de petróleo, tanques de licor base e áreas de tanques de GNL',
+    ],
+  },
+  'firefighting-reconnaissance-robot': {
+    name: 'Robô à prova de explosão de reconhecimento de incêndio',
+    shortName: 'Robô de incêndio',
+    tagline: 'Reconhecimento e intervenção de linha de frente para equipes de emergência e bombeiros',
+    description:
+      'Combinando funções de combate a incêndio e reconhecimento, este robô com esteiras transporta um canhão de água de monitoramento de incêndio e dispositivos de detecção ambiental, com um sistema de pulverização de cortina dupla de água e resfriamento que lhe permite entrar em áreas perigosas no lugar dos bombeiros. Seu chassi com esteiras oferece forte proteção à prova de explosão, capacidade de transpor obstáculos e de reboque, com rotação, inclinação e varredura do canhão controladas remotamente em vários modos de pulverização — alternando livremente entre água e espuma.',
+    specs: [
+      { label: 'Classificação à prova de explosão', value: 'Ex IIB T4 Gb' },
+      { label: 'Dimensões', value: '1800×1100×1500mm' },
+      { label: 'Peso', value: '780 kg' },
+      { label: 'Mobilidade', value: 'Esteiras duplas, tração nas quatro rodas — subidas de 70%, obstáculos de 15cm, vau de 20cm' },
+      { label: 'Canhão de água', value: 'Vazão de 80 L/s · alcance de 80m' },
+      { label: 'Autonomia', value: '5h de pulverização contínua / 1,5h de deslocamento contínuo · carga 6h' },
+      { label: 'Alcance do controle remoto', value: '1000m' },
+    ],
+    useCases: [
+      'Reconhecimento e extinção em cenas de incêndio antes da entrada de equipes humanas',
+      'Avaliação de incidentes com materiais perigosos e monitoramento de gás',
+      'Resposta a acidentes industriais e avaliação estrutural',
+    ],
+    features: [
+      'Extinção remota com alternância água/espuma e pulverização ajustável',
+      'Sistema de pulverização de cortina dupla de água e resfriamento para intervenção próxima',
+      'Invólucro à prova de explosão resistente ao calor para proximidade a incêndios',
+      'Comunicação bidirecional redundante para controle de campo confiável',
+    ],
+  },
+  'electric-wheeled-robot': {
+    name: 'Robô elétrico com rodas',
+    shortName: 'Elétrico com rodas',
+    tagline: 'Inspeção de áreas não perigosas para subestações e salas de distribuição',
+    description:
+      'Equipado com navegação SLAM 3D e pneus antiderrapantes, o robô elétrico com rodas opera com flexibilidade em ambientes internos e externos de subestações e salas de distribuição. Câmeras de luz visível de alto zoom e um termovisor infravermelho de alta precisão detectam leituras de medidores, o status de seccionadores e o superaquecimento de equipamentos, com módulos opcionais de detecção de descarga parcial/SF6 para alertas de arco e vazamento de gás.',
+    specs: [
+      { label: 'Classificação', value: 'Uso industrial geral (não-Ex), IP55' },
+      { label: 'Dimensões', value: '650×550×800mm' },
+      { label: 'Peso', value: '40 kg' },
+      { label: 'Mobilidade', value: 'Tração em quatro/duas rodas — subidas de 15°, obstáculos de 4cm' },
+      { label: 'Autonomia', value: '7 horas de autonomia · carga 3h' },
+      { label: 'Posicionamento', value: 'Navegação a laser, precisão ±2cm' },
+    ],
+    useCases: [
+      'Patrulha de subestações e salas de distribuição',
+      'Verificação de leituras de medidores e do status de seccionadores',
+      'Monitoramento de centros de dados e salas de distribuição elétrica',
+    ],
+    features: [
+      'Navegação SLAM 3D com pneus antiderrapantes para uso interno/externo',
+      'Imagem térmica infravermelha e de luz visível de alto zoom',
+      'Módulos opcionais de detecção de descarga parcial e vazamento de gás SF6',
+      'Integração perfeita com o software Asset Tracking Center',
+    ],
+  },
+  'security-patrol-robot-ga7': {
+    name: 'Robô de patrulha de segurança — GA7',
+    shortName: 'GA7',
+    tagline: 'Patrulha de segurança urbana com IA e monitoramento panorâmico em quatro direções',
+    description:
+      'O GA7 combina um design de navegação e desvio de obstáculos redundante com imagens de vídeo panorâmicas em quatro direções, reservando interfaces para expansão funcional. Integrando um grande modelo de IA, reconhecimento de imagem de alta definição, interação de voz multimodal e navegação LIDAR, ele fecha o ciclo de "patrulha inteligente, alertas de risco, serviços convenientes e rastreabilidade de dados" — trazendo proteção de nível industrial e operação em qualquer clima para a segurança urbana.',
+    specs: [
+      { label: 'Classificação', value: 'Implantação geral/urbana, IP65' },
+      { label: 'Dimensões', value: '1070×580×840mm' },
+      { label: 'Peso', value: '150 kg' },
+      { label: 'Mobilidade', value: 'Quatro rodas, oito motores, 0–0,9 m/s — subidas de 15°' },
+      { label: 'Autonomia', value: '5 horas de operação · carrega até 80% em 3h' },
+      { label: 'Posicionamento', value: 'Navegação a laser, precisão ±3cm' },
+    ],
+    useCases: [
+      'Patrulha de segurança autônoma de perímetro e limites',
+      'Interação multilíngue em espaços públicos e publicidade antifraude',
+      'Monitoramento de comportamento anômalo com rastreabilidade de relatórios de patrulha',
+    ],
+    features: [
+      'Grande modelo de IA com reconhecimento de imagem de alta definição',
+      'Imagem panorâmica em quatro direções com navegação redundante',
+      'Interação de voz multimodal e suporte multilíngue',
+      'Retorno à base com um clique e acoplamento automático na estação de carga',
+    ],
+  },
+  'electric-rail-robot': {
+    name: 'Sistema robótico elétrico sobre trilho',
+    shortName: 'Elétrico sobre trilho',
+    tagline: 'Monitoramento sobre trilho com alimentação contínua para infraestrutura elétrica estreita',
+    description:
+      'Uma linha de contato deslizante fornece alimentação contínua, eliminando completamente as interrupções por autonomia de bateria. A estrutura de acionamento de via única, combinada com calibração RFID, alcança alta precisão de posicionamento e controle seguro em situações imprevistas, transmitindo continuamente dados em tempo real para verificar o status de equipamentos de salas elétricas e galerias técnicas. Um design ultracompacto projetado especificamente para cenários de campos elétricos estreitos.',
+    specs: [
+      { label: 'Classificação', value: 'Uso industrial geral (não-Ex), IP55' },
+      { label: 'Dimensões', value: '450×330×760mm' },
+      { label: 'Peso', value: '30 kg' },
+      { label: 'Mobilidade', value: 'Acionamento em trilho único — subidas de 25°' },
+      { label: 'Alimentação', value: 'Contínua via linha de contato deslizante — sem tempo de inatividade por carga' },
+      { label: 'Posicionamento', value: 'Odometria + RFID, precisão ±3mm' },
+    ],
+    useCases: [
+      'Monitoramento contínuo 24/7 de salas elétricas e galerias técnicas',
+      'Inspeção de linhas de transmissão e subestações',
+      'Patrulha de centros de dados e salas de geradores',
+    ],
+    features: [
+      'Alimentação contínua via linha de contato deslizante — sem tempo de inatividade de bateria',
+      'Calibração RFID para precisão de posicionamento milimétrica',
+      'Alimentado por trilho para instalação permanente e ininterrupta',
+      'Compartilha a plataforma de sensores e software de toda a linha de produtos',
+    ],
+  },
+  'asset-tracking-center-software': {
+    name: 'Centro de rastreamento de ativos e equipamentos',
+    shortName: 'Tracking Center',
+    tagline: 'A camada de software que unifica toda a sua frota de robôs',
+    description:
+      'O Centro de rastreamento de ativos e equipamentos é a camada de software que conecta cada robô da sua frota — quadrúpede, com rodas, com esteiras e sobre trilho — em um único painel de operações. Monitore patrulhas em tempo real, revise dados de inspeção, gerencie cronogramas de robôs e gere relatórios de conformidade, tudo em uma única plataforma.',
+    specs: [
+      { label: 'Implantação', value: 'Nuvem ou local' },
+      { label: 'Tamanho da frota', value: 'Robôs e sensores ilimitados' },
+      { label: 'Retenção de dados', value: 'Configurável, até 5 anos' },
+      { label: 'Relatórios', value: 'Conformidade automatizada + exportações personalizadas' },
+      { label: 'Acesso', value: 'Baseado em funções, multissite, multiusuário' },
+      { label: 'Integração', value: 'API REST, conectores SCADA e DCS' },
+    ],
+    useCases: [
+      'Gestão de frota multissite para refinarias e plantas',
+      'Relatórios de conformidade automatizados para prontidão de auditoria',
+      'Roteamento de alertas em tempo real para equipes de operações e HSE',
+    ],
+    features: [
+      'Painel unificado para todos os tipos de robôs e cargas úteis de sensores',
+      'Agendamento e gerenciamento automatizados de rotas de patrulha',
+      'Detecção de anomalias com IA e análise de tendências históricas',
+      'Geração de relatórios de conformidade para auditorias e submissões regulatórias',
+      'API REST para integração com sistemas SCADA e DCS existentes',
+    ],
+  },
+  'explosion-proof-charging-room': {
+    name: 'Sala de carregamento à prova de explosão — SREX-CDF',
+    shortName: 'Sala de carregamento',
+    tagline: 'Carregamento e armazenamento seguros projetados especificamente para robôs com rodas ao ar livre',
+    description:
+      'Uma instalação projetada especificamente para robôs com rodas em aplicações de inspeção ao ar livre, a SREX-CDF é equipada internamente com uma porta elétrica, estações de carregamento e um sistema de iluminação. Adequada para ambientes perigosos das classes IIB/IIC, oferece um local de carregamento e armazenamento temporário seguro e confiável para robôs que operam em campo.',
+    specs: [
+      { label: 'Classificação à prova de explosão', value: 'Ex IIB T4 Gb / Ex IIC T4 Gb' },
+      { label: 'Dimensões', value: '2000×2900×2500mm' },
+      { label: 'Peso', value: '2 toneladas' },
+      { label: 'Resistência ao vento', value: 'Nível 8, porta enrolável automática' },
+      { label: 'Carregamento', value: 'Três estágios: corrente constante, tensão constante, carga de compensação' },
+      { label: 'Interior', value: 'Iluminação à prova de explosão, ventilador, estação de carregamento, gabinete de controle' },
+    ],
+    useCases: [
+      'Infraestrutura de carregamento em campo para frotas de robôs com rodas ao ar livre',
+      'Armazenamento de robôs protegido do clima e de riscos entre patrulhas',
+      'Locais que exigem instalações de carregamento ao ar livre classificadas IIB/IIC',
+    ],
+    features: [
+      'Certificado para atmosferas perigosas IIB e IIC',
+      'Resistência ao vento de nível 8 com porta de veneziana automática',
+      'Aquecimento, resfriamento, sensor de fumaça e câmera opcionais',
+      'O carregamento em três estágios preserva a vida útil da bateria',
+    ],
+  },
+  'industrial-network-pc': {
+    name: 'PC de rede industrial — E01 / E02',
+    shortName: 'PC de rede',
+    tagline: 'Roteador, switch e unidade de controle veicular em um único módulo industrial',
+    description:
+      'O PC de rede industrial integra funções de roteador, switch e unidade de controle veicular (VCU) usando um módulo roteador sem fio de grau industrial, um módulo sem fio 4G/5G, um chip comutador de auto-negociação de 100/1000Mbps e um MCU de alto desempenho. Usado em robôs, braços robóticos e implantações de IoT industrial, vem em dois modelos dependendo do módulo de comunicação instalado: o E01 4G e o E02 5G.',
+    specs: [
+      { label: 'Dimensões', value: '142×110,5×43mm' },
+      { label: 'Temperatura de operação', value: 'E01: -40°C a 80°C · E02: -40°C a 75°C' },
+      { label: '4G (E01)', value: 'LTE CAT4 — 150 Mbps de download / 50 Mbps de upload' },
+      { label: '5G (E02)', value: 'NR Sub-6GHz — 2,4 Gbps de download / 900 Mbps de upload' },
+      { label: 'Wi-Fi', value: 'Banda dupla 802.11a/b/g/n/ac/ax, até 2402 Mbps' },
+    ],
+    useCases: [
+      'Módulo de conectividade para qualquer robô da frota',
+      'Implantações de IoT industrial que exigem roteamento e controle integrados',
+      'Locais que precisam de um caminho de atualização para 5G (E02) além do 4G padrão (E01)',
+    ],
+    features: [
+      'Combina roteador, switch e unidade de controle veicular em um único módulo',
+      'Certificado para temperaturas extremas: piso de operação de -40°C',
+      'Variante 4G ou 5G dependendo das necessidades de conectividade do local',
+      'Wi-Fi de banda dupla com switch de auto-negociação de alto throughput',
+    ],
+  },
+  'ai-compute-module': {
+    name: 'PC industrial — Módulo de computação IA A01',
+    shortName: 'Módulo de computação IA',
+    tagline: 'Computação de IA modular embarcada para implantar algoritmos de inspeção na borda',
+    description:
+      'Um PC industrial modular que combina um módulo embarcado X86, um módulo de computação IA e um backplane de PC industrial em um invólucro de perfil de alumínio. A plataforma X86 de baixo consumo e a plataforma NVIDIA Jetson Xavier NX suportam sistemas de gerenciamento de microsserviços e algoritmos de IA, permitindo que algoritmos de inspeção sejam executados diretamente no robô. Disponível nos formatos plano e empilhado para atender diferentes necessidades de montagem.',
+    specs: [
+      { label: 'Plataforma X86', value: 'Intel Atom X7-E3950, 2,0 GHz (até 2,41 GHz em burst)' },
+      { label: 'Plataforma IA', value: 'NVIDIA Jetson Xavier NX, 21 TOPS' },
+      { label: 'Memória', value: 'LPDDR4 8/16GB · DDR3L 8GB' },
+      { label: 'Armazenamento', value: 'SSD M.2 2280 de 256GB / SSD mSATA' },
+      { label: 'Formatos', value: 'Variantes plana (embutida) e empilhada' },
+    ],
+    useCases: [
+      'Implantação embarcada de algoritmos de inspeção de IA sem dependência de nuvem',
+      'Locais que exigem detecção de anomalias offline e de baixa latência',
+      'Atualização retroativa de computação para implantações de robôs existentes',
+    ],
+    features: [
+      '21 TOPS de computação de IA via NVIDIA Jetson Xavier NX',
+      'Executa algoritmos de inspeção diretamente no robô, sem ida e volta à nuvem',
+      'Formato plano ou empilhado para se adaptar a diferentes chassis de robôs',
+      'Invólucro de perfil de alumínio com resfriamento ativo',
+    ],
+  },
+};

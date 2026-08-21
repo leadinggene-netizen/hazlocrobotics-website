@@ -1,4 +1,13 @@
 import { resourcesFr } from './resources.fr';
+import { resourcesEs } from './resources.es';
+import { resourcesPt } from './resources.pt';
+import type { Locale } from '@/i18n/useLocale';
+
+const translationsByLocale: Record<Exclude<Locale, 'en'>, typeof resourcesFr> = {
+  fr: resourcesFr,
+  es: resourcesEs,
+  pt: resourcesPt,
+};
 
 export interface ResourceArticle {
   slug: string;
@@ -188,17 +197,17 @@ export function getResource(slug: string): ResourceArticle | undefined {
   return resources.find((r) => r.slug === slug);
 }
 
-export function localizeResource(resource: ResourceArticle, locale: 'en' | 'fr'): ResourceArticle {
+export function localizeResource(resource: ResourceArticle, locale: Locale): ResourceArticle {
   if (locale === 'en') return resource;
-  const fr = resourcesFr[resource.slug];
-  return fr ? { ...resource, ...fr } : resource;
+  const translation = translationsByLocale[locale][resource.slug];
+  return translation ? { ...resource, ...translation } : resource;
 }
 
-export function getLocalizedResources(locale: 'en' | 'fr'): ResourceArticle[] {
+export function getLocalizedResources(locale: Locale): ResourceArticle[] {
   return resources.map((r) => localizeResource(r, locale));
 }
 
-export function getLocalizedResource(slug: string, locale: 'en' | 'fr'): ResourceArticle | undefined {
+export function getLocalizedResource(slug: string, locale: Locale): ResourceArticle | undefined {
   const resource = getResource(slug);
   return resource ? localizeResource(resource, locale) : undefined;
 }

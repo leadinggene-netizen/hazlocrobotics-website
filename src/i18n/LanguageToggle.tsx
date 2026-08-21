@@ -1,37 +1,40 @@
-import { Link, useLocation } from 'react-router-dom';
-import { useLocale } from './useLocale';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useLocale, stripLocalePrefix, localizePath, type Locale } from './useLocale';
 
 interface LanguageToggleProps {
   className?: string;
 }
 
+const LANGS: { code: Locale; label: string }[] = [
+  { code: 'en', label: 'EN' },
+  { code: 'fr', label: 'FR' },
+  { code: 'es', label: 'ES' },
+  { code: 'pt', label: 'PT' },
+];
+
 export default function LanguageToggle({ className = '' }: LanguageToggleProps) {
   const locale = useLocale();
   const { pathname } = useLocation();
+  const navigate = useNavigate();
 
-  const englishPath = locale === 'fr' ? pathname.replace(/^\/fr(\/|$)/, '/') : pathname;
-  const frenchPath = locale === 'en' ? (pathname === '/' ? '/fr' : `/fr${pathname}`) : pathname;
+  function handleChange(e: React.ChangeEvent<HTMLSelectElement>) {
+    const nextLocale = e.target.value as Locale;
+    const plainPath = stripLocalePrefix(pathname);
+    navigate(localizePath(plainPath, nextLocale));
+  }
 
   return (
-    <div className={`inline-flex overflow-hidden rounded-lg border ${className}`}>
-      <Link
-        to={englishPath || '/'}
-        aria-current={locale === 'en' ? 'page' : undefined}
-        className={`px-2.5 py-1 text-xs font-bold tracking-wide transition-colors ${
-          locale === 'en' ? 'bg-teal-600 text-white' : 'text-inherit hover:bg-black/5'
-        }`}
-      >
-        EN
-      </Link>
-      <Link
-        to={frenchPath}
-        aria-current={locale === 'fr' ? 'page' : undefined}
-        className={`px-2.5 py-1 text-xs font-bold tracking-wide transition-colors border-l ${
-          locale === 'fr' ? 'bg-teal-600 text-white' : 'text-inherit hover:bg-black/5'
-        }`}
-      >
-        FR
-      </Link>
-    </div>
+    <select
+      value={locale}
+      onChange={handleChange}
+      aria-label="Select language"
+      className={`rounded-lg border bg-transparent px-2 py-1 text-xs font-bold tracking-wide cursor-pointer outline-none ${className}`}
+    >
+      {LANGS.map((l) => (
+        <option key={l.code} value={l.code} className="text-ink-900">
+          {l.label}
+        </option>
+      ))}
+    </select>
   );
 }

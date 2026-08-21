@@ -12,7 +12,7 @@ const categoryColors: Record<string, string> = {
   'Gated': 'tag bg-gold-100 text-gold-700',
 };
 
-const categoryLabel: Record<'en' | 'fr', Record<string, string>> = {
+const categoryLabel: Record<'en' | 'fr' | 'es' | 'pt', Record<string, string>> = {
   en: {
     'Explainer': 'Explainer',
     'Guide': 'Guide',
@@ -24,6 +24,18 @@ const categoryLabel: Record<'en' | 'fr', Record<string, string>> = {
     'Guide': 'Guide',
     'Buyer Education': 'Éducation acheteur',
     'Gated': 'Contenu protégé',
+  },
+  es: {
+    'Explainer': 'Explicación',
+    'Guide': 'Guía',
+    'Buyer Education': 'Educación del comprador',
+    'Gated': 'Contenido restringido',
+  },
+  pt: {
+    'Explainer': 'Explicação',
+    'Guide': 'Guia',
+    'Buyer Education': 'Educação do comprador',
+    'Gated': 'Conteúdo restrito',
   },
 };
 
@@ -45,6 +57,24 @@ const copy = {
     newsletterTitle: 'Restez informé sur la robotique en emplacement dangereux',
     newsletterBody: 'Soyez avisé lorsque nous publions de nouveaux guides, mises à jour de certification et perspectives sectorielles.',
     subscribe: 'S\'abonner aux mises à jour',
+  },
+  es: {
+    eyebrow: 'Recursos',
+    title: 'Guías, explicaciones y educación del comprador',
+    subtitle: 'Información práctica para equipos de HSE, operaciones y adquisiciones que evalúan robots de inspección en ubicaciones peligrosas — desde guías de certificación hasta marcos de ROI.',
+    read: 'Leer',
+    newsletterTitle: 'Manténgase informado sobre robótica en ubicaciones peligrosas',
+    newsletterBody: 'Reciba notificaciones cuando publiquemos nuevas guías, actualizaciones de certificación y perspectivas de la industria.',
+    subscribe: 'Suscribirse a actualizaciones',
+  },
+  pt: {
+    eyebrow: 'Recursos',
+    title: 'Guias, explicações e educação do comprador',
+    subtitle: 'Informações práticas para equipes de HSE, operações e compras que avaliam robôs de inspeção em locais perigosos — de guias de certificação a estruturas de ROI.',
+    read: 'Ler',
+    newsletterTitle: 'Fique informado sobre robótica em locais perigosos',
+    newsletterBody: 'Seja notificado quando publicarmos novos guias, atualizações de certificação e insights do setor.',
+    subscribe: 'Inscrever-se para atualizações',
   },
 };
 

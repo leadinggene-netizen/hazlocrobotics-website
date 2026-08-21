@@ -14,10 +14,12 @@ import CaseStudyDetailPage from '@/pages/CaseStudyDetailPage';
 import AboutPage from '@/pages/AboutPage';
 import ContactPage from '@/pages/ContactPage';
 
-// Every route is declared twice: once at its plain English path, and once
-// under /fr/* for the French version. Page components detect which locale
-// they're rendering via useLocale() (based on the /fr prefix) and render
-// their own bilingual content accordingly — see src/i18n/useLocale.ts.
+// Every route is declared once per locale: plain English path, plus /fr/*,
+// /es/*, /pt/*. Page components detect which locale they're rendering via
+// useLocale() (based on the path prefix) and render their own localized
+// content accordingly — see src/i18n/useLocale.ts.
+const LOCALE_PREFIXES = ['fr', 'es', 'pt'];
+
 const routeDefs: { path: string; element: JSX.Element }[] = [
   { path: '/', element: <HomePage /> },
   { path: '/products', element: <ProductsHubPage /> },
@@ -42,13 +44,15 @@ export default function App() {
           {routeDefs.map((r) => (
             <Route key={r.path} path={r.path} element={r.element} />
           ))}
-          {routeDefs.map((r) => (
-            <Route
-              key={`fr-${r.path}`}
-              path={r.path === '/' ? '/fr' : `/fr${r.path}`}
-              element={r.element}
-            />
-          ))}
+          {LOCALE_PREFIXES.flatMap((prefix) =>
+            routeDefs.map((r) => (
+              <Route
+                key={`${prefix}-${r.path}`}
+                path={r.path === '/' ? `/${prefix}` : `/${prefix}${r.path}`}
+                element={r.element}
+              />
+            ))
+          )}
           <Route path="*" element={<HomePage />} />
         </Routes>
       </Layout>

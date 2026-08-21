@@ -40,6 +40,36 @@ const copy = {
     ctaBody: 'Répondez à quelques questions sur votre secteur, votre classification de danger et votre terrain, et nous vous orienterons vers les robots les plus susceptibles de convenir — un point de départ pour qu\'un spécialiste vous aide à définir votre déploiement.',
     ctaButton: 'Configurer votre robot',
   },
+  es: {
+    eyebrow: 'Línea de productos',
+    title: 'Robots de inspección y software de flota',
+    subtitle: 'Catorce robots diseñados para la inspección en ubicaciones peligrosas — desde cuadrúpedos y robots con ruedas antiexplosión hasta sistemas montados sobre rieles y el software que unifica su flota.',
+    filters: [
+      { key: 'all' as Filter, label: 'Todos los productos' },
+      { key: 'explosion-proof' as Filter, label: 'Antiexplosión' },
+      { key: 'electric' as Filter, label: 'Eléctrico' },
+      { key: 'software' as Filter, label: 'Software' },
+      { key: 'peripheral' as Filter, label: 'Periféricos' },
+    ],
+    ctaTitle: '¿No está seguro de qué robot se ajusta a su sitio?',
+    ctaBody: 'Responda algunas preguntas sobre su industria, clasificación de peligro y terreno, y le indicaremos los robots con más probabilidades de ajustarse — un punto de partida para que un especialista le ayude a definir su implementación.',
+    ctaButton: 'Configure su robot',
+  },
+  pt: {
+    eyebrow: 'Linha de produtos',
+    title: 'Robôs de inspeção e software de frota',
+    subtitle: 'Catorze robôs projetados para inspeção em locais perigosos — de quadrúpedes e robôs com rodas à prova de explosão a sistemas montados em trilhos e o software que unifica sua frota.',
+    filters: [
+      { key: 'all' as Filter, label: 'Todos os produtos' },
+      { key: 'explosion-proof' as Filter, label: 'À prova de explosão' },
+      { key: 'electric' as Filter, label: 'Elétrico' },
+      { key: 'software' as Filter, label: 'Software' },
+      { key: 'peripheral' as Filter, label: 'Periféricos' },
+    ],
+    ctaTitle: 'Não tem certeza de qual robô se adapta ao seu local?',
+    ctaBody: 'Responda a algumas perguntas sobre seu setor, classificação de risco e terreno, e indicaremos os robôs com maior probabilidade de atender — um ponto de partida para que um especialista ajude a definir sua implantação.',
+    ctaButton: 'Configure seu robô',
+  },
 };
 
 export default function ProductsHubPage() {

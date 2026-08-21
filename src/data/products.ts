@@ -17,6 +17,15 @@ import chargingRoomImg from '@/assets/peripherals/charging-room.jpg';
 import industrialPcImg from '@/assets/peripherals/industrial-pc-e01.jpg';
 import aiComputeImg from '@/assets/peripherals/pc-a01-flat-fan.jpg';
 import { productsFr } from './products.fr';
+import { productsEs } from './products.es';
+import { productsPt } from './products.pt';
+import type { Locale } from '@/i18n/useLocale';
+
+const translationsByLocale: Record<Exclude<Locale, 'en'>, typeof productsFr> = {
+  fr: productsFr,
+  es: productsEs,
+  pt: productsPt,
+};
 
 export type ProductCategory = 'explosion-proof' | 'electric' | 'software' | 'peripheral';
 
@@ -645,17 +654,17 @@ export function getProduct(slug: string): Product | undefined {
   return products.find((p) => p.slug === slug);
 }
 
-export function localizeProduct(product: Product, locale: 'en' | 'fr'): Product {
+export function localizeProduct(product: Product, locale: Locale): Product {
   if (locale === 'en') return product;
-  const fr = productsFr[product.slug];
-  return fr ? { ...product, ...fr } : product;
+  const translation = translationsByLocale[locale][product.slug];
+  return translation ? { ...product, ...translation } : product;
 }
 
-export function getLocalizedProducts(locale: 'en' | 'fr'): Product[] {
+export function getLocalizedProducts(locale: Locale): Product[] {
   return products.map((p) => localizeProduct(p, locale));
 }
 
-export function getLocalizedProduct(slug: string, locale: 'en' | 'fr'): Product | undefined {
+export function getLocalizedProduct(slug: string, locale: Locale): Product | undefined {
   const product = getProduct(slug);
   return product ? localizeProduct(product, locale) : undefined;
 }

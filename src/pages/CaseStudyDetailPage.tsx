@@ -28,6 +28,26 @@ const copy = {
     learnMore: 'En savoir plus',
     moreCases: 'Plus d\'études de cas',
   },
+  es: {
+    notFound: 'Caso de éxito no encontrado',
+    backToCases: 'Volver a casos de éxito',
+    caseStudyLabel: 'Caso de éxito',
+    challenge: 'El desafío',
+    solution: 'La solución',
+    productsDeployed: 'Productos implementados',
+    learnMore: 'Más información',
+    moreCases: 'Más casos de éxito',
+  },
+  pt: {
+    notFound: 'Estudo de caso não encontrado',
+    backToCases: 'Voltar aos estudos de caso',
+    caseStudyLabel: 'Estudo de caso',
+    challenge: 'O desafio',
+    solution: 'A solução',
+    productsDeployed: 'Produtos implantados',
+    learnMore: 'Saiba mais',
+    moreCases: 'Mais estudos de caso',
+  },
 };
 
 export default function CaseStudyDetailPage() {

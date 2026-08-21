@@ -1,4 +1,13 @@
 import { industriesFr } from './industries.fr';
+import { industriesEs } from './industries.es';
+import { industriesPt } from './industries.pt';
+import type { Locale } from '@/i18n/useLocale';
+
+const translationsByLocale: Record<Exclude<Locale, 'en'>, typeof industriesFr> = {
+  fr: industriesFr,
+  es: industriesEs,
+  pt: industriesPt,
+};
 
 export interface Industry {
   slug: string;
@@ -115,17 +124,17 @@ export function getIndustry(slug: string): Industry | undefined {
   return industries.find((i) => i.slug === slug);
 }
 
-export function localizeIndustry(industry: Industry, locale: 'en' | 'fr'): Industry {
+export function localizeIndustry(industry: Industry, locale: Locale): Industry {
   if (locale === 'en') return industry;
-  const fr = industriesFr[industry.slug];
-  return fr ? { ...industry, ...fr } : industry;
+  const translation = translationsByLocale[locale][industry.slug];
+  return translation ? { ...industry, ...translation } : industry;
 }
 
-export function getLocalizedIndustries(locale: 'en' | 'fr'): Industry[] {
+export function getLocalizedIndustries(locale: Locale): Industry[] {
   return industries.map((i) => localizeIndustry(i, locale));
 }
 
-export function getLocalizedIndustry(slug: string, locale: 'en' | 'fr'): Industry | undefined {
+export function getLocalizedIndustry(slug: string, locale: Locale): Industry | undefined {
   const industry = getIndustry(slug);
   return industry ? localizeIndustry(industry, locale) : undefined;
 }

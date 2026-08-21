@@ -24,6 +24,24 @@ const copy = {
     ctaBody: 'Planifiez une évaluation de site et nous bâtirons un plan de déploiement avec des résultats attendus quantifiés pour votre installation.',
     ctaButton: 'Demander une évaluation de site',
   },
+  es: {
+    eyebrow: 'Casos de éxito',
+    title: 'Implementaciones reales, resultados medibles',
+    subtitle: 'Vea cómo se implementan los robots de inspección en ubicaciones peligrosas en operaciones de petróleo y gas en todo el mundo — los desafíos que abordan, las soluciones implementadas y los resultados obtenidos.',
+    readFull: 'Leer el caso de éxito completo',
+    ctaTitle: '¿Quiere ver resultados en su sitio?',
+    ctaBody: 'Programe una evaluación de sitio y elaboraremos un plan de implementación con resultados esperados cuantificados para su instalación.',
+    ctaButton: 'Solicitar una evaluación de sitio',
+  },
+  pt: {
+    eyebrow: 'Estudos de caso',
+    title: 'Implantações reais, resultados mensuráveis',
+    subtitle: 'Veja como os robôs de inspeção em locais perigosos são implantados em operações de petróleo e gás em todo o mundo — os desafios que resolvem, as soluções implantadas e os resultados alcançados.',
+    readFull: 'Ler o estudo de caso completo',
+    ctaTitle: 'Quer ver resultados no seu local?',
+    ctaBody: 'Agende uma avaliação de local e elaboraremos um plano de implantação com resultados esperados quantificados para sua instalação.',
+    ctaButton: 'Solicitar uma avaliação de local',
+  },
 };
 
 export default function CaseStudiesHubPage() {
