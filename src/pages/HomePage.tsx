@@ -414,12 +414,12 @@ export default function HomePage() {
             <div className="rounded-2xl bg-gradient-to-r from-teal-600 to-teal-700 p-8 lg:p-12">
               <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
                 <div>
-                  <h3 className="font-display text-2xl font-bold text-white">{t.solutionTitle}</h3>
-                  <p className="mt-2 text-teal-50 max-w-2xl">
+                  <h3 className="font-display text-2xl font-bold text-ink-900">{t.solutionTitle}</h3>
+                  <p className="mt-2 text-ink-800 max-w-2xl">
                     {t.solutionBody}
                   </p>
                 </div>
-                <Link to="/certification" className="flex-shrink-0 inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 text-sm font-semibold text-teal-700 transition-all hover:bg-teal-50">
+                <Link to="/certification" className="flex-shrink-0 inline-flex items-center gap-2 rounded-lg bg-ink-900 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-ink-800">
                   {t.exploreTech}
                   <ArrowRight size={16} />
                 </Link>

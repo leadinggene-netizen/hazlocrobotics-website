@@ -488,7 +488,7 @@ export default function BuildRobotPage() {
                                 fns.includes(opt.value) ? 'border-teal-600 bg-teal-600' : 'border-ink-300'
                               }`}
                             >
-                              {fns.includes(opt.value) && <CheckCircle2 size={14} className="text-white" />}
+                              {fns.includes(opt.value) && <CheckCircle2 size={14} className="text-ink-900" />}
                             </span>
                             {opt.label}
                           </button>

@@ -314,7 +314,7 @@ export default function CertificationPage() {
               <Reveal key={i} delay={i * 80}>
                 <div className="flex gap-6 items-start">
                   <div className="flex-shrink-0 flex flex-col items-center">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-teal-600 text-white font-display font-bold text-sm">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-teal-600 text-ink-900 font-display font-bold text-sm">
                       {i + 1}
                     </div>
                     {i < t.stages.length - 1 && <div className="w-px h-16 bg-ink-200 mt-2" />}
@@ -366,10 +366,10 @@ export default function CertificationPage() {
           <Reveal className="mt-10">
             <div className="rounded-2xl bg-gradient-to-r from-teal-600 to-teal-700 p-8 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
               <div>
-                <h3 className="font-display text-xl font-bold text-white">{t.ctaTitle}</h3>
-                <p className="mt-2 text-teal-50">{t.ctaBody}</p>
+                <h3 className="font-display text-xl font-bold text-ink-900">{t.ctaTitle}</h3>
+                <p className="mt-2 text-ink-800">{t.ctaBody}</p>
               </div>
-              <Link to="/contact" className="flex-shrink-0 inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 text-sm font-semibold text-teal-700 hover:bg-teal-50 transition-all">
+              <Link to="/contact" className="flex-shrink-0 inline-flex items-center gap-2 rounded-lg bg-ink-900 px-6 py-3 text-sm font-semibold text-white hover:bg-ink-800 transition-all">
                 {t.ctaButton}
                 <ArrowRight size={16} />
               </Link>

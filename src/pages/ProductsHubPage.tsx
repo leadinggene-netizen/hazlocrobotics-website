@@ -102,7 +102,7 @@ export default function ProductsHubPage() {
                 onClick={() => setActive(f.key)}
                 className={`rounded-lg px-5 py-2.5 text-sm font-semibold transition-all ${
                   active === f.key
-                    ? 'bg-teal-600 text-white shadow-md shadow-teal-600/20'
+                    ? 'bg-teal-600 text-ink-900 shadow-md shadow-teal-600/20'
                     : 'bg-ink-50 text-ink-600 hover:bg-ink-100'
                 }`}
               >

@@ -183,9 +183,9 @@ export default function ResourceDetailPage() {
 
               <Reveal delay={400}>
                 <div className="rounded-2xl bg-gradient-to-br from-teal-600 to-teal-700 p-6">
-                  <h3 className="font-display text-lg font-bold text-white">{t.questionsTitle}</h3>
-                  <p className="mt-2 text-sm text-teal-50">{t.questionsBody}</p>
-                  <Link to="/contact" className="mt-4 inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2 text-sm font-semibold text-teal-700 hover:bg-teal-50 transition-all">
+                  <h3 className="font-display text-lg font-bold text-ink-900">{t.questionsTitle}</h3>
+                  <p className="mt-2 text-sm text-ink-800">{t.questionsBody}</p>
+                  <Link to="/contact" className="mt-4 inline-flex items-center gap-2 rounded-lg bg-ink-900 px-4 py-2 text-sm font-semibold text-white hover:bg-ink-800 transition-all">
                     {t.contactUs} <ArrowRight size={14} />
                   </Link>
                 </div>

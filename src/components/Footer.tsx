@@ -130,10 +130,10 @@ export default function Footer() {
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-ink-400">{t.tagline}</p>
             <div className="mt-6 flex gap-3">
-              <a href="#" className="flex h-9 w-9 items-center justify-center rounded-lg bg-ink-800 text-ink-400 transition-colors hover:bg-teal-600 hover:text-white" aria-label="LinkedIn">
+              <a href="#" className="flex h-9 w-9 items-center justify-center rounded-lg bg-ink-800 text-ink-400 transition-colors hover:bg-teal-600 hover:text-ink-900" aria-label="LinkedIn">
                 <Linkedin size={18} />
               </a>
-              <a href="mailto:info@hazlocrobotics.com" className="flex h-9 w-9 items-center justify-center rounded-lg bg-ink-800 text-ink-400 transition-colors hover:bg-teal-600 hover:text-white" aria-label="Email">
+              <a href="mailto:info@hazlocrobotics.com" className="flex h-9 w-9 items-center justify-center rounded-lg bg-ink-800 text-ink-400 transition-colors hover:bg-teal-600 hover:text-ink-900" aria-label="Email">
                 <Mail size={18} />
               </a>
             </div>
