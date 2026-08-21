@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { Menu, X, Bot } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import Link from '@/i18n/LocaleLink';
 import NavLink from '@/i18n/LocaleNavLink';
 import LanguageToggle from '@/i18n/LanguageToggle';
+import HazlocMark from '@/components/HazlocMark';
 import { useLocale } from '@/i18n/useLocale';
 
 const navItemsByLocale = {
@@ -74,11 +75,15 @@ export default function Header() {
       <div className="container-x">
         <div className="flex h-16 items-center justify-between lg:h-20">
           <Link to="/" className="flex items-center gap-2.5 group">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-teal-600 text-white transition-transform group-hover:scale-105">
-              <Bot size={20} />
-            </div>
+            <HazlocMark
+              variant={scrolled ? 'primary' : 'reversed'}
+              className="h-9 w-9 transition-transform group-hover:scale-105"
+            />
             <span className={`font-display text-lg font-bold tracking-tight ${scrolled ? 'text-ink-900' : 'text-white'}`}>
-              Hazloc<span className="text-gold-500">Robotics</span>
+              HAZLOC
+              <span className={`ml-1.5 text-[10px] font-semibold tracking-[0.18em] align-middle ${scrolled ? 'text-gold-600' : 'text-gold-300'}`}>
+                ROBOTICS
+              </span>
             </span>
           </Link>
 

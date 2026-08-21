@@ -1,5 +1,6 @@
-import { Bot, Linkedin, Mail, MapPin, ArrowRight } from 'lucide-react';
+import { Linkedin, Mail, MapPin, ArrowRight } from 'lucide-react';
 import Link from '@/i18n/LocaleLink';
+import HazlocMark from '@/components/HazlocMark';
 import { useLocale } from '@/i18n/useLocale';
 
 const copy = {
@@ -119,11 +120,12 @@ export default function Footer() {
         <div className="grid gap-12 lg:grid-cols-4">
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-2.5">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-teal-600 text-white">
-                <Bot size={20} />
-              </div>
+              <HazlocMark variant="reversed" className="h-9 w-9" />
               <span className="font-display text-lg font-bold text-white">
-                Hazloc<span className="text-gold-500">Robotics</span>
+                HAZLOC
+                <span className="ml-1.5 text-[10px] font-semibold tracking-[0.18em] align-middle text-gold-400">
+                  ROBOTICS
+                </span>
               </span>
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-ink-400">{t.tagline}</p>
