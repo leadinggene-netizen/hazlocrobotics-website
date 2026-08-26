@@ -89,10 +89,10 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       'As one of the world\'s largest chemical producers, BASF operates processing environments where flammable, corrosive, and toxic conditions make manual inspection both hazardous and costly — the same class of Zone 1 risk that explosion-proof robotics is built to address.',
     solution:
-      'Qiteng Robotics counts BASF among its established international manufacturing and industrial partners, alongside operators such as PetroChina and Sinopec. Hazlocrobotics is proud to note BASF as one of the newest additions to that client relationship as of 2026, extending the line\'s deployment into the global chemical sector.',
+      'Sevnce Robotics counts BASF among its established international manufacturing and industrial partners, alongside operators such as PetroChina and Sinopec. Hazlocrobotics is proud to note BASF as one of the newest additions to that client relationship as of 2026, extending the line\'s deployment into the global chemical sector.',
     productsUsed: ['explosion-proof-wheeled-robot-l4s', 'explosion-proof-quadruped-robot', 'asset-tracking-center-software'],
     description:
-      'BASF joins Qiteng Robotics\' roster of major international chemical and energy operators as a new client in 2026 — full deployment details to follow as the engagement progresses.',
+      'BASF joins Sevnce Robotics\' roster of major international chemical and energy operators as a new client in 2026 — full deployment details to follow as the engagement progresses.',
   },
 ];
 

@@ -53,8 +53,8 @@ export const caseStudiesEs: Record<string, CaseStudyTranslation> = {
     challenge:
       'Como uno de los mayores productores químicos del mundo, BASF opera entornos de procesamiento donde las condiciones inflamables, corrosivas y tóxicas hacen que la inspección manual sea peligrosa y costosa — el mismo tipo de riesgo de Zona 1 que la robótica antiexplosión está diseñada para abordar.',
     solution:
-      'Qiteng Robotics cuenta con BASF entre sus socios industriales y de fabricación internacionales establecidos, junto con operadores como PetroChina y Sinopec. Hazlocrobotics se enorgullece de destacar a BASF como una de las incorporaciones más recientes a esa relación con clientes a partir de 2026, extendiendo el despliegue de la línea al sector químico global.',
+      'Sevnce Robotics cuenta con BASF entre sus socios industriales y de fabricación internacionales establecidos, junto con operadores como PetroChina y Sinopec. Hazlocrobotics se enorgullece de destacar a BASF como una de las incorporaciones más recientes a esa relación con clientes a partir de 2026, extendiendo el despliegue de la línea al sector químico global.',
     description:
-      'BASF se une a la lista de grandes operadores químicos y energéticos internacionales de Qiteng Robotics como nuevo cliente en 2026 — los detalles completos del despliegue se compartirán a medida que avance la colaboración.',
+      'BASF se une a la lista de grandes operadores químicos y energéticos internacionales de Sevnce Robotics como nuevo cliente en 2026 — los detalles completos del despliegue se compartirán a medida que avance la colaboración.',
   },
 };

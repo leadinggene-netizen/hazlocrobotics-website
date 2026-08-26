@@ -31,7 +31,7 @@ const copy = {
     directContact: 'Direct Contact',
     emailLabel: 'Email',
     naLaOffice: 'North & Latin America Office',
-    manufacturingPartner: 'Manufacturing Partner — Qiteng Robotics',
+    manufacturingPartner: 'Manufacturing Partner — Sevnce Robotics',
     whatHappensNext: 'What happens next?',
     steps: [
       'We review your message and route it to the right specialist.',
@@ -64,7 +64,7 @@ const copy = {
     directContact: 'Contact direct',
     emailLabel: 'Courriel',
     naLaOffice: 'Bureau Amérique du Nord et Amérique latine',
-    manufacturingPartner: 'Partenaire de fabrication — Qiteng Robotics',
+    manufacturingPartner: 'Partenaire de fabrication — Sevnce Robotics',
     whatHappensNext: 'Que se passe-t-il ensuite?',
     steps: [
       'Nous examinons votre message et l\'acheminons au bon spécialiste.',
@@ -97,7 +97,7 @@ const copy = {
     directContact: 'Contacto directo',
     emailLabel: 'Correo electrónico',
     naLaOffice: 'Oficina de Norteamérica y Latinoamérica',
-    manufacturingPartner: 'Socio de fabricación — Qiteng Robotics',
+    manufacturingPartner: 'Socio de fabricación — Sevnce Robotics',
     whatHappensNext: '¿Qué sucede después?',
     steps: [
       'Revisamos su mensaje y lo dirigimos al especialista adecuado.',
@@ -130,7 +130,7 @@ const copy = {
     directContact: 'Contato direto',
     emailLabel: 'E-mail',
     naLaOffice: 'Escritório da América do Norte e América Latina',
-    manufacturingPartner: 'Parceira de fabricação — Qiteng Robotics',
+    manufacturingPartner: 'Parceira de fabricação — Sevnce Robotics',
     whatHappensNext: 'O que acontece a seguir?',
     steps: [
       'Analisamos sua mensagem e a encaminhamos ao especialista certo.',
