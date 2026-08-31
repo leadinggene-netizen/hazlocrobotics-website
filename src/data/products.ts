@@ -1,4 +1,5 @@
 import x3StableImg from '@/assets/robots/x3-stable.jpg';
+import x5Img from '@/assets/robots/x5.jpg';
 import sgls04Img from '@/assets/robots/sgls-04.jpg';
 import sglsC3Img from '@/assets/robots/sgls-c3.jpg';
 import l4sImg from '@/assets/robots/l4-s.jpg';
@@ -50,6 +51,7 @@ export interface Product {
   features: string[];
   relatedCaseStudy?: string;
   relatedResource?: string;
+  datasheet?: string;
 }
 
 export const products: Product[] = [
@@ -87,6 +89,40 @@ export const products: Product[] = [
     ],
     relatedCaseStudy: 'iraq-basra-missan',
     relatedResource: 'ul-6260-explainer',
+  },
+  {
+    slug: 'explosion-proof-quadruped-robot-x5',
+    name: 'Explosion-Proof Quadruped Robot — X5',
+    shortName: 'X5',
+    tagline: 'Wheel-leg hybrid mobility built for the widest range of industrial terrain',
+    description:
+      'Constructed from aerospace-grade alloy for high strength and reliability, the X5 pairs an upgraded wheel-leg hybrid locomotion structure with a newly developed motion control algorithm, delivering superior mobility and terrain adaptability for mission-critical industrial environments. It is widely deployed across petroleum, chemical, natural gas, steel, and distillery facilities, supporting unmanned inspection and reconnaissance in deserts, forests, mountains, and other extreme terrain.',
+    category: 'explosion-proof',
+    keyword: 'explosion proof quadruped robot X5',
+    image: x5Img,
+    heroImage: x5Img,
+    specs: [
+      { label: 'Explosion Rating', value: 'Ex IIB T4 Gb' },
+      { label: 'Dimensions', value: '1200×750×950mm' },
+      { label: 'Weight', value: '125 kg' },
+      { label: 'Payload', value: '30 kg' },
+      { label: 'Mobility', value: 'Wheel-leg hybrid, 16+2 DOF, 0–2.0 m/s — climbs 30° slopes, 40cm obstacles' },
+      { label: 'Battery Life', value: '2 hours continuous patrol · 3h charge' },
+      { label: 'Sensors', value: 'LiDAR SLAM + IMU + visual positioning, ±5cm accuracy' },
+    ],
+    certifications: ['IIB T4 Gb', 'IP66', 'IECEx', 'ATEX'],
+    useCases: [
+      'Cross-terrain inspection across petroleum, natural gas, and chemical facilities',
+      'Steel plant and distillery site patrol',
+      'Reconnaissance across desert, forest, and mountainous terrain',
+    ],
+    features: [
+      'Wheel-leg hybrid locomotion with 16+2 degrees of freedom for complex terrain',
+      'Aerospace-grade alloy construction for high strength and reliability',
+      'Autonomous obstacle avoidance, emergency stop, and auto-charging',
+      'LiDAR SLAM navigation with IMU and visual positioning, ±5cm accuracy',
+    ],
+    datasheet: '/datasheets/explosion-proof-quadruped-robot-x5.pdf',
   },
   {
     slug: 'explosion-proof-wheeled-robot-sgls-04',
@@ -153,6 +189,7 @@ export const products: Product[] = [
       'Ex IIC — the highest gas group, including hydrogen atmospheres',
     ],
     relatedResource: 'iecex-vs-nec-guide',
+    datasheet: '/datasheets/explosion-proof-wheeled-robot-sgls-c3.pdf',
   },
   {
     slug: 'explosion-proof-wheeled-robot-l4s',
@@ -320,6 +357,7 @@ export const products: Product[] = [
       'Lift-and-pan gimbal with optical and acoustic imaging',
       'Rated for -20°C to 60°C operating environments',
     ],
+    datasheet: '/datasheets/explosion-proof-rail-robot-g7-power.pdf',
   },
   {
     slug: 'explosion-proof-rail-robot-g451',
@@ -386,6 +424,7 @@ export const products: Product[] = [
     ],
     relatedCaseStudy: 'iraq-basra-missan',
     relatedResource: 'iecex-vs-nec-guide',
+    datasheet: '/datasheets/explosion-proof-tracked-robot.pdf',
   },
   {
     slug: 'firefighting-reconnaissance-robot',
@@ -421,6 +460,7 @@ export const products: Product[] = [
     ],
     relatedCaseStudy: 'iraq-basra-missan',
     relatedResource: 'iecex-vs-nec-guide',
+    datasheet: '/datasheets/firefighting-reconnaissance-robot.pdf',
   },
   {
     slug: 'electric-wheeled-robot',

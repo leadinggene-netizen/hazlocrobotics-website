@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { ArrowRight, ArrowLeft, CheckCircle2, Activity } from 'lucide-react';
+import { ArrowRight, ArrowLeft, CheckCircle2, Activity, Download } from 'lucide-react';
 import Link from '@/i18n/LocaleLink';
 import { useLocale } from '@/i18n/useLocale';
 import PageHero from '@/components/PageHero';
@@ -24,6 +24,7 @@ const copy = {
     demoCta: 'Request Online Demo',
     allProducts: 'All Products',
     techSpecs: 'Technical Specifications',
+    downloadSpecSheet: 'Download Spec Sheet',
     useCases: 'Typical Use Cases',
     relatedCaseStudy: 'Related Case Study',
     readCaseStudy: 'Read Case Study',
@@ -45,6 +46,7 @@ const copy = {
     demoCta: 'Demande de démo en ligne',
     allProducts: 'Tous les produits',
     techSpecs: 'Spécifications techniques',
+    downloadSpecSheet: 'Télécharger la fiche technique',
     useCases: 'Cas d\'usage typiques',
     relatedCaseStudy: 'Étude de cas associée',
     readCaseStudy: 'Lire l\'étude de cas',
@@ -66,6 +68,7 @@ const copy = {
     demoCta: 'Solicitar demostración en línea',
     allProducts: 'Todos los productos',
     techSpecs: 'Especificaciones técnicas',
+    downloadSpecSheet: 'Descargar ficha técnica',
     useCases: 'Casos de uso típicos',
     relatedCaseStudy: 'Caso de éxito relacionado',
     readCaseStudy: 'Leer caso de éxito',
@@ -87,6 +90,7 @@ const copy = {
     demoCta: 'Solicitar demonstração online',
     allProducts: 'Todos os produtos',
     techSpecs: 'Especificações técnicas',
+    downloadSpecSheet: 'Baixar ficha técnica',
     useCases: 'Casos de uso típicos',
     relatedCaseStudy: 'Estudo de caso relacionado',
     readCaseStudy: 'Ler estudo de caso',
@@ -183,7 +187,19 @@ export default function ProductDetailPage() {
       <section className="bg-ink-50 py-16 lg:py-24">
         <div className="container-x">
           <Reveal>
-            <h2 className="font-display text-2xl font-bold text-ink-900 sm:text-3xl">{t.techSpecs}</h2>
+            <div className="flex flex-wrap items-center justify-between gap-4">
+              <h2 className="font-display text-2xl font-bold text-ink-900 sm:text-3xl">{t.techSpecs}</h2>
+              {product.datasheet && (
+                <a
+                  href={product.datasheet}
+                  download
+                  className="inline-flex items-center gap-2 rounded-lg border border-ink-200 bg-white px-4 py-2 text-sm font-semibold text-ink-700 transition-all hover:border-ink-300 hover:bg-ink-50"
+                >
+                  <Download size={16} />
+                  {t.downloadSpecSheet}
+                </a>
+              )}
+            </div>
           </Reveal>
           <Reveal delay={100}>
             <div className="mt-8 overflow-hidden rounded-2xl border border-ink-100 bg-white">

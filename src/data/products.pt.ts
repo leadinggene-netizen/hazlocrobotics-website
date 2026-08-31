@@ -28,6 +28,33 @@ export const productsPt: Record<string, ProductTranslation> = {
       'Algoritmos de cenário opcionais: detecção de pessoas, área de bombeamento, área de tanques, patrulha de tubulações',
     ],
   },
+  'explosion-proof-quadruped-robot-x5': {
+    name: 'Robô quadrúpede à prova de explosão — X5',
+    shortName: 'X5',
+    tagline: 'Mobilidade híbrida roda-perna projetada para a mais ampla variedade de terrenos industriais',
+    description:
+      'Construído em liga de grau aeroespacial para alta resistência e confiabilidade, o X5 combina uma estrutura de locomoção híbrida roda-perna aprimorada com um algoritmo de controle de movimento recém-desenvolvido, oferecendo mobilidade superior e adaptabilidade ao terreno para ambientes industriais críticos. É amplamente implantado em instalações de petróleo, química, gás natural, siderurgia e destilarias, apoiando inspeção e reconhecimento não tripulados em desertos, florestas, montanhas e outros terrenos extremos.',
+    specs: [
+      { label: 'Classificação à prova de explosão', value: 'Ex IIB T4 Gb' },
+      { label: 'Dimensões', value: '1200×750×950mm' },
+      { label: 'Peso', value: '125 kg' },
+      { label: 'Carga útil', value: '30 kg' },
+      { label: 'Mobilidade', value: 'Híbrido roda-perna, 16+2 graus de liberdade, 0–2,0 m/s — subidas de 30°, obstáculos de 40cm' },
+      { label: 'Autonomia', value: '2 horas de patrulha contínua · carga 3h' },
+      { label: 'Sensores', value: 'LiDAR SLAM + IMU + posicionamento visual, precisão ±5cm' },
+    ],
+    useCases: [
+      'Inspeção em todo tipo de terreno em instalações de petróleo, gás natural e química',
+      'Patrulha de siderúrgicas e sites de destilação',
+      'Reconhecimento em terreno desértico, florestal e montanhoso',
+    ],
+    features: [
+      'Locomoção híbrida roda-perna com 16+2 graus de liberdade para terrenos complexos',
+      'Construção em liga de grau aeroespacial para alta resistência e confiabilidade',
+      'Desvio autônomo de obstáculos, parada de emergência e carregamento automático',
+      'Navegação LiDAR SLAM com IMU e posicionamento visual, precisão ±5cm',
+    ],
+  },
   'explosion-proof-wheeled-robot-sgls-04': {
     name: 'Robô com rodas à prova de explosão — SGLS-04',
     shortName: 'SGLS-04',
