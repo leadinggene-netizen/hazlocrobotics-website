@@ -1,4 +1,4 @@
-import { Linkedin, Mail, MapPin, ArrowRight } from 'lucide-react';
+import { Linkedin, Mail, MapPin, Phone, ArrowRight } from 'lucide-react';
 import Link from '@/i18n/LocaleLink';
 import HazlocMark from '@/components/HazlocMark';
 import { useLocale } from '@/i18n/useLocale';
@@ -24,6 +24,7 @@ const copy = {
     partner: 'North & Latin America commercial partner',
     partnerLine2: 'for Sevnce Robotics',
     demoCta: 'Request Online Demo',
+    tollFree: 'Toll-Free',
     legalName: 'Hazloc Robotics Inc',
     rights: 'All rights reserved.',
     privacy: 'Privacy Policy',
@@ -50,6 +51,7 @@ const copy = {
     partner: 'Partenaire commercial pour l\'Amérique du Nord et l\'Amérique latine',
     partnerLine2: 'de Sevnce Robotics',
     demoCta: 'Demande de démo en ligne',
+    tollFree: 'Sans frais',
     legalName: 'Hazloc Robotics Inc',
     rights: 'Tous droits réservés.',
     privacy: 'Politique de confidentialité',
@@ -76,6 +78,7 @@ const copy = {
     partner: 'Socio comercial para Norteamérica y América Latina',
     partnerLine2: 'de Sevnce Robotics',
     demoCta: 'Solicitar una demo en línea',
+    tollFree: 'Línea gratuita',
     legalName: 'Hazloc Robotics Inc',
     rights: 'Todos los derechos reservados.',
     privacy: 'Política de privacidad',
@@ -102,6 +105,7 @@ const copy = {
     partner: 'Parceiro comercial para América do Norte e América Latina',
     partnerLine2: 'da Sevnce Robotics',
     demoCta: 'Solicitar uma demonstração online',
+    tollFree: 'Linha gratuita',
     legalName: 'Hazloc Robotics Inc',
     rights: 'Todos os direitos reservados.',
     privacy: 'Política de Privacidade',
@@ -165,6 +169,13 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-semibold text-white">{t.getInTouch}</h4>
             <ul className="mt-4 space-y-3 text-sm">
+              <li className="flex items-start gap-2">
+                <Phone size={16} className="mt-0.5 flex-shrink-0 text-teal-400" />
+                <span>
+                  <a href="tel:+18336575158" className="hover:text-gold-400 transition-colors">1-833-657-5158</a>
+                  <span className="text-ink-500"> ({t.tollFree})</span>
+                </span>
+              </li>
               <li className="flex items-start gap-2">
                 <Mail size={16} className="mt-0.5 flex-shrink-0 text-teal-400" />
                 <a href="mailto:info@hazlocrobotics.com" className="hover:text-gold-400 transition-colors">info@hazlocrobotics.com</a>
