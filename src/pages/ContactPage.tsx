@@ -327,7 +327,7 @@ export default function ContactPage() {
                       <MapPin size={20} className="flex-shrink-0 mt-0.5 text-teal-400" />
                       <div>
                         <p className="text-sm text-ink-400">{t.naLaOffice}</p>
-                        <p className="text-sm font-medium">Dover, Delaware, USA</p>
+                        <p className="text-sm font-medium">Montreal, Canada</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">

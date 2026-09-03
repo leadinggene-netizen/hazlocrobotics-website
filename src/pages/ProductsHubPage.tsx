@@ -13,7 +13,7 @@ const copy = {
   en: {
     eyebrow: 'Product Line',
     title: 'Inspection Robots & Fleet Software',
-    subtitle: 'Fourteen robots engineered for hazardous-location inspection — from explosion-proof quadrupeds and wheeled robots to rail-mounted systems and the software that unifies your fleet.',
+    subtitle: 'Fifteen robots engineered for hazardous-location inspection — from explosion-proof quadrupeds and wheeled robots to rail-mounted systems and the software that unifies your fleet.',
     filters: [
       { key: 'all' as Filter, label: 'All Products' },
       { key: 'explosion-proof' as Filter, label: 'Explosion-Proof' },
@@ -28,7 +28,7 @@ const copy = {
   fr: {
     eyebrow: 'Gamme de produits',
     title: 'Robots d\'inspection et logiciel de flotte',
-    subtitle: 'Quatorze robots conçus pour l\'inspection en emplacement dangereux — des quadrupèdes et robots à roues antidéflagrants aux systèmes sur rail et au logiciel qui unifie votre flotte.',
+    subtitle: 'Quinze robots conçus pour l\'inspection en emplacement dangereux — des quadrupèdes et robots à roues antidéflagrants aux systèmes sur rail et au logiciel qui unifie votre flotte.',
     filters: [
       { key: 'all' as Filter, label: 'Tous les produits' },
       { key: 'explosion-proof' as Filter, label: 'Antidéflagrant' },
@@ -43,7 +43,7 @@ const copy = {
   es: {
     eyebrow: 'Línea de productos',
     title: 'Robots de inspección y software de flota',
-    subtitle: 'Catorce robots diseñados para la inspección en ubicaciones peligrosas — desde cuadrúpedos y robots con ruedas antiexplosión hasta sistemas montados sobre rieles y el software que unifica su flota.',
+    subtitle: 'Quince robots diseñados para la inspección en ubicaciones peligrosas — desde cuadrúpedos y robots con ruedas antiexplosión hasta sistemas montados sobre rieles y el software que unifica su flota.',
     filters: [
       { key: 'all' as Filter, label: 'Todos los productos' },
       { key: 'explosion-proof' as Filter, label: 'Antiexplosión' },
@@ -58,7 +58,7 @@ const copy = {
   pt: {
     eyebrow: 'Linha de produtos',
     title: 'Robôs de inspeção e software de frota',
-    subtitle: 'Catorze robôs projetados para inspeção em locais perigosos — de quadrúpedes e robôs com rodas à prova de explosão a sistemas montados em trilhos e o software que unifica sua frota.',
+    subtitle: 'Quinze robôs projetados para inspeção em locais perigosos — de quadrúpedes e robôs com rodas à prova de explosão a sistemas montados em trilhos e o software que unifica sua frota.',
     filters: [
       { key: 'all' as Filter, label: 'Todos os produtos' },
       { key: 'explosion-proof' as Filter, label: 'À prova de explosão' },

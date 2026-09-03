@@ -13,6 +13,9 @@ import CaseStudiesHubPage from '@/pages/CaseStudiesHubPage';
 import CaseStudyDetailPage from '@/pages/CaseStudyDetailPage';
 import AboutPage from '@/pages/AboutPage';
 import ContactPage from '@/pages/ContactPage';
+import FaqPage from '@/pages/FaqPage';
+import PrivacyPolicyPage from '@/pages/PrivacyPolicyPage';
+import TermsPage from '@/pages/TermsPage';
 
 // Every route is declared once per locale: plain English path, plus /fr/*,
 // /es/*, /pt/*. Page components detect which locale they're rendering via
@@ -34,6 +37,9 @@ const routeDefs: { path: string; element: JSX.Element }[] = [
   { path: '/case-studies/:slug', element: <CaseStudyDetailPage /> },
   { path: '/about', element: <AboutPage /> },
   { path: '/contact', element: <ContactPage /> },
+  { path: '/faq', element: <FaqPage /> },
+  { path: '/privacy', element: <PrivacyPolicyPage /> },
+  { path: '/terms', element: <TermsPage /> },
 ];
 
 export default function App() {

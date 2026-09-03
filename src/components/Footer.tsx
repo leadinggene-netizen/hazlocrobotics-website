@@ -20,6 +20,7 @@ const copy = {
     caseStudies: 'Case Studies',
     resources: 'Resources',
     contact: 'Contact',
+    faq: 'FAQ',
     getInTouch: 'Get in Touch',
     partner: 'North & Latin America commercial partner',
     partnerLine2: 'for Sevnce Robotics',
@@ -28,8 +29,7 @@ const copy = {
     legalName: 'Hazloc Robotics Inc',
     rights: 'All rights reserved.',
     privacy: 'Privacy Policy',
-    terms: 'Terms of Service',
-    cookies: 'Cookie Policy',
+    terms: 'Terms & Conditions',
   },
   fr: {
     tagline:
@@ -47,6 +47,7 @@ const copy = {
     caseStudies: 'Études de cas',
     resources: 'Ressources',
     contact: 'Contact',
+    faq: 'FAQ',
     getInTouch: 'Nous joindre',
     partner: 'Partenaire commercial pour l\'Amérique du Nord et l\'Amérique latine',
     partnerLine2: 'de Sevnce Robotics',
@@ -55,8 +56,7 @@ const copy = {
     legalName: 'Hazloc Robotics Inc',
     rights: 'Tous droits réservés.',
     privacy: 'Politique de confidentialité',
-    terms: 'Conditions d\'utilisation',
-    cookies: 'Politique de témoins',
+    terms: 'Conditions générales',
   },
   es: {
     tagline:
@@ -74,6 +74,7 @@ const copy = {
     caseStudies: 'Casos de éxito',
     resources: 'Recursos',
     contact: 'Contacto',
+    faq: 'Preguntas frecuentes',
     getInTouch: 'Contáctenos',
     partner: 'Socio comercial para Norteamérica y América Latina',
     partnerLine2: 'de Sevnce Robotics',
@@ -82,8 +83,7 @@ const copy = {
     legalName: 'Hazloc Robotics Inc',
     rights: 'Todos los derechos reservados.',
     privacy: 'Política de privacidad',
-    terms: 'Términos de servicio',
-    cookies: 'Política de cookies',
+    terms: 'Términos y Condiciones',
   },
   pt: {
     tagline:
@@ -101,6 +101,7 @@ const copy = {
     caseStudies: 'Casos de sucesso',
     resources: 'Recursos',
     contact: 'Contato',
+    faq: 'Perguntas frequentes',
     getInTouch: 'Fale conosco',
     partner: 'Parceiro comercial para América do Norte e América Latina',
     partnerLine2: 'da Sevnce Robotics',
@@ -109,8 +110,7 @@ const copy = {
     legalName: 'Hazloc Robotics Inc',
     rights: 'Todos os direitos reservados.',
     privacy: 'Política de Privacidade',
-    terms: 'Termos de Serviço',
-    cookies: 'Política de Cookies',
+    terms: 'Termos e Condições',
   },
 };
 
@@ -163,6 +163,7 @@ export default function Footer() {
               <li><Link to="/case-studies" className="hover:text-gold-400 transition-colors">{t.caseStudies}</Link></li>
               <li><Link to="/resources" className="hover:text-gold-400 transition-colors">{t.resources}</Link></li>
               <li><Link to="/contact" className="hover:text-gold-400 transition-colors">{t.contact}</Link></li>
+              <li><Link to="/faq" className="hover:text-gold-400 transition-colors">{t.faq}</Link></li>
             </ul>
           </div>
 
@@ -196,9 +197,8 @@ export default function Footer() {
             © {new Date().getFullYear()} {t.legalName}. {t.rights}
           </p>
           <div className="flex gap-6 text-xs text-ink-500">
-            <a href="#" className="hover:text-ink-300 transition-colors">{t.privacy}</a>
-            <a href="#" className="hover:text-ink-300 transition-colors">{t.terms}</a>
-            <a href="#" className="hover:text-ink-300 transition-colors">{t.cookies}</a>
+            <Link to="/privacy" className="hover:text-ink-300 transition-colors">{t.privacy}</Link>
+            <Link to="/terms" className="hover:text-ink-300 transition-colors">{t.terms}</Link>
           </div>
         </div>
       </div>

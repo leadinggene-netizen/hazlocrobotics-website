@@ -15,7 +15,7 @@ const copy = {
     missionBody2: 'Hazloc Robotics Inc. is the North & Latin America commercial partner for Sevnce Robotics\' explosion-proof inspection robot line, combining regional sales, compliance, and site-support expertise with Sevnce\'s robotics engineering and manufacturing capability. Our robots are deployed in 40+ countries across oil & gas, power generation, marine, mining, and emergency response.',
     stats: [
       { value: '40+', label: 'Countries Deployed' },
-      { value: '14+', label: 'Robot Models' },
+      { value: '15+', label: 'Robot Models' },
       { value: 'IIC T6', label: 'Highest Ex Rating' },
       { value: '24/7', label: 'Autonomous Patrol' },
     ],
@@ -28,9 +28,9 @@ const copy = {
       { icon: Globe, title: 'Global deployment, local support', desc: 'Deployed in 40+ countries with on-the-ground support teams in the Middle East, Southeast Asia, and North America.' },
     ],
     presenceTitle: 'Global Presence',
-    presenceBody: 'Hazloc Robotics Inc. handles sales, compliance, and support for North and Latin America from Dover, Delaware, while Sevnce Robotics — our manufacturing partner — engineers and builds the robot line in Chongqing, China. Our on-the-ground support teams serve operators across the Middle East, Southeast Asia, and North America.',
+    presenceBody: 'Hazloc Robotics Inc. handles sales, compliance, and support for North and Latin America from Montreal, Canada, while Sevnce Robotics — our manufacturing partner — engineers and builds the robot line in Chongqing, China. Our on-the-ground support teams serve operators across the Middle East, Southeast Asia, and North America.',
     offices: [
-      { city: 'Dover, Delaware', role: 'North & Latin America Office', desc: 'Business operations, sales, and compliance for North and Latin American markets.' },
+      { city: 'Montreal, Canada', role: 'North & Latin America Office', desc: 'Business operations, sales, and compliance for North and Latin American markets.' },
       { city: 'Chongqing, China', role: 'Manufacturing Partner — Sevnce Robotics', desc: 'Robotics engineering, product development, and manufacturing quality control.' },
       { city: 'Basra, Iraq', role: 'Middle East Operations', desc: 'On-site deployment and support for oil & gas operators in the region.' },
     ],
@@ -48,7 +48,7 @@ const copy = {
     missionBody2: 'Hazloc Robotics Inc. est le partenaire commercial pour l\'Amérique du Nord et l\'Amérique latine de la gamme de robots d\'inspection antidéflagrants de Sevnce Robotics, combinant expertise régionale en vente, conformité et soutien de site avec l\'ingénierie robotique et la capacité de fabrication de Sevnce. Nos robots sont déployés dans plus de 40 pays dans les secteurs pétrolier et gazier, de la production d\'électricité, maritime, minier et de l\'intervention d\'urgence.',
     stats: [
       { value: '40+', label: 'Pays déployés' },
-      { value: '14+', label: 'Modèles de robots' },
+      { value: '15+', label: 'Modèles de robots' },
       { value: 'IIC T6', label: 'Certification Ex la plus élevée' },
       { value: '24/7', label: 'Patrouille autonome' },
     ],
@@ -61,9 +61,9 @@ const copy = {
       { icon: Globe, title: 'Déploiement mondial, soutien local', desc: 'Déployés dans plus de 40 pays avec des équipes de soutien sur le terrain au Moyen-Orient, en Asie du Sud-Est et en Amérique du Nord.' },
     ],
     presenceTitle: 'Présence mondiale',
-    presenceBody: 'Hazloc Robotics Inc. gère les ventes, la conformité et le soutien pour l\'Amérique du Nord et l\'Amérique latine depuis Dover, au Delaware, tandis que Sevnce Robotics — notre partenaire de fabrication — conçoit et construit la gamme de robots à Chongqing, en Chine. Nos équipes de soutien sur le terrain servent les opérateurs au Moyen-Orient, en Asie du Sud-Est et en Amérique du Nord.',
+    presenceBody: 'Hazloc Robotics Inc. gère les ventes, la conformité et le soutien pour l\'Amérique du Nord et l\'Amérique latine depuis Montréal, au Canada, tandis que Sevnce Robotics — notre partenaire de fabrication — conçoit et construit la gamme de robots à Chongqing, en Chine. Nos équipes de soutien sur le terrain servent les opérateurs au Moyen-Orient, en Asie du Sud-Est et en Amérique du Nord.',
     offices: [
-      { city: 'Dover, Delaware', role: 'Bureau Amérique du Nord et Amérique latine', desc: 'Opérations commerciales, ventes et conformité pour les marchés d\'Amérique du Nord et d\'Amérique latine.' },
+      { city: 'Montréal, Canada', role: 'Bureau Amérique du Nord et Amérique latine', desc: 'Opérations commerciales, ventes et conformité pour les marchés d\'Amérique du Nord et d\'Amérique latine.' },
       { city: 'Chongqing, Chine', role: 'Partenaire de fabrication — Sevnce Robotics', desc: 'Ingénierie robotique, développement de produits et contrôle de la qualité de fabrication.' },
       { city: 'Basra, Irak', role: 'Opérations Moyen-Orient', desc: 'Déploiement et soutien sur site pour les opérateurs pétroliers et gaziers de la région.' },
     ],
@@ -81,7 +81,7 @@ const copy = {
     missionBody2: 'Hazloc Robotics Inc. es el socio comercial para Norteamérica y Latinoamérica de la línea de robots de inspección antiexplosión de Sevnce Robotics, combinando experiencia regional en ventas, cumplimiento normativo y soporte en sitio con la ingeniería robótica y capacidad de fabricación de Sevnce. Nuestros robots están desplegados en más de 40 países en petróleo y gas, generación de energía, marítimo, minería y respuesta de emergencia.',
     stats: [
       { value: '40+', label: 'Países con despliegue' },
-      { value: '14+', label: 'Modelos de robots' },
+      { value: '15+', label: 'Modelos de robots' },
       { value: 'IIC T6', label: 'Clasificación Ex más alta' },
       { value: '24/7', label: 'Patrullaje autónomo' },
     ],
@@ -94,9 +94,9 @@ const copy = {
       { icon: Globe, title: 'Despliegue global, soporte local', desc: 'Desplegados en más de 40 países con equipos de soporte en el terreno en Medio Oriente, el sudeste asiático y Norteamérica.' },
     ],
     presenceTitle: 'Presencia global',
-    presenceBody: 'Hazloc Robotics Inc. gestiona ventas, cumplimiento normativo y soporte para Norteamérica y Latinoamérica desde Dover, Delaware, mientras que Sevnce Robotics — nuestro socio de fabricación — diseña y construye la línea de robots en Chongqing, China. Nuestros equipos de soporte en terreno atienden a operadores en Medio Oriente, el sudeste asiático y Norteamérica.',
+    presenceBody: 'Hazloc Robotics Inc. gestiona ventas, cumplimiento normativo y soporte para Norteamérica y Latinoamérica desde Montreal, Canadá, mientras que Sevnce Robotics — nuestro socio de fabricación — diseña y construye la línea de robots en Chongqing, China. Nuestros equipos de soporte en terreno atienden a operadores en Medio Oriente, el sudeste asiático y Norteamérica.',
     offices: [
-      { city: 'Dover, Delaware', role: 'Oficina de Norteamérica y Latinoamérica', desc: 'Operaciones comerciales, ventas y cumplimiento normativo para los mercados de Norteamérica y Latinoamérica.' },
+      { city: 'Montreal, Canada', role: 'Oficina de Norteamérica y Latinoamérica', desc: 'Operaciones comerciales, ventas y cumplimiento normativo para los mercados de Norteamérica y Latinoamérica.' },
       { city: 'Chongqing, China', role: 'Socio de fabricación — Sevnce Robotics', desc: 'Ingeniería robótica, desarrollo de productos y control de calidad de fabricación.' },
       { city: 'Basora, Irak', role: 'Operaciones en Medio Oriente', desc: 'Despliegue y soporte en sitio para operadores de petróleo y gas en la región.' },
     ],
@@ -114,7 +114,7 @@ const copy = {
     missionBody2: 'A Hazloc Robotics Inc. é a parceira comercial para a América do Norte e América Latina da linha de robôs de inspeção à prova de explosão da Sevnce Robotics, combinando experiência regional em vendas, conformidade e suporte no local com a engenharia robótica e capacidade de fabricação da Sevnce. Nossos robôs são implantados em mais de 40 países nos setores de petróleo e gás, geração de energia, marítimo, mineração e resposta a emergências.',
     stats: [
       { value: '40+', label: 'Países com implantação' },
-      { value: '14+', label: 'Modelos de robôs' },
+      { value: '15+', label: 'Modelos de robôs' },
       { value: 'IIC T6', label: 'Classificação Ex mais alta' },
       { value: '24/7', label: 'Patrulhamento autônomo' },
     ],
@@ -127,9 +127,9 @@ const copy = {
       { icon: Globe, title: 'Implantação global, suporte local', desc: 'Implantados em mais de 40 países com equipes de suporte em campo no Oriente Médio, Sudeste Asiático e América do Norte.' },
     ],
     presenceTitle: 'Presença global',
-    presenceBody: 'A Hazloc Robotics Inc. gerencia vendas, conformidade e suporte para a América do Norte e América Latina a partir de Dover, Delaware, enquanto a Sevnce Robotics — nossa parceira de fabricação — projeta e constrói a linha de robôs em Chongqing, China. Nossas equipes de suporte em campo atendem operadores no Oriente Médio, Sudeste Asiático e América do Norte.',
+    presenceBody: 'A Hazloc Robotics Inc. gerencia vendas, conformidade e suporte para a América do Norte e América Latina a partir de Montreal, Canadá, enquanto a Sevnce Robotics — nossa parceira de fabricação — projeta e constrói a linha de robôs em Chongqing, China. Nossas equipes de suporte em campo atendem operadores no Oriente Médio, Sudeste Asiático e América do Norte.',
     offices: [
-      { city: 'Dover, Delaware', role: 'Escritório da América do Norte e América Latina', desc: 'Operações comerciais, vendas e conformidade para os mercados da América do Norte e América Latina.' },
+      { city: 'Montreal, Canada', role: 'Escritório da América do Norte e América Latina', desc: 'Operações comerciais, vendas e conformidade para os mercados da América do Norte e América Latina.' },
       { city: 'Chongqing, China', role: 'Parceira de fabricação — Sevnce Robotics', desc: 'Engenharia robótica, desenvolvimento de produtos e controle de qualidade de fabricação.' },
       { city: 'Basra, Iraque', role: 'Operações no Oriente Médio', desc: 'Implantação e suporte no local para operadores de petróleo e gás na região.' },
     ],
