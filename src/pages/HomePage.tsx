@@ -16,9 +16,24 @@ import { getLocalizedIndustries } from '@/data/industries';
 import { getLocalizedCaseStudies } from '@/data/caseStudies';
 import { getLocalizedResources } from '@/data/resources';
 import heroBanner from '@/assets/banner.jpg';
+import PromoCarousel, { type PromoSlide } from '@/components/PromoCarousel';
 
 const copy = {
   en: {
+    promo: {
+      slides: [
+        {
+          id: 'ca-sept-2026-poc',
+          badge: 'Canada — September Offer',
+          headline: 'Free First Month — Canada POC Pilot Program',
+          subtext:
+            'Put a hazardous-area inspection robot to work on your site. Only 10 pilot slots available across Canada this September — first month free when you start a Proof-of-Concept pilot.',
+          primaryCta: { label: 'Reserve Your Pilot Slot', to: '/contact' },
+          secondaryCta: { label: 'See how it works', to: '/build' },
+          finePrint: 'Offer valid through September 30, 2026. Limited availability.',
+        },
+      ] as PromoSlide[],
+    },
     certBadge: 'IECEx & ATEX Certified · UL 6260 Roadmap',
     heroTitle: 'Explosion-Proof Inspection Robots for the World\'s Most Hazardous Environments',
     heroSubtitle:
@@ -74,6 +89,20 @@ const copy = {
     seeCaseStudies: 'See Case Studies',
   },
   fr: {
+    promo: {
+      slides: [
+        {
+          id: 'ca-sept-2026-poc',
+          badge: 'Canada — Offre de septembre',
+          headline: 'Premier mois gratuit — Programme pilote POC Canada',
+          subtext:
+            'Mettez un robot d\'inspection en zone dangereuse au travail sur votre site. Seulement 10 places pilotes disponibles à travers le Canada ce mois de septembre — premier mois gratuit pour tout projet pilote de démonstration de faisabilité (POC).',
+          primaryCta: { label: 'Réservez votre place pilote', to: '/contact' },
+          secondaryCta: { label: 'Voir comment ça fonctionne', to: '/build' },
+          finePrint: 'Offre valide jusqu\'au 30 septembre 2026. Disponibilité limitée.',
+        },
+      ] as PromoSlide[],
+    },
     certBadge: 'Certifié IECEx et ATEX · Feuille de route UL 6260',
     heroTitle: 'Robots d\'inspection antidéflagrants pour les environnements les plus dangereux au monde',
     heroSubtitle:
@@ -129,6 +158,7 @@ const copy = {
     seeCaseStudies: 'Voir les études de cas',
   },
   es: {
+    promo: { slides: [] as PromoSlide[] },
     certBadge: 'Certificado IECEx y ATEX · Hoja de ruta UL 6260',
     heroTitle: 'Robots de inspección antiexplosión para los entornos más peligrosos del mundo',
     heroSubtitle:
@@ -184,6 +214,7 @@ const copy = {
     seeCaseStudies: 'Ver casos de éxito',
   },
   pt: {
+    promo: { slides: [] as PromoSlide[] },
     certBadge: 'Certificado IECEx e ATEX · Roteiro UL 6260',
     heroTitle: 'Robôs de inspeção à prova de explosão para os ambientes mais perigosos do mundo',
     heroSubtitle:
@@ -278,8 +309,13 @@ export default function HomePage() {
 
   return (
     <>
+      <PromoCarousel slides={t.promo.slides} storageKey="hazloc-promo-ca-sept-2026-poc" />
+
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-ink-950">
+      <section
+        style={{ marginTop: 'var(--promo-bar-height, 0px)' }}
+        className="relative min-h-screen flex items-center overflow-hidden bg-ink-950"
+      >
         <div className="absolute inset-0">
           <img
             src={heroBanner}

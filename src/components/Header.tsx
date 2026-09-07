@@ -68,7 +68,8 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+      style={{ top: 'var(--promo-bar-height, 0px)' }}
+      className={`fixed inset-x-0 z-50 transition-all duration-300 ${
         scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
       }`}
     >
