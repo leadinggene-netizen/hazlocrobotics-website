@@ -31,11 +31,33 @@ jobs:
         run: npm run build
 
       - name: Deploy to VPS
-        uses: burnett01/rsync-deployments@7.0.1
-        with:
-          switches: -avzr --delete
-          path: dist/
-          remote_path: ${{ secrets.VPS_PATH }}
-          remote_host: ${{ secrets.VPS_HOST }}
-          remote_user: ${{ secrets.VPS_USER }}
-          remote_key: ${{ secrets.VPS_SSH_KEY }}
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_USER: ${{ secrets.VPS_USER }}
+          VPS_PATH: ${{ secrets.VPS_PATH }}
+        run: |
+          set -e
+          mkdir -p ~/.ssh
+          echo "${{ secrets.VPS_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H "$VPS_HOST" >> ~/.ssh/known_hosts 2>/dev/null
+
+          # The Hostinger VPS occasionally drops the SSH connection before it
+          # even reaches sshd (no server-side log entry), which manifests as
+          # rsync hanging for ~2-3 minutes before the whole job times out.
+          # ConnectTimeout forces a fast fail per attempt instead, so a few
+          # retries fit well within the time one hung attempt used to take.
+          max_attempts=4
+          attempt=1
+          until rsync -avzr --delete \
+            -e "ssh -i ~/.ssh/deploy_key -o ConnectTimeout=15 -o StrictHostKeyChecking=yes" \
+            dist/ "$VPS_USER@$VPS_HOST:$VPS_PATH"
+          do
+            if [ "$attempt" -ge "$max_attempts" ]; then
+              echo "rsync failed after $max_attempts attempts"
+              exit 1
+            fi
+            echo "rsync attempt $attempt failed, retrying in 10s..."
+            attempt=$((attempt + 1))
+            sleep 10
+          done
