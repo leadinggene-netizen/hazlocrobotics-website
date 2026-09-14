@@ -150,19 +150,19 @@ export default function Footer() {
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-ink-400">{t.tagline}</p>
             <div className="mt-6 flex gap-3">
-              <a href="#" className="flex h-9 w-9 items-center justify-center rounded-lg bg-ink-800 text-ink-400 transition-colors hover:bg-teal-600 hover:text-ink-900" aria-label="LinkedIn">
+              <a href="#" className="flex h-9 w-9 items-center justify-center rounded-lg bg-teal-600 text-ink-900 transition-all hover:bg-teal-500 hover:shadow-lg hover:shadow-teal-600/30" aria-label="LinkedIn">
                 <Linkedin size={18} />
               </a>
-              <a href="https://www.youtube.com/@hazlocrobotics" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-lg bg-ink-800 text-ink-400 transition-colors hover:bg-teal-600 hover:text-ink-900" aria-label="YouTube">
+              <a href="https://www.youtube.com/@hazlocrobotics" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-lg bg-teal-600 text-ink-900 transition-all hover:bg-teal-500 hover:shadow-lg hover:shadow-teal-600/30" aria-label="YouTube">
                 <Youtube size={18} />
               </a>
-              <a href="https://x.com/hazlocrobotics" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-lg bg-ink-800 text-ink-400 transition-colors hover:bg-teal-600 hover:text-ink-900" aria-label="X">
+              <a href="https://x.com/hazlocrobotics" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-lg bg-teal-600 text-ink-900 transition-all hover:bg-teal-500 hover:shadow-lg hover:shadow-teal-600/30" aria-label="X">
                 <XIcon size={18} />
               </a>
-              <a href="https://www.reddit.com/user/hazloc_robotics/" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-lg bg-ink-800 text-ink-400 transition-colors hover:bg-teal-600 hover:text-ink-900" aria-label="Reddit">
+              <a href="https://www.reddit.com/user/hazloc_robotics/" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-lg bg-teal-600 text-ink-900 transition-all hover:bg-teal-500 hover:shadow-lg hover:shadow-teal-600/30" aria-label="Reddit">
                 <RedditIcon size={18} />
               </a>
-              <a href="mailto:info@hazlocrobotics.com" className="flex h-9 w-9 items-center justify-center rounded-lg bg-ink-800 text-ink-400 transition-colors hover:bg-teal-600 hover:text-ink-900" aria-label="Email">
+              <a href="mailto:info@hazlocrobotics.com" className="flex h-9 w-9 items-center justify-center rounded-lg bg-teal-600 text-ink-900 transition-all hover:bg-teal-500 hover:shadow-lg hover:shadow-teal-600/30" aria-label="Email">
                 <Mail size={18} />
               </a>
             </div>
