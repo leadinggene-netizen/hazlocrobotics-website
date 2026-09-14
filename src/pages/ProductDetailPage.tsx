@@ -5,6 +5,7 @@ import { useLocale } from '@/i18n/useLocale';
 import PageHero from '@/components/PageHero';
 import Reveal from '@/components/Reveal';
 import ProductCard from '@/components/ProductCard';
+import YouTubeEmbed from '@/components/YouTubeEmbed';
 import { getLocalizedProduct, getLocalizedProducts } from '@/data/products';
 import { getLocalizedCaseStudies } from '@/data/caseStudies';
 import { getLocalizedResources } from '@/data/resources';
@@ -151,7 +152,15 @@ export default function ProductDetailPage() {
           <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
             <Reveal>
               <div className="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-xl">
-                <img src={product.image} alt={product.name} className="h-full w-full object-cover" />
+                {product.video ? (
+                  <YouTubeEmbed
+                    videoId={locale === 'fr' ? product.video.fr : product.video.en}
+                    posterSrc={product.image}
+                    title={product.name}
+                  />
+                ) : (
+                  <img src={product.image} alt={product.name} className="h-full w-full object-cover" />
+                )}
               </div>
             </Reveal>
             <Reveal delay={150}>

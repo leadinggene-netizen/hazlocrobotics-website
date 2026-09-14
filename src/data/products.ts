@@ -52,6 +52,7 @@ export interface Product {
   relatedCaseStudy?: string;
   relatedResource?: string;
   datasheet?: string;
+  video?: { en: string; fr: string };
 }
 
 export const products: Product[] = [
@@ -89,6 +90,7 @@ export const products: Product[] = [
     ],
     relatedCaseStudy: 'iraq-basra-missan',
     relatedResource: 'ul-6260-explainer',
+    video: { en: 'JEpUMfi3cHc', fr: 'MzBFG9hM8fg' },
   },
   {
     slug: 'explosion-proof-quadruped-robot-x5',
@@ -123,6 +125,7 @@ export const products: Product[] = [
       'LiDAR SLAM navigation with IMU and visual positioning, ±5cm accuracy',
     ],
     datasheet: '/datasheets/explosion-proof-quadruped-robot-x5.pdf',
+    video: { en: 'Km-FTBYU0K8', fr: 'HaJWKp6tFyk' },
   },
   {
     slug: 'explosion-proof-wheeled-robot-sgls-04',
@@ -461,6 +464,7 @@ export const products: Product[] = [
     relatedCaseStudy: 'iraq-basra-missan',
     relatedResource: 'iecex-vs-nec-guide',
     datasheet: '/datasheets/firefighting-reconnaissance-robot.pdf',
+    video: { en: 'qXnDZBDNR80', fr: 'DIIOJkQ1tbo' },
   },
   {
     slug: 'electric-wheeled-robot',
