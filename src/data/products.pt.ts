@@ -292,16 +292,16 @@ export const productsPt: Record<string, ProductTranslation> = {
     ],
   },
   'firefighting-reconnaissance-robot': {
-    name: 'Robô à prova de explosão de reconhecimento de incêndio',
+    name: 'Robô à prova de explosão de reconhecimento de incêndio — QT04',
     shortName: 'Robô de incêndio',
     tagline: 'Reconhecimento e intervenção de linha de frente para equipes de emergência e bombeiros',
     description:
       'Combinando funções de combate a incêndio e reconhecimento, este robô com esteiras transporta um canhão de água de monitoramento de incêndio e dispositivos de detecção ambiental, com um sistema de pulverização de cortina dupla de água e resfriamento que lhe permite entrar em áreas perigosas no lugar dos bombeiros. Seu chassi com esteiras oferece forte proteção à prova de explosão, capacidade de transpor obstáculos e de reboque, com rotação, inclinação e varredura do canhão controladas remotamente em vários modos de pulverização — alternando livremente entre água e espuma.',
     specs: [
-      { label: 'Classificação à prova de explosão', value: 'Ex IIB T4 Gb' },
-      { label: 'Dimensões', value: '1800×1100×1500mm' },
-      { label: 'Peso', value: '780 kg' },
-      { label: 'Mobilidade', value: 'Esteiras duplas, tração nas quatro rodas — subidas de 70%, obstáculos de 15cm, vau de 20cm' },
+      { label: 'Classificação à prova de explosão', value: 'Ex IIB T6 Gb' },
+      { label: 'Dimensões', value: '1700×900×1250mm' },
+      { label: 'Peso', value: '850 kg' },
+      { label: 'Mobilidade', value: 'Esteiras duplas, tração nas quatro rodas — subidas de 90%, obstáculos de 30cm, vau de 50cm' },
       { label: 'Canhão de água', value: 'Vazão de 80 L/s · alcance de 80m' },
       { label: 'Autonomia', value: '5h de pulverização contínua / 1,5h de deslocamento contínuo · carga 6h' },
       { label: 'Alcance do controle remoto', value: '1000m' },

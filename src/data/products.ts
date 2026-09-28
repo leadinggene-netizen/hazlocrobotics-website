@@ -3,11 +3,13 @@ import x5Img from '@/assets/robots/x5.jpg';
 import sgls04Img from '@/assets/robots/sgls-04.jpg';
 import sglsC3Img from '@/assets/robots/sgls-c3.jpg';
 import l4sImg from '@/assets/robots/l4-s.jpg';
+import l3Img from '@/assets/robots/l3.png';
 import l7TwisterImg from '@/assets/robots/l7-twister.jpg';
 import l7FireImg from '@/assets/robots/l7-fire.jpg';
 import g7ModuleImg from '@/assets/robots/g7-module.jpg';
 import g7PowerImg from '@/assets/robots/g7-power.jpg';
 import g451Img from '@/assets/robots/g451.jpg';
+import krxg32cImg from '@/assets/robots/krxg32c.png';
 import d071Img from '@/assets/robots/d071.jpg';
 import firefightingImg from '@/assets/robots/firefighting-reconnaissance.jpg';
 import electricWheeledImg from '@/assets/robots/electric-wheeled.jpg';
@@ -56,42 +58,6 @@ export interface Product {
 }
 
 export const products: Product[] = [
-  {
-    slug: 'explosion-proof-quadruped-robot',
-    name: 'Explosion-Proof Quadruped Robot — X3 Stable',
-    shortName: 'X3 Stable',
-    tagline: 'Agile legged inspection for complex, cluttered hazardous zones',
-    description:
-      'Innovatively combining multiple explosion-proof design methods, the X3 Stable delivers comprehensive performance across explosion protection, lightweight design, and reliability. Equipped with more than 500 intelligent algorithms, adaptive learning, and high-precision image acquisition and perception, it navigates stairs, steps, gaps, obstacles, and confined spaces that wheeled robots cannot reach — and extends beyond inspection to reconnaissance, material transport, and rescue support in emergency response scenarios.',
-    category: 'explosion-proof',
-    keyword: 'explosion proof quadruped robot',
-    image: x3StableImg,
-    heroImage: x3StableImg,
-    specs: [
-      { label: 'Explosion Rating', value: 'Ex IIB T4 Gb' },
-      { label: 'Dimensions', value: 'Standing 1200×600×1060mm · Lying 1310×600×590mm' },
-      { label: 'Weight', value: '110 kg' },
-      { label: 'Payload', value: '20 kg' },
-      { label: 'Mobility', value: 'Quadruped, 14 DOF (12 + 2-axis gimbal) — climbs 20° slopes, 20cm obstacles' },
-      { label: 'Battery Life', value: '2–3 hours continuous patrol · 3h charge' },
-      { label: 'Sensors', value: 'Thermal, gas, HD camera, LIDAR — laser navigation, ±5cm accuracy' },
-    ],
-    certifications: ['IIB T4 Gb', 'IP66', 'IECEx', 'ATEX'],
-    useCases: [
-      'Stairwell and multi-level robot inspections in petrochemical plants',
-      'Narrow corridor patrol in confined processing units',
-      'Material transport and rescue support in emergency response scenarios',
-    ],
-    features: [
-      'Legged mobility reaches areas wheeled robots cannot access',
-      '500+ onboard algorithms for environmental perception and autonomous learning',
-      'Autonomous patrol with obstacle avoidance and route replay',
-      'Optional scene algorithms: personnel detection, pump area, storage tank, pipeline patrol',
-    ],
-    relatedCaseStudy: 'iraq-basra-missan',
-    relatedResource: 'ul-6260-explainer',
-    video: { en: 'JEpUMfi3cHc', fr: 'MzBFG9hM8fg' },
-  },
   {
     slug: 'explosion-proof-quadruped-robot-x5',
     name: 'Explosion-Proof Quadruped Robot — X5',
@@ -228,6 +194,39 @@ export const products: Product[] = [
     ],
     relatedCaseStudy: 'iraq-basra-missan',
     relatedResource: 'iecex-vs-nec-guide',
+  },
+  {
+    slug: 'explosion-proof-wheeled-robot-l3',
+    name: 'Explosion-Proof Wheeled Robot — L3',
+    shortName: 'L3',
+    tagline: 'Modular, quick-swap wheeled inspection with flexible sensor configuration',
+    description:
+      'Built on a modular design that balances compactness with light weight, the L3 uses independent sealed compartments and quick-maintenance interfaces to speed up field servicing. Rich expansion interfaces let sensor modules be freely configured, and an integrated one-piece pan-tilt gimbal delivers one machine, multiple uses. Four-wheel, eight-drive propulsion gives strong terrain adaptability across complex industrial environments.',
+    category: 'explosion-proof',
+    keyword: 'explosion proof wheeled robot L3',
+    image: l3Img,
+    heroImage: l3Img,
+    specs: [
+      { label: 'Explosion Rating', value: 'Ex IIC T6 Gb' },
+      { label: 'Dimensions', value: '1010×650×1070mm' },
+      { label: 'Weight', value: '180 kg' },
+      { label: 'Mobility', value: 'Four-wheel, eight-drive, 0–1.0 m/s — climbs 25° slopes, 9cm obstacles' },
+      { label: 'Battery Life', value: '3 hours continuous patrol · 2h charge' },
+      { label: 'Sensors', value: 'Laser SLAM + IMU, ±5cm accuracy' },
+    ],
+    certifications: ['IIC T6 Gb', 'IP66'],
+    useCases: [
+      'Modular sensor payload swaps for site-specific inspection needs',
+      'Zone 1 wheeled inspection across oil, gas, and chemical facilities',
+      'Operations requiring rapid-turnaround field maintenance',
+    ],
+    features: [
+      'Modular, independently sealed compartments for fast component swaps and field maintenance',
+      'Integrated one-piece pan-tilt gimbal with freely configurable sensor modules',
+      'Four-wheel, eight-drive propulsion for strong all-terrain adaptability',
+      'LiDAR SLAM + IMU navigation, ±5cm positioning accuracy',
+    ],
+    datasheet: '/datasheets/explosion-proof-wheeled-robot-l3.pdf',
   },
   {
     slug: 'explosion-proof-wheeled-robot-l7-twister',
@@ -395,6 +394,40 @@ export const products: Product[] = [
     ],
   },
   {
+    slug: 'explosion-proof-rail-robot-krxg32c',
+    name: 'Explosion-Proof Mining Rail Robot — KRXG32C',
+    shortName: 'KRXG32C',
+    tagline: 'Purpose-built rail inspection for underground coal-mine hazards',
+    description:
+      'Purpose-built for coal-mine underground environments, the KRXG32C uses a composite explosion-proof structure engineered for gas and dust hazards, paired with flexible rail-following technology that adapts to curves and slopes throughout mine tunnels. Integrated multi-dimensional sensing, edge computing, and 5G transmission deliver real-time monitoring and fast data return, improving mine safety management and operating efficiency.',
+    category: 'explosion-proof',
+    keyword: 'explosion proof mining rail robot KRXG32C',
+    image: krxg32cImg,
+    heroImage: krxg32cImg,
+    specs: [
+      { label: 'Explosion Rating', value: 'Ex I Mb (mining gas group)' },
+      { label: 'Dimensions', value: '1400×420×480mm' },
+      { label: 'Weight', value: '120 kg' },
+      { label: 'Mobility', value: 'Single-rail, dual-drive, 0–2.0 m/s — climbs 25° slopes' },
+      { label: 'Min. Passable Clearance', value: '600×600mm (incl. rail)' },
+      { label: 'Range', value: '8 km (level track) · 3h charge' },
+      { label: 'Positioning', value: '±5cm accuracy' },
+    ],
+    certifications: ['I Mb'],
+    useCases: [
+      'Continuous gas and dust hazard monitoring in underground coal-mine tunnels',
+      'Fixed-route rail inspection through curved and sloped mine tracks',
+      '5G-enabled real-time data return for mine safety management centers',
+    ],
+    features: [
+      'Flexible rail-following technology adapts to curves and slopes in mine tunnels',
+      'Composite explosion-proof structure purpose-built for coal-mine gas and dust hazards',
+      'Integrated multi-sensing, edge computing, and 5G transmission for real-time data return',
+      'Mining-specific Ex I Mb rating — a distinct hazard class from Hazloc\'s surface-facility rail robots',
+    ],
+    datasheet: '/datasheets/explosion-proof-rail-robot-krxg32c.pdf',
+  },
+  {
     slug: 'explosion-proof-tracked-robot',
     name: 'Explosion-Proof Crawler Robot — D071',
     shortName: 'D071',
@@ -431,25 +464,25 @@ export const products: Product[] = [
   },
   {
     slug: 'firefighting-reconnaissance-robot',
-    name: 'Explosion-Proof Firefighting Reconnaissance Robot',
+    name: 'Explosion-Proof Firefighting Reconnaissance Robot — QT04',
     shortName: 'Firefighting Robot',
     tagline: 'Front-line reconnaissance and suppression for fire and emergency response teams',
     description:
       'Combining firefighting and reconnaissance functions, this tracked robot carries a fire-monitoring water cannon and environmental sensing devices, with a dual water-curtain spray and cooling system that lets it enter hazardous areas in place of firefighters. Its tracked chassis delivers strong explosion protection, obstacle-climbing, and towing capacity, with remote-controlled cannon rotation, tilt, and sweep across multiple spray modes — switching freely between water and foam.',
     category: 'explosion-proof',
-    keyword: 'firefighting reconnaissance robot',
+    keyword: 'firefighting reconnaissance robot QT04',
     image: firefightingImg,
     heroImage: firefightingImg,
     specs: [
-      { label: 'Explosion Rating', value: 'Ex IIB T4 Gb' },
-      { label: 'Dimensions', value: '1800×1100×1500mm' },
-      { label: 'Weight', value: '780 kg' },
-      { label: 'Mobility', value: 'Dual-track, four-wheel drive — climbs 70% grade, 15cm obstacles, 20cm water' },
+      { label: 'Explosion Rating', value: 'Ex IIB T6 Gb' },
+      { label: 'Dimensions', value: '1700×900×1250mm' },
+      { label: 'Weight', value: '850 kg' },
+      { label: 'Mobility', value: 'Dual-track, four-wheel drive — climbs 90% grade, 30cm obstacles, 50cm water' },
       { label: 'Water Monitor', value: 'Flow rate 80 L/s · range 80m' },
       { label: 'Endurance', value: '5h continuous spraying / 1.5h continuous travel · 6h charge' },
       { label: 'Remote Control Range', value: '1000m' },
     ],
-    certifications: ['IIB T4 Gb', 'IP66', 'IECEx', 'ATEX'],
+    certifications: ['IIB T6 Gb', 'IP66', 'IECEx', 'ATEX'],
     useCases: [
       'Fire scene reconnaissance and suppression before human team entry',
       'Hazardous material incident assessment and gas monitoring',
@@ -465,6 +498,42 @@ export const products: Product[] = [
     relatedResource: 'iecex-vs-nec-guide',
     datasheet: '/datasheets/firefighting-reconnaissance-robot.pdf',
     video: { en: 'qXnDZBDNR80', fr: 'DIIOJkQ1tbo' },
+  },
+  {
+    slug: 'explosion-proof-quadruped-robot',
+    name: 'Explosion-Proof Quadruped Robot — X3 Stable',
+    shortName: 'X3 Stable',
+    tagline: 'Agile legged inspection for complex, cluttered hazardous zones',
+    description:
+      'Innovatively combining multiple explosion-proof design methods, the X3 Stable delivers comprehensive performance across explosion protection, lightweight design, and reliability. Equipped with more than 500 intelligent algorithms, adaptive learning, and high-precision image acquisition and perception, it navigates stairs, steps, gaps, obstacles, and confined spaces that wheeled robots cannot reach — and extends beyond inspection to reconnaissance, material transport, and rescue support in emergency response scenarios.',
+    category: 'explosion-proof',
+    keyword: 'explosion proof quadruped robot',
+    image: x3StableImg,
+    heroImage: x3StableImg,
+    specs: [
+      { label: 'Explosion Rating', value: 'Ex IIB T4 Gb' },
+      { label: 'Dimensions', value: 'Standing 1200×600×1060mm · Lying 1310×600×590mm' },
+      { label: 'Weight', value: '110 kg' },
+      { label: 'Payload', value: '20 kg' },
+      { label: 'Mobility', value: 'Quadruped, 14 DOF (12 + 2-axis gimbal) — climbs 20° slopes, 20cm obstacles' },
+      { label: 'Battery Life', value: '2–3 hours continuous patrol · 3h charge' },
+      { label: 'Sensors', value: 'Thermal, gas, HD camera, LIDAR — laser navigation, ±5cm accuracy' },
+    ],
+    certifications: ['IIB T4 Gb', 'IP66', 'IECEx', 'ATEX'],
+    useCases: [
+      'Stairwell and multi-level robot inspections in petrochemical plants',
+      'Narrow corridor patrol in confined processing units',
+      'Material transport and rescue support in emergency response scenarios',
+    ],
+    features: [
+      'Legged mobility reaches areas wheeled robots cannot access',
+      '500+ onboard algorithms for environmental perception and autonomous learning',
+      'Autonomous patrol with obstacle avoidance and route replay',
+      'Optional scene algorithms: personnel detection, pump area, storage tank, pipeline patrol',
+    ],
+    relatedCaseStudy: 'iraq-basra-missan',
+    relatedResource: 'ul-6260-explainer',
+    video: { en: 'JEpUMfi3cHc', fr: 'MzBFG9hM8fg' },
   },
   {
     slug: 'electric-wheeled-robot',

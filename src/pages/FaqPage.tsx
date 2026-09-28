@@ -30,7 +30,7 @@ const copy = {
       {
         category: 'Products',
         items: [
-          { q: 'How many robot models do you offer?', a: '15 robots across explosion-proof, electric, and security categories, plus a small line of accessory products (charging infrastructure and onboard compute modules).' },
+          { q: 'How many robot models do you offer?', a: '17 robots across explosion-proof, electric, and security categories, plus a small line of accessory products (charging infrastructure and onboard compute modules).' },
           { q: 'What\'s the difference between "explosion-proof" and "electric" robots?', a: 'Explosion-proof (Ex-rated) robots are certified for hazardous locations where flammable gas or dust may be present. Electric robots are for general industrial/non-hazardous areas and don\'t carry that certification, so they are priced lower.' },
           { q: 'Is there fleet management software?', a: 'Yes — the Asset/Equipment Tracking Center, a cloud-or-on-premise software layer that unifies monitoring, scheduling, and compliance reporting across every robot in a fleet, with a REST API and SCADA/DCS connectors.' },
           { q: 'Can robots be custom-configured for our specific site?', a: 'Several models (e.g. SGLS-C3) are explicitly modular and built to integrate different sensor payloads. Contact us to discuss additional functional add-ins for your site.' },
@@ -79,7 +79,7 @@ const copy = {
       {
         category: 'Produits',
         items: [
-          { q: 'Combien de modèles de robots proposez-vous?', a: '15 robots répartis dans les catégories antidéflagrant, électrique et sécurité, ainsi qu\'une petite gamme de produits accessoires (infrastructure de charge et modules de calcul embarqués).' },
+          { q: 'Combien de modèles de robots proposez-vous?', a: '17 robots répartis dans les catégories antidéflagrant, électrique et sécurité, ainsi qu\'une petite gamme de produits accessoires (infrastructure de charge et modules de calcul embarqués).' },
           { q: 'Quelle est la différence entre les robots « antidéflagrants » et « électriques »?', a: 'Les robots antidéflagrants (certifiés Ex) sont certifiés pour les emplacements dangereux où des gaz ou poussières inflammables peuvent être présents. Les robots électriques sont destinés aux zones industrielles générales non dangereuses et ne portent pas cette certification, d\'où un prix inférieur.' },
           { q: 'Existe-t-il un logiciel de gestion de flotte?', a: 'Oui — l\'Asset/Equipment Tracking Center, une couche logicielle infonuagique ou sur site qui unifie la surveillance, la planification et les rapports de conformité pour chaque robot d\'une flotte, avec une API REST et des connecteurs SCADA/DCS.' },
           { q: 'Les robots peuvent-ils être configurés sur mesure pour notre site?', a: 'Plusieurs modèles (par ex. le SGLS-C3) sont explicitement modulaires et conçus pour intégrer différentes charges utiles de capteurs. Contactez-nous pour discuter des ajouts fonctionnels supplémentaires pour votre site.' },
@@ -128,7 +128,7 @@ const copy = {
       {
         category: 'Productos',
         items: [
-          { q: '¿Cuántos modelos de robots ofrecen?', a: '15 robots en las categorías antiexplosión, eléctrico y seguridad, además de una pequeña línea de productos accesorios (infraestructura de carga y módulos de cómputo integrados).' },
+          { q: '¿Cuántos modelos de robots ofrecen?', a: '17 robots en las categorías antiexplosión, eléctrico y seguridad, además de una pequeña línea de productos accesorios (infraestructura de carga y módulos de cómputo integrados).' },
           { q: '¿Cuál es la diferencia entre los robots "antiexplosión" y "eléctricos"?', a: 'Los robots antiexplosión (con clasificación Ex) están certificados para ubicaciones peligrosas donde puede haber gas o polvo inflamable. Los robots eléctricos son para áreas industriales generales no peligrosas y no cuentan con esa certificación, por lo que su precio es menor.' },
           { q: '¿Existe software de gestión de flota?', a: 'Sí — el Asset/Equipment Tracking Center, una capa de software en la nube o local que unifica el monitoreo, la programación y los informes de cumplimiento de cada robot de una flota, con una API REST y conectores SCADA/DCS.' },
           { q: '¿Los robots pueden configurarse a medida para nuestro sitio específico?', a: 'Varios modelos (por ejemplo, el SGLS-C3) son explícitamente modulares y están diseñados para integrar diferentes cargas útiles de sensores. Contáctenos para hablar sobre funciones adicionales para su sitio.' },
@@ -177,7 +177,7 @@ const copy = {
       {
         category: 'Produtos',
         items: [
-          { q: 'Quantos modelos de robôs vocês oferecem?', a: '15 robôs nas categorias à prova de explosão, elétrico e segurança, além de uma pequena linha de produtos acessórios (infraestrutura de carregamento e módulos de computação embarcados).' },
+          { q: 'Quantos modelos de robôs vocês oferecem?', a: '17 robôs nas categorias à prova de explosão, elétrico e segurança, além de uma pequena linha de produtos acessórios (infraestrutura de carregamento e módulos de computação embarcados).' },
           { q: 'Qual é a diferença entre robôs "à prova de explosão" e "elétricos"?', a: 'Os robôs à prova de explosão (classificados Ex) são certificados para locais perigosos onde pode haver gás ou poeira inflamável. Os robôs elétricos são para áreas industriais gerais não perigosas e não possuem essa certificação, por isso têm preço mais baixo.' },
           { q: 'Existe software de gestão de frota?', a: 'Sim — o Asset/Equipment Tracking Center, uma camada de software em nuvem ou local que unifica monitoramento, agendamento e relatórios de conformidade em toda a frota, com API REST e conectores SCADA/DCS.' },
           { q: 'Os robôs podem ser configurados sob medida para nosso local específico?', a: 'Vários modelos (por exemplo, o SGLS-C3) são explicitamente modulares e projetados para integrar diferentes cargas de sensores. Entre em contato para discutir funcionalidades adicionais para o seu local.' },

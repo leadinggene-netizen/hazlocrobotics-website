@@ -48,7 +48,7 @@ const copy = {
     sectors: ['Oil & Gas', 'Petrochemical', 'Power Generation', 'Offshore', 'Mining', 'Emergency Response'],
     productLine: 'Product Line',
     fleetTitle: 'The Robot Fleet',
-    fleetSubtitle: 'Fifteen robots — from explosion-proof quadrupeds to fleet management software — built for hazardous-location inspection.',
+    fleetSubtitle: 'Seventeen robots — from explosion-proof quadrupeds to fleet management software — built for hazardous-location inspection.',
     viewAllProducts: 'View All Products',
     problemLabel: 'The Problem',
     problemTitle: 'Manual inspection is dangerous, infrequent, and expensive',
@@ -117,7 +117,7 @@ const copy = {
     sectors: ['Pétrole et gaz', 'Pétrochimie', 'Production d\'électricité', 'Extracôtier', 'Exploitation minière', 'Intervention d\'urgence'],
     productLine: 'Gamme de produits',
     fleetTitle: 'La flotte de robots',
-    fleetSubtitle: 'Quinze robots — des quadrupèdes antidéflagrants au logiciel de gestion de flotte — conçus pour l\'inspection en emplacement dangereux.',
+    fleetSubtitle: 'Dix-sept robots — des quadrupèdes antidéflagrants au logiciel de gestion de flotte — conçus pour l\'inspection en emplacement dangereux.',
     viewAllProducts: 'Voir tous les produits',
     problemLabel: 'Le problème',
     problemTitle: 'L\'inspection manuelle est dangereuse, peu fréquente et coûteuse',
@@ -173,7 +173,7 @@ const copy = {
     sectors: ['Petróleo y gas', 'Petroquímica', 'Generación de energía', 'Costa afuera', 'Minería', 'Respuesta a emergencias'],
     productLine: 'Línea de productos',
     fleetTitle: 'La flota de robots',
-    fleetSubtitle: 'Quince robots — desde cuadrúpedos antiexplosión hasta software de gestión de flota — construidos para la inspección en áreas peligrosas.',
+    fleetSubtitle: 'Diecisiete robots — desde cuadrúpedos antiexplosión hasta software de gestión de flota — construidos para la inspección en áreas peligrosas.',
     viewAllProducts: 'Ver todos los productos',
     problemLabel: 'El problema',
     problemTitle: 'La inspección manual es peligrosa, poco frecuente y costosa',
@@ -229,7 +229,7 @@ const copy = {
     sectors: ['Óleo e gás', 'Petroquímica', 'Geração de energia', 'Offshore', 'Mineração', 'Resposta a emergências'],
     productLine: 'Linha de produtos',
     fleetTitle: 'A frota de robôs',
-    fleetSubtitle: 'Quinze robôs — de quadrúpedes à prova de explosão a software de gestão de frota — construídos para inspeção em áreas classificadas.',
+    fleetSubtitle: 'Dezessete robôs — de quadrúpedes à prova de explosão a software de gestão de frota — construídos para inspeção em áreas classificadas.',
     viewAllProducts: 'Ver todos os produtos',
     problemLabel: 'O problema',
     problemTitle: 'A inspeção manual é perigosa, pouco frequente e cara',
@@ -289,8 +289,8 @@ export default function HomePage() {
   const resources = getLocalizedResources(locale);
 
   const featuredProducts = [
-    products.find((p) => p.slug === 'explosion-proof-wheeled-robot-l4s')!,
-    products.find((p) => p.slug === 'explosion-proof-quadruped-robot')!,
+    products.find((p) => p.slug === 'explosion-proof-quadruped-robot-x5')!,
+    products.find((p) => p.slug === 'explosion-proof-wheeled-robot-sgls-c3')!,
     products.find((p) => p.slug === 'firefighting-reconnaissance-robot')!,
   ];
 

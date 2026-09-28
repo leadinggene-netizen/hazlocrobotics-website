@@ -292,16 +292,16 @@ export const productsEs: Record<string, ProductTranslation> = {
     ],
   },
   'firefighting-reconnaissance-robot': {
-    name: 'Robot antiexplosión de reconocimiento contra incendios',
+    name: 'Robot antiexplosión de reconocimiento contra incendios — QT04',
     shortName: 'Robot contra incendios',
     tagline: 'Reconocimiento e intervención de primera línea para equipos de emergencia y de bomberos',
     description:
       'Combinando funciones de extinción de incendios y reconocimiento, este robot con orugas transporta un cañón de agua de monitoreo de incendios y dispositivos de detección ambiental, con un sistema de pulverización de doble cortina de agua y enfriamiento que le permite ingresar a zonas peligrosas en lugar de los bomberos. Su chasis con orugas ofrece una gran protección antiexplosión, capacidad de superar obstáculos y de remolque, con rotación, inclinación y barrido del cañón controlados remotamente en varios modos de pulverización — cambiando libremente entre agua y espuma.',
     specs: [
-      { label: 'Certificación antiexplosión', value: 'Ex IIB T4 Gb' },
-      { label: 'Dimensiones', value: '1800×1100×1500mm' },
-      { label: 'Peso', value: '780 kg' },
-      { label: 'Movilidad', value: 'Doble oruga, tracción a las cuatro ruedas — pendientes del 70%, obstáculos de 15cm, vadeo de 20cm' },
+      { label: 'Certificación antiexplosión', value: 'Ex IIB T6 Gb' },
+      { label: 'Dimensiones', value: '1700×900×1250mm' },
+      { label: 'Peso', value: '850 kg' },
+      { label: 'Movilidad', value: 'Doble oruga, tracción a las cuatro ruedas — pendientes del 90%, obstáculos de 30cm, vadeo de 50cm' },
       { label: 'Cañón de agua', value: 'Caudal 80 L/s · alcance 80m' },
       { label: 'Autonomía', value: '5h de pulverización continua / 1,5h de desplazamiento continuo · carga 6h' },
       { label: 'Alcance de control remoto', value: '1000m' },

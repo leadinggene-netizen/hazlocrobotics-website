@@ -302,16 +302,16 @@ export const productsFr: Record<string, ProductTranslation> = {
     ],
   },
   'firefighting-reconnaissance-robot': {
-    name: 'Robot antidéflagrant de reconnaissance incendie',
+    name: 'Robot antidéflagrant de reconnaissance incendie — QT04',
     shortName: 'Robot d\'incendie',
     tagline: 'Reconnaissance et intervention de première ligne pour les équipes d\'urgence et d\'incendie',
     description:
       'Combinant les fonctions de lutte contre l\'incendie et de reconnaissance, ce robot chenillé transporte un canon à eau de surveillance incendie et des dispositifs de détection environnementale, avec un système de pulvérisation à double rideau d\'eau et de refroidissement qui lui permet de pénétrer dans les zones dangereuses à la place des pompiers. Son châssis chenillé offre une forte protection antidéflagrante, une capacité de franchissement d\'obstacles et de remorquage, avec rotation, inclinaison et balayage du canon contrôlés à distance selon plusieurs modes de pulvérisation — passant librement de l\'eau à la mousse.',
     specs: [
-      { label: 'Certification antidéflagrante', value: 'Ex IIB T4 Gb' },
-      { label: 'Dimensions', value: '1800×1100×1500mm' },
-      { label: 'Poids', value: '780 kg' },
-      { label: 'Mobilité', value: 'Double chenille, quatre roues motrices — pentes de 70%, obstacles de 15cm, gué de 20cm' },
+      { label: 'Certification antidéflagrante', value: 'Ex IIB T6 Gb' },
+      { label: 'Dimensions', value: '1700×900×1250mm' },
+      { label: 'Poids', value: '850 kg' },
+      { label: 'Mobilité', value: 'Double chenille, quatre roues motrices — pentes de 90%, obstacles de 30cm, gué de 50cm' },
       { label: 'Canon à eau', value: 'Débit 80 L/s · portée 80m' },
       { label: 'Autonomie', value: '5h de pulvérisation continue / 1,5h de déplacement continu · charge 6h' },
       { label: 'Portée de télécommande', value: '1000m' },
