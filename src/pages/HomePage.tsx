@@ -23,14 +23,34 @@ const copy = {
     promo: {
       slides: [
         {
-          id: 'ca-sept-2026-poc',
-          badge: 'Canada — September Offer',
-          headline: 'Free First Month — Canada POC Pilot Program',
+          id: 'ca-prewinter-2026',
+          badge: 'Canada — Pre-Winter Offer',
+          headline: 'Free Site Assessment — Before the Freeze',
           subtext:
-            'Put a hazardous-area inspection robot to work on your site. Only 10 pilot slots available across Canada this September — first month free when you start a Proof-of-Concept pilot.',
-          primaryCta: { label: 'Reserve Your Pilot Slot', to: '/contact' },
-          secondaryCta: { label: 'See how it works', to: '/build' },
-          finePrint: 'Offer valid through September 30, 2026. Limited availability.',
+            'Keep your people out of the cold. Let a hazardous-area inspection robot handle routine checks and respond to emergencies this winter. We start with a free site assessment to define the right robot setup for your facility. Only 10 slots available each month in Canada.',
+          primaryCta: { label: 'Book Your Free Assessment', to: '/contact' },
+          secondaryCta: { label: 'Build Your Robot', to: '/build' },
+          finePrint: '10 slots per month in Canada through December 22, 2026. Limited availability.',
+        },
+        {
+          id: 'us-prewinter-2026',
+          badge: 'United States — Pre-Winter Offer',
+          headline: 'Free Site Assessment — Before the Freeze',
+          subtext:
+            'Keep your people out of the cold. Let a hazardous-area inspection robot handle routine checks and respond to emergencies this winter. We start with a free site assessment to define the right robot setup for your facility. Only 10 slots available each month in the United States.',
+          primaryCta: { label: 'Book Your Free Assessment', to: '/contact' },
+          secondaryCta: { label: 'Build Your Robot', to: '/build' },
+          finePrint: '10 slots per month in the United States through December 22, 2026. Limited availability.',
+        },
+        {
+          id: 'mx-prewinter-2026',
+          badge: 'Mexico — Pre-Winter Offer',
+          headline: 'Free Site Assessment — Before the Freeze',
+          subtext:
+            'Keep your people out of the cold. Let a hazardous-area inspection robot handle routine checks and respond to emergencies this winter. We start with a free site assessment to define the right robot setup for your facility. Only 10 slots available each month in Mexico.',
+          primaryCta: { label: 'Book Your Free Assessment', to: '/contact' },
+          secondaryCta: { label: 'Build Your Robot', to: '/build' },
+          finePrint: '10 slots per month in Mexico through December 22, 2026. Limited availability.',
         },
       ] as PromoSlide[],
     },
@@ -92,14 +112,14 @@ const copy = {
     promo: {
       slides: [
         {
-          id: 'ca-sept-2026-poc',
-          badge: 'Canada — Offre de septembre',
-          headline: 'Premier mois gratuit — Programme pilote POC Canada',
+          id: 'ca-prewinter-2026',
+          badge: 'Canada — Offre pré-hiver',
+          headline: 'Évaluation de site gratuite — avant le gel',
           subtext:
-            'Mettez un robot d\'inspection en zone dangereuse au travail sur votre site. Seulement 10 places pilotes disponibles à travers le Canada ce mois de septembre — premier mois gratuit pour tout projet pilote de démonstration de faisabilité (POC).',
-          primaryCta: { label: 'Réservez votre place pilote', to: '/contact' },
-          secondaryCta: { label: 'Voir comment ça fonctionne', to: '/build' },
-          finePrint: 'Offre valide jusqu\'au 30 septembre 2026. Disponibilité limitée.',
+            'Gardez vos équipes à l\'abri du froid. Confiez à un robot d\'inspection pour zones dangereuses les vérifications de routine et l\'intervention en cas d\'urgence cet hiver. Nous commençons par une évaluation de site gratuite pour définir la configuration de robot adaptée à votre installation. Seulement 10 places disponibles chaque mois au Canada.',
+          primaryCta: { label: 'Réservez votre évaluation gratuite', to: '/contact' },
+          secondaryCta: { label: 'Configurez votre robot', to: '/build' },
+          finePrint: '10 places par mois au Canada jusqu\'au 22 décembre 2026. Places limitées.',
         },
       ] as PromoSlide[],
     },
@@ -158,7 +178,20 @@ const copy = {
     seeCaseStudies: 'Voir les études de cas',
   },
   es: {
-    promo: { slides: [] as PromoSlide[] },
+    promo: {
+      slides: [
+        {
+          id: 'mx-prewinter-2026',
+          badge: 'México — Oferta de pre-invierno',
+          headline: 'Evaluación de sitio gratuita — antes de las heladas',
+          subtext:
+            'Mantenga a su personal a salvo del frío. Deje que un robot de inspección para áreas peligrosas realice las revisiones de rutina y responda a emergencias este invierno. Comenzamos con una evaluación de sitio gratuita para definir la configuración de robot adecuada para sus instalaciones. Solo 10 lugares disponibles cada mes en México.',
+          primaryCta: { label: 'Reserve su evaluación gratuita', to: '/contact' },
+          secondaryCta: { label: 'Configure su robot', to: '/build' },
+          finePrint: '10 lugares por mes en México hasta el 22 de diciembre de 2026. Disponibilidad limitada.',
+        },
+      ] as PromoSlide[],
+    },
     certBadge: 'Certificado IECEx y ATEX · Hoja de ruta UL 6260',
     heroTitle: 'Robots de inspección antiexplosión para los entornos más peligrosos del mundo',
     heroSubtitle:
@@ -309,7 +342,7 @@ export default function HomePage() {
 
   return (
     <>
-      <PromoCarousel slides={t.promo.slides} storageKey="hazloc-promo-ca-sept-2026-poc" />
+      <PromoCarousel slides={t.promo.slides} storageKey="hazloc-promo-prewinter-2026" />
 
       {/* Hero */}
       <section
